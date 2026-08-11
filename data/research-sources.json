@@ -1,0 +1,12 @@
+[
+  {"name":"东方财富研报中心","url":"https://data.eastmoney.com/report/","type":"research","typeLabel":"研报索引","description":"公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。","coverage":"A股券商研报"},
+  {"name":"券商官方网站研究栏目","url":"https://www.sac.net.cn/hyfw/hydt/","type":"research","typeLabel":"券商公开","description":"从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。","coverage":"中国券商公开观点"},
+  {"name":"World Bank Documents & Reports","url":"https://documents.worldbank.org/en/publication/documents-reports","type":"research","typeLabel":"国际研究","description":"世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。","coverage":"全球宏观与产业"},
+  {"name":"IMF eLibrary","url":"https://www.elibrary.imf.org/","type":"research","typeLabel":"国际研究","description":"IMF公开出版物、国别报告、专题研究与金融稳定资料。","coverage":"全球宏观、金融与政策"},
+  {"name":"McKinsey Insights","url":"https://www.mckinsey.com/featured-insights","type":"research","typeLabel":"咨询研究","description":"麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。","coverage":"消费、科技、医疗、工业"},
+  {"name":"BCG Publications","url":"https://www.bcg.com/publications","type":"research","typeLabel":"咨询研究","description":"BCG公开行业报告与企业战略研究。","coverage":"全球行业与竞争格局"},
+  {"name":"Bain Insights","url":"https://www.bain.com/insights/","type":"research","typeLabel":"咨询研究","description":"贝恩公开行业洞察，消费品、零售和技术覆盖较多。","coverage":"消费、零售、科技"},
+  {"name":"Deloitte Insights","url":"https://www.deloitte.com/us/en/insights.html","type":"research","typeLabel":"咨询研究","description":"德勤公开行业展望、调查和专题分析。","coverage":"TMT、消费、医疗、制造"},
+  {"name":"巨潮资讯","url":"https://www.cninfo.com.cn/","type":"validation","typeLabel":"事实核验","description":"上市公司法定公告与财报，用于核验研报中的经营与财务判断。","coverage":"A股公司公告"},
+  {"name":"国家统计局","url":"https://www.stats.gov.cn/","type":"validation","typeLabel":"事实核验","description":"宏观、消费、工业产量和行业统计的官方来源。","coverage":"中国官方统计"}
+]

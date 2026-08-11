@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "行业研究报告",
+  "type": "object",
+  "required": ["id", "industry", "category", "asOf", "updatedAt", "prosperity", "summary", "cycle", "reversalConditions"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "industry": { "type": "string" },
+    "category": { "enum": ["cycle", "growth", "mixed"] },
+    "asOf": { "type": "string" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "decisionLevel": { "enum": ["no_trade", "data_insufficient", "wait_trigger", "trial", "add"] },
+    "dataGaps": { "type": "array", "items": { "type": "string" } },
+    "decisionOverview": { "type": "object" },
+    "weeklyChanges": { "type": "object" },
+    "supplyDemand": { "type": "object" },
+    "marketResearch": { "type": "object" },
+    "prosperity": {
+      "type": "object",
+      "required": ["level", "direction", "score", "verdict", "dimensions", "driver", "improvement", "deterioration"],
+      "properties": {
+        "level": { "type": "string" },
+        "direction": { "type": "string" },
+        "directionTone": { "enum": ["positive", "negative", "neutral", "warning"] },
+        "score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "verdict": { "type": "string" },
+        "dimensions": { "type": "array" },
+        "driver": { "type": "string" },
+        "improvement": { "type": "string" },
+        "deterioration": { "type": "string" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "stage": { "type": "string" },
+        "rating": { "type": "string" },
+        "confidence": { "type": "string" },
+        "conclusion": { "type": "string" },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "cycle": {
+      "type": "object",
+      "properties": {
+        "current": { "type": "string" },
+        "stages": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "reversalConditions": { "type": "array" },
+    "metrics": { "type": "array" },
+    "industryChain": { "type": "array" },
+    "companyComparison": { "type": "array" },
+    "valuationScenarios": { "type": "array" },
+    "technical": { "type": "object" },
+    "catalysts": { "type": "array" },
+    "executionPlan": { "type": "object" },
+    "bearCase": { "type": "array" },
+    "evidenceQuality": { "type": "array" },
+    "scenarios": { "type": "array" },
+    "risks": { "type": "array" },
+    "sources": { "type": "array" }
+  }
+}

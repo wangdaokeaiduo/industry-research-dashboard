@@ -1,0 +1,56 @@
+.chart-window {
+  background: #fff;
+}
+.close-line{fill:none;stroke:#263f56;stroke-width:1.5;vector-effect:non-scaling-stroke}
+
+.chart-scrubber {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 1fr) auto auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 8px 15px 10px;
+  border-top: 1px solid var(--line2);
+  background: var(--wash);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.zoom-range{position:relative;height:26px;min-width:120px}.zoom-range::before{content:"";position:absolute;left:0;right:0;top:11px;height:4px;background:#dce3e8;border-radius:4px}.zoom-selection{position:absolute;left:var(--zoom-left);right:var(--zoom-right);top:9px;height:8px;border:1px solid #c77a28;background:#efb66d66;border-radius:3px}.zoom-range input[type="range"]{position:absolute;inset:0;width:100%;height:26px;margin:0;background:transparent;appearance:none;-webkit-appearance:none;pointer-events:none}.zoom-range input[type="range"]::-webkit-slider-runnable-track{height:4px;background:transparent}.zoom-range input[type="range"]::-webkit-slider-thumb{width:14px;height:22px;margin-top:-9px;border:2px solid #fff;border-radius:3px;background:var(--orange);box-shadow:0 0 0 1px #bd6f1f;appearance:none;-webkit-appearance:none;pointer-events:auto;cursor:ew-resize}.zoom-range input[type="range"]::-moz-range-track{height:4px;background:transparent}.zoom-range input[type="range"]::-moz-range-thumb{width:12px;height:20px;border:2px solid #fff;border-radius:3px;background:var(--orange);box-shadow:0 0 0 1px #bd6f1f;pointer-events:auto;cursor:ew-resize}.zoom-start{z-index:3}.zoom-end{z-index:4}
+
+.chart-scrubber button {
+  border: 0;
+  background: transparent;
+  color: #40566a;
+  font: 600 11px var(--sans);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.chart-scrubber button:hover:not(:disabled) {
+  color: var(--orange);
+}
+
+.chart-scrubber button:disabled {
+  color: #a7b1ba;
+  cursor: default;
+}
+
+.chart-scrubber output {
+  min-width: 142px;
+  text-align: right;
+  color: #40566a;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 760px) {
+  .chart-scrubber {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .chart-scrubber output {
+    grid-column: 1 / -1;
+    min-width: 0;
+    text-align: center;
+  }
+}
