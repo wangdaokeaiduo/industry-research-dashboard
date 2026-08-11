@@ -31,7 +31,8 @@ const profiles = {
   'baijiu-sector': { keywords:['白酒','贵州茅台','五粮液','山西汾酒','泸州老窖'], consensus:'关注动销与库存', conclusion:'消费数据改善不能替代渠道去库存，批价、库存和现金回款需同时转强才是可靠反转。' },
   'tourism-hotel': { keywords:['旅游','酒店','首旅酒店','锦江酒店','宋城演艺'], consensus:'需求韧性、利润弹性分化', conclusion:'客流继续增长，但投资价值取决于房价、入住率和新增供给能否转化为RevPAR与利润。' },
   'optical-module': { keywords:['光模块','中际旭创','新易盛','天孚通信'], consensus:'AI资本开支支撑需求', conclusion:'需求共识较强，主要分歧转向产能、良率、价格压力和高估值能否被盈利兑现。' },
-  'mlcc-sector': { keywords:['MLCC','被动元件','风华高科','三环集团','火炬电子','鸿远电子','洁美科技'], consensus:'高端AI需求强、消费端分化', conclusion:'高端规格的订单与价格正在改善，但消费端并未全面复苏；需用BB Ratio、价格、样本公司毛利率和板块量价突破共同确认。' }
+  'mlcc-sector': { keywords:['MLCC','被动元件','风华高科','三环集团','火炬电子','鸿远电子','洁美科技'], consensus:'高端AI需求强、消费端分化', conclusion:'高端规格的订单与价格正在改善，但消费端并未全面复苏；需用BB Ratio、价格、样本公司毛利率和板块量价突破共同确认。' },
+  'gold-sector': { keywords:['黄金','贵金属','山东黄金','中金黄金','赤峰黄金','山金国际','紫金矿业'], consensus:'央行和投资需求提供结构支撑', conclusion:'黄金长期配置逻辑仍强，但黄金股投资价值必须继续核验实际利率、ETF和央行买盘，以及矿企产量、AISC与现金流。' }
 }
 const freeSources = JSON.parse(await fs.readFile(path.join(root,'data/research-sources.json'),'utf8'))
 
