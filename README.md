@@ -87,6 +87,33 @@ npm run reports:docs
 
 不同 Tushare 接口存在积分、权限和调用频率要求。接口不可用时，程序会尽量保留上一次有效数据；报告中也应明确标注数据缺口。
 
+## 安装行业研究 Skill
+
+仓库同时包含符合 Codex Skill 目录规范的 [`industry-cycle-trading-research`](skills/industry-cycle-trading-research/SKILL.md)：
+
+```text
+skills/industry-cycle-trading-research/
+├── SKILL.md
+├── agents/openai.yaml
+├── references/
+└── scripts/analyze_ohlcv.py
+```
+
+安装到个人 Codex Skills 目录：
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R skills/industry-cycle-trading-research ~/.codex/skills/
+```
+
+重新打开 Codex 任务后，可以明确调用：
+
+```text
+使用 $industry-cycle-trading-research 调研 MLCC 板块，并生成网站兼容的完整行业报告。
+```
+
+该 Skill 强制要求真实可追溯数据、行业景气判断、供需证据链、反转条件、行业研报共性与分歧、真实 OHLCV、多周期技术分析，以及明确的触发位、量能条件和失效位。
+
 ## 导入自己的行业报告
 
 把 UTF-8 JSON 文件放入 `data/reports/` 即可，运行中的网站会自动加载。最小结构：

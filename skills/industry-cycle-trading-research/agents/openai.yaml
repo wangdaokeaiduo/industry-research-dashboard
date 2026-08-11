@@ -1,0 +1,5 @@
+interface:
+  display_name: "行业周期与左侧交易研究"
+  short_description: "真实数据驱动的行业景气、公司筛选、估值与交易决策研究"
+  default_prompt: "使用 $industry-cycle-trading-research 生成含周度变化、公司比较、估值情景、真实K线和执行条件的完整行业投资报告。"
+
