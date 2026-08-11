@@ -12,6 +12,7 @@
     "report:optical": "node scripts/build-optical-module-report.mjs",
     "report:mlcc": "node scripts/build-mlcc-report.mjs",
     "report:gold": "node scripts/build-gold-report.mjs",
+    "report:innovative-drug": "node scripts/build-innovative-drug-report.mjs",
     "test": "node --test"
   },
   "dependencies": {
