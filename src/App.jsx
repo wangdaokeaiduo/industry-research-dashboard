@@ -2,6 +2,13 @@ import { useEffect, useMemo, useState } from 'react'
 
 const categoryName = { cycle: '周期', growth: '成长', mixed: '混合' }
 const isStockReport = report => report?.reportType === 'stock' || report?.id?.endsWith('-stock')
+const reportIdFromUrl = () => new URLSearchParams(window.location.search).get('report') || ''
+const syncReportUrl = reportId => {
+  const url = new URL(window.location.href)
+  if (reportId) url.searchParams.set('report', reportId)
+  else url.searchParams.delete('report')
+  window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`)
+}
 const statusMeta = {
   met: ['已达成', 'positive'], partial: ['部分达成', 'warning'],
   unmet: ['未达成', 'negative'], unknown: ['待验证', 'muted']
@@ -325,10 +332,11 @@ export default function App() {
   const [reports,setReports]=useState([]), [errors,setErrors]=useState([]), [selected,setSelected]=useState('')
   const [query,setQuery]=useState(''), [filter,setFilter]=useState('all'), [reportType,setReportType]=useState('sector'), [online,setOnline]=useState(false), [updated,setUpdated]=useState(0)
   const [readingLarge,setReadingLarge]=useState(()=>localStorage.getItem('reading-size')==='large')
-  const load = async () => { const res=await fetch('/api/reports'); const data=await res.json(), next=data.reports||[]; setReports(next); setErrors(data.errors||[]); setSelected(value=>next.some(r=>r.id===value)?value:(next.find(r=>!isStockReport(r))?.id||next[0]?.id||'')); setUpdated(Date.now()) }
+  const load = async () => { const res=await fetch('/api/reports'); const data=await res.json(), next=data.reports||[], linked=next.find(r=>r.id===reportIdFromUrl()); setReports(next); setErrors(data.errors||[]); if(linked)setReportType(isStockReport(linked)?'stock':'sector'); setSelected(value=>linked?.id||(next.some(r=>r.id===value)?value:(next.find(r=>!isStockReport(r))?.id||next[0]?.id||''))); setUpdated(Date.now()) }
   useEffect(()=>{ load().catch(()=>setOnline(false)); const events=new EventSource('/api/events'); events.addEventListener('connected',()=>setOnline(true)); events.addEventListener('reports-updated',()=>load()); events.onerror=()=>setOnline(false); return()=>events.close() },[])
   const report=useMemo(()=>reports.find(r=>r.id===selected),[reports,selected])
-  const changeReportType=type=>{setReportType(type);setFilter('all');setQuery('');setSelected(reports.find(r=>type==='stock'?isStockReport(r):!isStockReport(r))?.id||'')}
+  const selectReport=id=>{setSelected(id);syncReportUrl(id)}
+  const changeReportType=type=>{const id=reports.find(r=>type==='stock'?isStockReport(r):!isStockReport(r))?.id||'';setReportType(type);setFilter('all');setQuery('');setSelected(id);syncReportUrl(id)}
   useEffect(()=>{localStorage.setItem('reading-size',readingLarge?'large':'standard')},[readingLarge])
-  return <div className="app-shell"><Sidebar reports={reports} selected={selected} onSelect={setSelected} query={query} setQuery={setQuery} filter={filter} setFilter={setFilter} reportType={reportType} onTypeChange={changeReportType}/><ReportView key={report?.id||'loading'} report={report} readingLarge={readingLarge} setReadingLarge={setReadingLarge}/><div className={`live-status ${online?'online':''}`}><span/>{online?'实时同步':'正在重连'}<small>{updated?new Date(updated).toLocaleTimeString('zh-CN',{hour12:false}):''}</small></div>{errors.length>0&&<div className="error-toast"><Icon name="alert"/><div><strong>{errors.length} 个报告未载入</strong><span>{errors[0].file} · {errors[0].message}</span></div></div>}</div>
+  return <div className="app-shell"><Sidebar reports={reports} selected={selected} onSelect={selectReport} query={query} setQuery={setQuery} filter={filter} setFilter={setFilter} reportType={reportType} onTypeChange={changeReportType}/><ReportView key={report?.id||'loading'} report={report} readingLarge={readingLarge} setReadingLarge={setReadingLarge}/><div className={`live-status ${online?'online':''}`}><span/>{online?'实时同步':'正在重连'}<small>{updated?new Date(updated).toLocaleTimeString('zh-CN',{hour12:false}):''}</small></div>{errors.length>0&&<div className="error-toast"><Icon name="alert"/><div><strong>{errors.length} 个报告未载入</strong><span>{errors[0].file} · {errors[0].message}</span></div></div>}</div>
 }
