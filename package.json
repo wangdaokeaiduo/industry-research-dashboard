@@ -21,6 +21,7 @@
     "report:yaoyigou": "node scripts/build-yaoyigou-report.mjs && npm run reports:docs",
     "report:yixintang": "node scripts/build-yixintang-report.mjs && npm run reports:docs",
     "report:ctg-duty-free": "STOCK_CODE=601888.SH STOCK_NAME=中国中免 STOCK_ID=601888 QUOTE_SYMBOL=sh601888 INDUSTRY_REPORT=tourism-hotel.json node scripts/build-yixintang-report.mjs && npm run reports:docs",
+    "report:giant-network": "STOCK_CODE=002558.SZ STOCK_NAME=巨人网络 STOCK_ID=002558 QUOTE_SYMBOL=sz002558 INDUSTRY_REPORT=game-sector.json node scripts/build-yixintang-report.mjs && npm run reports:docs",
     "test": "node --test"
   },
   "dependencies": {
