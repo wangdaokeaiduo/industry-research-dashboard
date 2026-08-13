@@ -35,7 +35,8 @@ const profiles = {
   'gold-sector': { keywords:['黄金','贵金属','山东黄金','中金黄金','赤峰黄金','山金国际','紫金矿业'], consensus:'央行和投资需求提供结构支撑', conclusion:'黄金长期配置逻辑仍强，但黄金股投资价值必须继续核验实际利率、ETF和央行买盘，以及矿企产量、AISC与现金流。' },
   'innovative-drug': { keywords:['创新药','生物医药','恒瑞医药','百济神州','君实生物','荣昌生物','泽璟制药'], consensus:'中国创新资产全球价值提升', conclusion:'产业景气向上但公司分化显著；优先验证临床差异化、BD首付款、商业化收入、现金储备和板块量价突破。' },
   'pharmacy-chain': { keywords:['药店','医药零售','医药连锁','益丰药房','大参林','老百姓','一心堂','健之佳'], consensus:'从门店扩张转向合规与单店效率', conclusion:'处方外流带来长期增量，但价格监管与门店过密压制回报；需用同店、毛利率、库存、经营现金流和板块量价共同确认。' },
-  'memory-chip': { keywords:['存储芯片','存储器','DRAM','NAND','HBM','兆易创新','北京君正','东芯股份','佰维存储','江波龙'], consensus:'AI需求与供给约束推动价格和盈利扩张', conclusion:'存储进入高景气扩张期，但A股映射和估值分化明显；需用合约价、原厂库存、样本毛利率与板块量价共同确认。' }
+  'memory-chip': { keywords:['存储芯片','存储器','DRAM','NAND','HBM','兆易创新','北京君正','东芯股份','佰维存储','江波龙'], consensus:'AI需求与供给约束推动价格和盈利扩张', conclusion:'存储进入高景气扩张期，但A股映射和估值分化明显；需用合约价、原厂库存、样本毛利率与板块量价共同确认。' },
+  'pcb-sector': { keywords:['PCB','印制电路板','HDI','深南电路','沪电股份','胜宏科技','鹏鼎控股','生益电子'], consensus:'AI服务器推动高阶PCB层数、材料和单机价值量升级', conclusion:'AI高阶PCB景气明确，但普通消费板并非同步繁荣；需用高端材料供给、扩产良率、AI收入、样本毛利率和板块量价共同确认。' }
 }
 const freeSources = JSON.parse(await fs.readFile(path.join(root,'data/research-sources.json'),'utf8'))
 
