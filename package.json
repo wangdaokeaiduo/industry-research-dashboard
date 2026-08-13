@@ -16,6 +16,7 @@
     "report:pharmacy-chain": "node scripts/build-pharmacy-chain-report.mjs",
     "report:memory-chip": "node scripts/build-memory-chip-report.mjs",
     "report:pcb": "node scripts/build-pcb-report.mjs",
+    "report:food-beverage": "node scripts/build-food-beverage-report.mjs",
     "test": "node --test"
   },
   "dependencies": {
