@@ -106,11 +106,23 @@ description: 使用真实、可追溯、带日期的数据分析单只上市公�
 2. 投资价值评分：产业位置、商业质量、盈利现金流、估值、消息、技术。
 3. 公司业务与竞争优势。
 4. 最新财务、盈利拆分和质量检查。
-5. 估值：历史、可比公司、乐观/基准/悲观情景，不给无依据目标价。
-6. 近90日公告与消息：事实、影响、预期差和验证点。
-7. 真实OHLCV、量能均线和多体系技术分析。
-8. 基本面—估值—消息—技术共振矩阵。
-9. 催化剂、三个最强空头理由、证伪条件和数据缺口。
-10. 数据截止日和紧贴结论的来源链接。
+5. 最近5个完整年度的财报审计风险与解除条件。
+6. 估值：历史、可比公司、乐观/基准/悲观情景，不给无依据目标价。
+7. 近90日公告与消息：事实、影响、预期差和验证点。
+8. 结构化技术分析：趋势、均线、指标、筹码边界、多空信号、综合研判、K线与交易验证。
+9. 基本面—估值—消息—技术共振矩阵。
+10. 催化剂、三个最强空头理由、证伪条件和数据缺口。
+11. 数据截止日和紧贴结论的来源链接。
 
-若项目包含 `data/reports/` 网站，按现有报告JSON结构生成或覆盖 `<ticker>-stock.json`，把公司名作为 `industry` 展示字段，保留 `decisionLevel`、`technical.ohlc`、`executionPlan`、`sources` 等结构；生成Markdown、运行测试与构建后再交付。
+## 网站与JSON交付
+
+项目包含 `data/reports/` 网站时必须执行：
+
+- 把个股研究放入独立的“个股研究”选项卡，不与板块报告混排；板块继续使用 `industry-cycle-trading-research`。
+- 生成或覆盖 `<ticker>-stock.json`，设置 `reportType: stock`，公司名作为 `industry` 展示字段。
+- 保留 `decisionLevel`、`executionPlan`、`sources`、`technical.ohlc`、`technical.volumeAverages` 和 `technical.technicalDetail`。
+- `technical.technicalDetail` 固定包含 `asOf`、`headline`、`structure`、`movingAverages`、`indicators`、`marketStats`、`chip`、`signals`、`plainConclusion`；页面按六段展示，并移除重复的旧技术解读卡片。
+- 新增 `auditRiskHistory`：包含 `period`、`overallRisk`、`summary`、`watch` 和最近5年 `items`。每项至少包含 `year`、`annDate`、`opinion`、`agency`、`signers`、`fee`、`risk`、`riskLabel`、`change`、`issue`。
+- 页面把审计风险放在真实财务数据之后、估值之前；列表突出非标意见、事务所变更和风险解除条件。没有审计数据时写“无法验证”，不得默认无风险。
+- K线默认显示最近50个交易日，支持左右拖动、悬停OHLC/成交额，并绘制带价格数值的触发位和失效位。
+- 同步生成Markdown；检查JSON不得出现 `NaN`、虚构筹码或错误继承的板块单位；运行测试、生产构建和浏览器视觉检查后再交付。
