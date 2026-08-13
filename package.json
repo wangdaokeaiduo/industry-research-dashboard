@@ -25,6 +25,7 @@
     "report:g-bits": "STOCK_CODE=603444.SH STOCK_NAME=吉比特 STOCK_ID=603444 QUOTE_SYMBOL=sh603444 INDUSTRY_REPORT=game-sector.json node scripts/build-yixintang-report.mjs && node scripts/enrich-gbits-full-report.mjs && npm run reports:docs",
     "report:taiji": "STOCK_CODE=600129.SH STOCK_NAME=太极集团 STOCK_ID=600129 QUOTE_SYMBOL=sh600129 INDUSTRY_REPORT=innovative-drug.json node scripts/build-yixintang-report.mjs && STOCK_CODE=600129.SH STOCK_NAME=太极集团 STOCK_ID=600129 INDUSTRY_REPORT=innovative-drug.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-taiji-full-report.mjs && npm run reports:docs",
     "report:haida": "STOCK_CODE=002311.SZ STOCK_NAME=海大集团 STOCK_ID=002311 QUOTE_SYMBOL=sz002311 INDUSTRY_REPORT=pig-cycle.json node scripts/build-yixintang-report.mjs && STOCK_CODE=002311.SZ STOCK_NAME=海大集团 STOCK_ID=002311 INDUSTRY_REPORT=pig-cycle.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-haida-full-report.mjs && npm run reports:docs",
+    "report:mindray": "STOCK_CODE=300760.SZ STOCK_NAME=迈瑞医疗 STOCK_ID=300760 QUOTE_SYMBOL=sz300760 INDUSTRY_REPORT=innovative-drug.json node scripts/build-yixintang-report.mjs && STOCK_CODE=300760.SZ STOCK_NAME=迈瑞医疗 STOCK_ID=300760 INDUSTRY_REPORT=innovative-drug.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-mindray-full-report.mjs && npm run reports:docs",
     "test": "node --test"
   },
   "dependencies": {
