@@ -145,9 +145,14 @@ npm run reports:docs
 
 不同 Tushare 接口存在积分、权限和调用频率要求。接口不可用时，程序会尽量保留上一次有效数据；报告中也应明确标注数据缺口。
 
-## 安装行业研究 Skill
+## 安装行业与个股研究 Skills
 
-仓库同时包含符合 Codex Skill 目录规范的 [`industry-cycle-trading-research`](skills/industry-cycle-trading-research/SKILL.md)：
+仓库包含两个符合 Codex Skill 目录规范、自动分流的研究 Skills：
+
+- [`industry-cycle-trading-research`](skills/industry-cycle-trading-research/SKILL.md)：行业、板块、赛道、产业链和行业景气研究。
+- [`stock-investment-research`](skills/stock-investment-research/SKILL.md)：具体公司或证券代码的基本面、公告消息、估值、技术面和介入条件研究。
+
+行业 Skill 目录示例：
 
 ```text
 skills/industry-cycle-trading-research/
@@ -162,15 +167,25 @@ skills/industry-cycle-trading-research/
 ```bash
 mkdir -p ~/.codex/skills
 cp -R skills/industry-cycle-trading-research ~/.codex/skills/
+cp -R skills/stock-investment-research ~/.codex/skills/
 ```
 
 重新打开 Codex 任务后，可以明确调用：
 
 ```text
 使用 $industry-cycle-trading-research 调研 MLCC 板块，并生成网站兼容的完整行业报告。
+
+使用 $stock-investment-research 分析贵州茅台的投资价值、最新公告消息、技术面、介入条件和失效条件。
 ```
 
 该 Skill 强制要求真实可追溯数据、行业景气判断、供需证据链、反转条件、行业研报共性与分歧、真实 OHLCV、多周期技术分析，以及明确的触发位、量能条件和失效位。
+
+### 自动路由规则
+
+- 输入“PCB、电力、食品饮料、猪周期”等行业或板块时，调用行业 Skill。
+- 输入“贵州茅台、长江电力、600519”等具体公司或证券代码时，调用个股 Skill。
+- 同时询问行业和个股时，先判断行业环境，再用个股 Skill 分析公司；个股K线不能被行业篮子K线替代。
+- 若名称既可能是公司又可能是行业，先确认证券代码和上市地。
 
 ### 在 Codex 中完整使用
 

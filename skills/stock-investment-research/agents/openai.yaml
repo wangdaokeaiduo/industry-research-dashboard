@@ -1,0 +1,4 @@
+interface:
+  display_name: "个股投资研究"
+  short_description: "结合真实行情、基本面、公告消息与技术面判断个股投资价值和介入条件"
+  default_prompt: "使用 $stock-investment-research 深入分析这只股票的投资价值、消息面、技术面、介入条件和失效条件。"
