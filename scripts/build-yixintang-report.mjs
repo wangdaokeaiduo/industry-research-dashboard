@@ -22,9 +22,9 @@ const [raw,factors,basicRows,audits,disclosures,forecasts,expressRows]=await Pro
   api('express',{ts_code:code,start_date:'20260701',end_date:'20260930'},'ann_date,end_date,revenue,n_income,yoy_net_profit,perf_summary')
 ])
 const fm=new Map(factors.map(x=>[x.trade_date,x.adj_factor])),latestFactor=factors[0]?.adj_factor||1
-const rows=raw.map(r=>{const q=(fm.get(r.trade_date)||latestFactor)/latestFactor;return{date:r.trade_date,open:r.open*q,high:r.high*q,low:r.low*q,close:r.close*q,volume:r.amount/10000,pct_chg:r.pct_chg}}).reverse()
+const rows=raw.map(r=>{const q=(fm.get(r.trade_date)||latestFactor)/latestFactor;return{date:r.trade_date,open:r.open*q,high:r.high*q,low:r.low*q,close:r.close*q,volume:r.amount/1000,pct_chg:r.pct_chg}}).reverse()
 const quoteText=(await execFile('curl',['-L','-s','--retry','3',`https://qt.gtimg.cn/q=${quoteSymbol}`])).stdout
-const qf=quoteText.match(/="([\s\S]*)";/)?.[1]?.split('~')||[],tradeDate=qf[30]?.slice(0,8),quote=qf.length>35?{close:Number(qf[3]),open:Number(qf[5]),high:Number(qf[33]),low:Number(qf[34]),vol:Number(qf[6]),amount:Number(qf[35]?.split('/')[2])/1e7,changePct:Number(qf[32]),turnover:Number(qf[38]),volumeRatio:Number(qf[49])}:null
+const qf=quoteText.match(/="([\s\S]*)";/)?.[1]?.split('~')||[],tradeDate=qf[30]?.slice(0,8),quote=qf.length>35?{close:Number(qf[3]),open:Number(qf[5]),high:Number(qf[33]),low:Number(qf[34]),vol:Number(qf[6]),amount:Number(qf[35]?.split('/')[2])/1e6,changePct:Number(qf[32]),turnover:Number(qf[38]),volumeRatio:Number(qf[49])}:null
 if(quote?.close&&tradeDate&&!rows.some(x=>x.date===tradeDate))rows.push({date:tradeDate,open:quote.open,high:quote.high,low:quote.low,close:quote.close,volume:quote.amount,pct_chg:quote.changePct,realtime:true})
 const prices=rows.map(x=>x.close),volumes=rows.map(x=>x.volume),latest=rows.at(-1),ma=n=>mean(prices.slice(-n)),maValues=Object.fromEntries([5,10,20,60,90,145].map(n=>[n,ma(n)])),volumeAverages=[5,10,20,60,90,145].map(days=>({days,average:mean(volumes.slice(-days)),ratio:latest.volume/mean(volumes.slice(-days))}))
 const e12=ema(prices,12),e26=ema(prices,26),dif=e12.map((x,i)=>x-e26[i]),dea=ema(dif,9),macdBar=(dif.at(-1)-dea.at(-1))*2
@@ -32,7 +32,7 @@ let k=50,d=50;for(let i=Math.max(8,rows.length-120);i<rows.length;i++){const s=r
 const rsi=n=>{const c=prices.slice(-n-1);let g=0,l=0;for(let i=1;i<c.length;i++){const x=c[i]-c[i-1];g+=Math.max(x,0);l+=Math.max(-x,0)}return l===0?100:100-100/(1+g/l)}
 const mid=ma(20),sd=Math.sqrt(mean(prices.slice(-20).map(x=>(x-mid)**2))),bollUpper=mid+2*sd,bollLower=mid-2*sd
 const high250=Math.max(...rows.slice(-250).map(x=>x.high)),low250=Math.min(...rows.slice(-250).map(x=>x.low)),span=high250-low250
-const recentHigh=Math.max(...rows.slice(-21,-1).map(x=>x.high)),recentLow=Math.min(...rows.slice(-20).map(x=>x.low)),trigger=Number((recentHigh*1.005).toFixed(2)),invalidation=Number((Math.max(recentLow,maValues[20]*.96)).toFixed(2)),vr20=volumeAverages.find(x=>x.days===20).ratio,bias5=(latest.close/maValues[5]-1)*100
+const recentHigh=Math.max(...rows.slice(-21,-1).map(x=>x.high)),recentLow=Math.min(...rows.slice(-20).map(x=>x.low)),trigger=Number((recentHigh*1.005).toFixed(2)),invalidation=Number(Math.min(recentLow,maValues[20]*.96,latest.close*.985).toFixed(2)),vr20=volumeAverages.find(x=>x.days===20).ratio,bias5=(latest.close/maValues[5]-1)*100
 const aboveLong=latest.close>maValues[60]&&latest.close>maValues[145],aboveShort=latest.close>maValues[5]&&latest.close>maValues[20],overheated=rsi(6)>80||j>95||bias5>10,breakout=latest.close>=trigger&&vr20>=1.2
 const decisionLevel=breakout&&!overheated?'trial':'wait_trigger',rating=decisionLevel==='trial'?'可以小仓试错':'等待量价触发，现在不追'
 const nearMa20=latest.close>=maValues[20]&&latest.close/maValues[20]<=1.03
