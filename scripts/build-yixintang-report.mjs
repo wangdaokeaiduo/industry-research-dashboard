@@ -35,6 +35,8 @@ const high250=Math.max(...rows.slice(-250).map(x=>x.high)),low250=Math.min(...ro
 const recentHigh=Math.max(...rows.slice(-21,-1).map(x=>x.high)),recentLow=Math.min(...rows.slice(-20).map(x=>x.low)),trigger=Number((recentHigh*1.005).toFixed(2)),invalidation=Number((Math.max(recentLow,maValues[20]*.96)).toFixed(2)),vr20=volumeAverages.find(x=>x.days===20).ratio,bias5=(latest.close/maValues[5]-1)*100
 const aboveLong=latest.close>maValues[60]&&latest.close>maValues[145],aboveShort=latest.close>maValues[5]&&latest.close>maValues[20],overheated=rsi(6)>80||j>95||bias5>10,breakout=latest.close>=trigger&&vr20>=1.2
 const decisionLevel=breakout&&!overheated?'trial':'wait_trigger',rating=decisionLevel==='trial'?'可以小仓试错':'等待量价触发，现在不追'
+const tradeVerdict=breakout&&!overheated?'量价已经确认，可按失效位小仓试错':!aboveLong&&vr20<.8?'仍在弱势区且量能不足，当前不介入':aboveShort&&aboveLong&&vr20>=1?'趋势已转强，但放量确认还差一步':latest.close<maValues[20]?'尚未站回短期趋势，继续观察':'接近突破条件，但不能提前买入'
+const tradeChecks=[{name:'价格突破',current:`收盘${fmt(latest.close)}元`,threshold:`收盘≥${fmt(trigger)}元`,status:latest.close>=trigger?'met':'unmet'},{name:'20日量能',current:`当日/20日均额=${fmt(vr20)}倍`,threshold:'≥1.20倍',status:vr20>=1.2?'met':'unmet'},{name:'短期趋势',current:`MA5/20=${fmt(maValues[5])}/${fmt(maValues[20])}元`,threshold:'收盘同时站上MA5与MA20',status:aboveShort?'met':'unmet'},{name:'中长期趋势',current:`MA60/145=${fmt(maValues[60])}/${fmt(maValues[145])}元`,threshold:'收盘同时站上MA60与MA145',status:aboveLong?'met':'partial'},{name:'动量不过热',current:`RSI6 ${fmt(rsi(6))}，KDJ-J ${fmt(j)}`,threshold:'RSI6≤80、J≤95且MA5乖离≤10%',status:overheated?'unmet':'met'}]
 const structure=[
   {stage:'中期底部',period:'近6个月低位区',range:`${fmt(Math.min(...rows.slice(-120).map(x=>x.low)))}–${fmt(maValues[60])}元`,feature:'观察低点是否抬高、成交额是否逐步回升'},
   {stage:'短线整理',period:'最近20日',range:`${fmt(recentLow)}–${fmt(recentHigh)}元`,feature:`价格围绕MA20 ${fmt(maValues[20])}元进行方向选择`},
@@ -61,5 +63,6 @@ finalReport.marketResearch={fullTextStatus:'permission_required',statusNote:'本
 finalReport.bearCase=['成交额不足导致突破失败','价格跌破结构失效位并转弱','重要财报或公告低于预期造成跳空风险']
 finalReport.evidenceQuality=[{grade:'A',label:'行情与技术指标',note:`Tushare前复权OHLCV与腾讯实时行情，截至${latest.date}`},{grade:'A',label:'财报预约与业绩快报',note:'Tushare disclosure_date/forecast/express'},{grade:'A',label:'近5年审计意见',note:'Tushare fina_audit'},{grade:'C',label:'公告消息与机构研报',note:'全文接口未接入，本次不形成消息面共识'}]
 finalReport.dataGaps=[...new Set([...(finalReport.dataGaps||[]),'交易所公告全文与近90日重大事项尚未接入，消息面无法完整评级','同业估值和盈利情景需要完整基本面研究，本次技术专项报告不填充虚假数据'])]
+finalReport.tradeDecision={asOf:finalReport.asOf,verdict:tradeVerdict,reason:`结论由收盘${fmt(latest.close)}元、突破线${fmt(trigger)}元、20日量比${fmt(vr20)}倍、MA20 ${fmt(maValues[20])}元与MA145 ${fmt(maValues[145])}元共同计算，不由评级模板代替。`,checks:tradeChecks}
 await fs.writeFile(path.join(root,`data/reports/${stockId}-stock.json`),JSON.stringify(finalReport,null,2)+'\n')
 console.log(JSON.stringify({asOf:report.asOf,close:fmt(latest.close),trigger:fmt(trigger),invalidation:fmt(invalidation),vr20:fmt(vr20),decisionLevel,rating,auditYears:auditHistory.length},null,2))

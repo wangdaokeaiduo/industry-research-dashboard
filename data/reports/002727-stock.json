@@ -4,7 +4,7 @@
   "industry": "一心堂（002727.SZ）",
   "category": "mixed",
   "asOf": "2026-08-13",
-  "updatedAt": "2026-08-13T04:48:24.994Z",
+  "updatedAt": "2026-08-13T04:54:24.586Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度",
@@ -8393,5 +8393,42 @@
       "label": "公告消息与机构研报",
       "note": "全文接口未接入，本次不形成消息面共识"
     }
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-13",
+    "verdict": "趋势已转强，但放量确认还差一步",
+    "reason": "结论由收盘12.29元、突破线12.97元、20日量比1.16倍、MA20 11.58元与MA145 12.13元共同计算，不由评级模板代替。",
+    "checks": [
+      {
+        "name": "价格突破",
+        "current": "收盘12.29元",
+        "threshold": "收盘≥12.97元",
+        "status": "unmet"
+      },
+      {
+        "name": "20日量能",
+        "current": "当日/20日均额=1.16倍",
+        "threshold": "≥1.20倍",
+        "status": "unmet"
+      },
+      {
+        "name": "短期趋势",
+        "current": "MA5/20=12.07/11.58元",
+        "threshold": "收盘同时站上MA5与MA20",
+        "status": "met"
+      },
+      {
+        "name": "中长期趋势",
+        "current": "MA60/145=11.08/12.13元",
+        "threshold": "收盘同时站上MA60与MA145",
+        "status": "met"
+      },
+      {
+        "name": "动量不过热",
+        "current": "RSI6 77.71，KDJ-J 68.94",
+        "threshold": "RSI6≤80、J≤95且MA5乖离≤10%",
+        "status": "met"
+      }
+    ]
+  }
 }

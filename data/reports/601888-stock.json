@@ -4,7 +4,7 @@
   "industry": "中国中免（601888.SH）",
   "category": "mixed",
   "asOf": "2026-08-13",
-  "updatedAt": "2026-08-13T04:48:25.627Z",
+  "updatedAt": "2026-08-13T04:54:25.313Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度",
@@ -8401,5 +8401,42 @@
       "label": "公告消息与机构研报",
       "note": "全文接口未接入，本次不形成消息面共识"
     }
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-13",
+    "verdict": "仍在弱势区且量能不足，当前不介入",
+    "reason": "结论由收盘55.55元、突破线59.80元、20日量比0.39倍、MA20 55.73元与MA145 67.60元共同计算，不由评级模板代替。",
+    "checks": [
+      {
+        "name": "价格突破",
+        "current": "收盘55.55元",
+        "threshold": "收盘≥59.80元",
+        "status": "unmet"
+      },
+      {
+        "name": "20日量能",
+        "current": "当日/20日均额=0.39倍",
+        "threshold": "≥1.20倍",
+        "status": "unmet"
+      },
+      {
+        "name": "短期趋势",
+        "current": "MA5/20=55.73/55.73元",
+        "threshold": "收盘同时站上MA5与MA20",
+        "status": "unmet"
+      },
+      {
+        "name": "中长期趋势",
+        "current": "MA60/145=55.22/67.60元",
+        "threshold": "收盘同时站上MA60与MA145",
+        "status": "partial"
+      },
+      {
+        "name": "动量不过热",
+        "current": "RSI6 33.06，KDJ-J 1.92",
+        "threshold": "RSI6≤80、J≤95且MA5乖离≤10%",
+        "status": "met"
+      }
+    ]
+  }
 }

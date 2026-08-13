@@ -147,23 +147,23 @@ function DecisionOverview({ data={} }) {
 }
 
 function TradeDecision({ report }) {
-  const stock = isStockReport(report)
   const action = report.executionPlan?.action || report.technical?.rating || report.summary?.rating || '观察'
   const explicit = {
-    no_trade: [stock?'现在不适合介入':'现在不适合交易','negative','先回避'],
-    data_insufficient: ['关键数据不足，暂不判断','negative','补齐数据'],
-    wait_trigger: ['等待触发，现在不追','warning','条件观察'],
-    trial: ['可以小仓试错','positive','小仓试错'],
-    add: ['可以条件性加仓','positive','条件加仓']
+    no_trade: ['negative','先回避'], data_insufficient: ['negative','补齐数据'],
+    wait_trigger: ['warning','条件观察'], trial: ['positive','小仓试错'], add: ['positive','条件加仓']
   }[report.decisionLevel]
   const normalized = action.toLowerCase()
   const fallbackTone = normalized.includes('不适合') || normalized.includes('降低') ? 'negative' : normalized.startsWith('条件性加仓') || normalized.startsWith('试仓') ? 'positive' : 'warning'
-  const [verdict,tone,badge] = explicit || [fallbackTone === 'negative' ? (stock?'现在不适合介入':'现在不适合交易') : fallbackTone === 'positive' ? (stock?'可以介入，但必须按条件执行':'可以交易，但必须按条件执行') : '等待触发，现在不追',fallbackTone,action]
+  const [tone,badge] = explicit || [fallbackTone,action]
+  const verdict = report.tradeDecision?.verdict || action
+  const checks = report.tradeDecision?.checks || report.reversalConditions || []
+  const met = checks.filter(item=>item.status==='met').length
+  const partial = checks.filter(item=>item.status==='partial').length
   const reasons = [report.decisionOverview?.coreConflict, ...(report.summary?.evidence || []).slice(0, 2)].filter(Boolean)
   const invalidation = [report.executionPlan?.priceInvalidation, report.executionPlan?.fundamentalInvalidation].filter(Boolean).join('；')
   const technicalDecision = [report.technical?.rating,report.technical?.trend,report.technical?.volume].filter(Boolean).join('；')
   return <div className={`trade-decision-card ${tone}`}>
-    <div className="trade-decision-verdict"><small>直接结论</small><strong>{verdict}</strong><span>{badge} · {action}</span><div className="verdict-trigger"><b>触发什么</b><p>{report.executionPlan?.trigger||report.technical?.trigger||'报告尚未给出可复核的触发条件'}</p></div></div>
+    <div className="trade-decision-verdict"><small>直接结论 · 截至 {report.tradeDecision?.asOf||report.asOf}</small><strong>{verdict}</strong><span>{badge} · 实际条件已达成 {met}/{checks.length}{partial?`，部分达成 ${partial} 项`:''}</span>{report.tradeDecision?.reason&&<p className="decision-data-reason">{report.tradeDecision.reason}</p>}<div className="decision-checks">{checks.slice(0,5).map((item,index)=>{const meta=statusMeta[item.status]||statusMeta.unknown;return <div key={`${item.name}-${index}`}><span className={`status ${meta[1]}`}>{meta[0]}</span><p><b>{item.name}</b><em>{item.current}｜标准：{item.threshold}</em></p></div>})}</div><div className="verdict-trigger"><b>还差什么 / 触发什么</b><p>{report.executionPlan?.trigger||report.technical?.trigger||'报告尚未给出可复核的触发条件'}</p></div></div>
     <div className="trade-decision-reasons"><small>为什么</small>{reasons.map((reason,index)=><p key={`${reason}-${index}`}><b>0{index+1}</b>{reason}</p>)}</div>
     <div className="trade-decision-steps"><small>怎么操作</small><ol>
       <li><b>现在</b><span>{report.executionPlan?.action || report.decisionOverview?.action || '保持观察'}</span></li>
