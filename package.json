@@ -14,6 +14,7 @@
     "report:gold": "node scripts/build-gold-report.mjs",
     "report:innovative-drug": "node scripts/build-innovative-drug-report.mjs",
     "report:pharmacy-chain": "node scripts/build-pharmacy-chain-report.mjs",
+    "report:memory-chip": "node scripts/build-memory-chip-report.mjs",
     "test": "node --test"
   },
   "dependencies": {
