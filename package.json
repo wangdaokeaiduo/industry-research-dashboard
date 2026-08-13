@@ -20,6 +20,7 @@
     "report:power": "node scripts/build-power-report.mjs",
     "report:yaoyigou": "node scripts/build-yaoyigou-report.mjs && npm run reports:docs",
     "report:yixintang": "node scripts/build-yixintang-report.mjs && npm run reports:docs",
+    "report:ctg-duty-free": "STOCK_CODE=601888.SH STOCK_NAME=中国中免 STOCK_ID=601888 QUOTE_SYMBOL=sh601888 INDUSTRY_REPORT=tourism-hotel.json node scripts/build-yixintang-report.mjs && npm run reports:docs",
     "test": "node --test"
   },
   "dependencies": {
