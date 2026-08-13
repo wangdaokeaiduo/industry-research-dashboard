@@ -3,7 +3,7 @@
   "industry": "药易购（300937.SZ）",
   "category": "mixed",
   "asOf": "2026-08-13",
-  "updatedAt": "2026-08-13T04:42:08.778Z",
+  "updatedAt": "2026-08-13T04:48:51.897Z",
   "decisionLevel": "no_trade",
   "dataGaps": [
     "Tushare公告接口无权限，近90日公告通过公开公告页与原文镜像核验；应继续回到巨潮资讯下载原件",
@@ -6260,11 +6260,11 @@
       "statusLabel": "当日待核验"
     },
     {
-      "date": "2026-08至09",
-      "event": "2026年中报",
+      "date": "2026-08-25",
+      "event": "2026年半年度报告预约披露",
       "expectation": "验证收入、利润、现金流、存货应收和并购影响",
       "status": "pending",
-      "statusLabel": "待披露"
+      "statusLabel": "交易所预约日"
     }
   ],
   "bearCase": [

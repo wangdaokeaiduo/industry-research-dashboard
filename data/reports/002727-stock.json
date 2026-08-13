@@ -4,10 +4,12 @@
   "industry": "一心堂（002727.SZ）",
   "category": "mixed",
   "asOf": "2026-08-13",
-  "updatedAt": "2026-08-13T04:42:09.674Z",
+  "updatedAt": "2026-08-13T04:48:24.994Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
-    "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度"
+    "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度",
+    "交易所公告全文与近90日重大事项尚未接入，消息面无法完整评级",
+    "同业估值和盈利情景需要完整基本面研究，本次技术专项报告不填充虚假数据"
   ],
   "decisionOverview": {
     "items": [
@@ -60,7 +62,7 @@
     "stage": "中长期修复",
     "rating": "等待量价触发，现在不追",
     "confidence": "中",
-    "conclusion": "目前不追涨。等待收盘突破12.97元且成交额不低于20日均额1.2倍，或回踩MA20附近缩量企稳后再评估。",
+    "conclusion": "目前不追涨。等待收盘突破12.97元且成交额不低于20日均额1.2倍，或回踩MA20 11.58元附近缩量企稳后再评估。",
     "evidence": [
       "收盘12.29元，MA5/20/60/145=12.07/11.58/11.08/12.13",
       "20日量比1.16倍",
@@ -8274,7 +8276,7 @@
           "20日量比仅1.16倍，突破确认不足"
         ]
       },
-      "plainConclusion": "目前不追涨。等待收盘突破12.97元且成交额不低于20日均额1.2倍，或回踩MA20附近缩量企稳后再评估。"
+      "plainConclusion": "目前不追涨。等待收盘突破12.97元且成交额不低于20日均额1.2倍，或回踩MA20 11.58元附近缩量企稳后再评估。"
     }
   },
   "executionPlan": {
@@ -8295,18 +8297,18 @@
   "sources": [
     "Tushare Pro daily/adj_factor/daily_basic/fina_audit，20260813提取",
     "腾讯证券实时行情用于补齐最新交易日；前复权历史由Tushare计算",
-    "医药连锁行业供需背景：国家医保局、财政部 20260519：https://www.nhsa.gov.cn/art/2026/5/19/art_53_20546.html",
-    "医药连锁行业供需背景：国务院办公厅 20260414：https://www.nhsa.gov.cn/art/2026/4/14/art_53_20215.html",
-    "医药连锁行业供需背景：国家医保局 20260202：https://www.nhsa.gov.cn/art/2026/2/2/art_53_19557.html",
-    "医药连锁行业供需背景：国家医保局 20250420：https://www.nhsa.gov.cn/art/2025/4/20/art_52_16312.html",
-    "医药连锁行业供需背景：国家医保局门诊统筹政策：https://www.nhsa.gov.cn/art/2023/2/15/art_104_10166.html",
-    "医药连锁行业供需背景：Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260812提取"
+    "对应行业供需背景：国家医保局、财政部 20260519：https://www.nhsa.gov.cn/art/2026/5/19/art_53_20546.html",
+    "对应行业供需背景：国务院办公厅 20260414：https://www.nhsa.gov.cn/art/2026/4/14/art_53_20215.html",
+    "对应行业供需背景：国家医保局 20260202：https://www.nhsa.gov.cn/art/2026/2/2/art_53_19557.html",
+    "对应行业供需背景：国家医保局 20250420：https://www.nhsa.gov.cn/art/2025/4/20/art_52_16312.html",
+    "对应行业供需背景：国家医保局门诊统筹政策：https://www.nhsa.gov.cn/art/2023/2/15/art_104_10166.html",
+    "对应行业供需背景：Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260812提取"
   ],
   "supplyDemand": {
     "state": "需求刚性、渠道供给过剩",
     "tone": "warning",
     "direction": "行业出清",
-    "conclusion": "行业层面：居民用药需求具有韧性，但零售药店的有效需求受医院渠道、线上平台和医保支付分流；门店供给相对过剩，竞争焦点从开店转向处方获取、专业服务、采购效率和合规能力。 公司层面：一心堂的技术面改善能否持续，仍需用同店销售、门店净增减、毛利率、库存周转和经营现金流验证，不能只由K线推断。",
+    "conclusion": "行业层面：居民用药需求具有韧性，但零售药店的有效需求受医院渠道、线上平台和医保支付分流；门店供给相对过剩，竞争焦点从开店转向处方获取、专业服务、采购效率和合规能力。 公司层面：一心堂的技术面变化能否持续，仍需用客流、收入、毛利率、库存周转和经营现金流验证，不能只由K线推断。",
     "demand": {
       "status": "刚性但增量有限",
       "evidence": "慢病与老龄化支撑需求，门诊统筹和处方外流提供增量。",
@@ -8337,8 +8339,59 @@
       "change": "同店和费用率决定弹性",
       "tone": "positive"
     },
-    "leadingIndicator": "一心堂同店销售、门店净增/净关、医保统筹收入、毛利率、库存周转、经营现金流、单店人效，以及连锁药店行业价格与监管变化。",
-    "improvement": "行业同店销售转正，且一心堂毛利率、库存周转和经营现金流同步改善；同时股价完成量价突破。",
-    "invalidation": "行业同店继续下降、医保比价压缩毛利，或一心堂库存/现金流恶化，即使K线转强也应下调结论。"
-  }
+    "leadingIndicator": "一心堂客流与销售、毛利率、库存周转、经营现金流，以及对应行业需求与价格变化。",
+    "improvement": "行业需求改善，且一心堂毛利率、库存周转和经营现金流同步改善；同时股价完成量价突破。",
+    "invalidation": "行业需求或价格继续恶化，或一心堂库存/现金流恶化，即使K线转强也应下调结论。"
+  },
+  "catalysts": [
+    {
+      "date": "2026-08-27",
+      "event": "2026年半年度报告预约披露",
+      "expectation": "核验收入、利润、毛利率、库存与经营现金流是否改善",
+      "status": "pending",
+      "statusLabel": "交易所预约日"
+    }
+  ],
+  "marketResearch": {
+    "fullTextStatus": "permission_required",
+    "statusNote": "本次为技术专项报告；交易所公告全文接口未接入，不用新闻转载补造消息面",
+    "period": "截至2026-08-13",
+    "reportCount": 0,
+    "institutionCount": 0,
+    "companyForecastSampleCount": 0,
+    "reportScope": "交易所预约披露日、业绩预告/快报和技术行情",
+    "consensus": "公告与机构研报样本不足",
+    "revisionTrend": "等待半年度报告和合法公告全文接入",
+    "integratedConclusion": "当前结论以真实行情为主，不能替代完整基本面与消息面研究。",
+    "evidenceCheck": "已调用disclosure_date、forecast、express；公告全文和机构研报未取得。",
+    "topReports": [],
+    "freeSources": []
+  },
+  "bearCase": [
+    "成交额不足导致突破失败",
+    "价格跌破结构失效位并转弱",
+    "重要财报或公告低于预期造成跳空风险"
+  ],
+  "evidenceQuality": [
+    {
+      "grade": "A",
+      "label": "行情与技术指标",
+      "note": "Tushare前复权OHLCV与腾讯实时行情，截至20260813"
+    },
+    {
+      "grade": "A",
+      "label": "财报预约与业绩快报",
+      "note": "Tushare disclosure_date/forecast/express"
+    },
+    {
+      "grade": "A",
+      "label": "近5年审计意见",
+      "note": "Tushare fina_audit"
+    },
+    {
+      "grade": "C",
+      "label": "公告消息与机构研报",
+      "note": "全文接口未接入，本次不形成消息面共识"
+    }
+  ]
 }

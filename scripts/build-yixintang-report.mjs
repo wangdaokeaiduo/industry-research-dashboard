@@ -12,11 +12,14 @@ if(!token)throw new Error('缺少TUSHARE_TOKEN')
 const code=process.env.STOCK_CODE||'002727.SZ',name=process.env.STOCK_NAME||'一心堂',stockId=process.env.STOCK_ID||code.slice(0,6),quoteSymbol=process.env.QUOTE_SYMBOL||(code.endsWith('.SH')?`sh${stockId}`:`sz${stockId}`),industryReportFile=process.env.INDUSTRY_REPORT||'pharmacy-chain.json',start='20230101',end=new Date().toISOString().slice(0,10).replaceAll('-','')
 async function api(api_name,params,fields){const b=await fetch('http://api.tushare.pro',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({api_name,token,params,fields})}).then(r=>r.json());if(b.code!==0)throw new Error(`${api_name}: ${b.msg}`);const f=b.data?.fields||[];return(b.data?.items||[]).map(v=>Object.fromEntries(f.map((x,i)=>[x,v[i]])))}
 const mean=a=>a.reduce((s,x)=>s+x,0)/a.length,fmt=(n,d=2)=>Number(n).toFixed(d),ema=(a,n)=>{const k=2/(n+1),o=[];let v=a[0];for(const x of a){v=x*k+v*(1-k);o.push(v)}return o}
-const [raw,factors,basicRows,audits]=await Promise.all([
+const [raw,factors,basicRows,audits,disclosures,forecasts,expressRows]=await Promise.all([
   api('daily',{ts_code:code,start_date:start,end_date:end},'trade_date,open,high,low,close,vol,amount,pct_chg'),
   api('adj_factor',{ts_code:code,start_date:start,end_date:end},'trade_date,adj_factor'),
   api('daily_basic',{ts_code:code,start_date:'20260801',end_date:end},'trade_date,close,turnover_rate,volume_ratio,pe_ttm,pb,total_mv'),
-  api('fina_audit',{ts_code:code,start_date:'20210101',end_date:'20261231'},'ann_date,end_date,audit_result,audit_fees,audit_agency,audit_sign')
+  api('fina_audit',{ts_code:code,start_date:'20210101',end_date:'20261231'},'ann_date,end_date,audit_result,audit_fees,audit_agency,audit_sign'),
+  api('disclosure_date',{ts_code:code,end_date:'20260630'},'ann_date,end_date,pre_date,actual_date'),
+  api('forecast',{ts_code:code,start_date:'20260701',end_date:'20260930'},'ann_date,end_date,type,p_change_min,p_change_max,summary,change_reason'),
+  api('express',{ts_code:code,start_date:'20260701',end_date:'20260930'},'ann_date,end_date,revenue,n_income,yoy_net_profit,perf_summary')
 ])
 const fm=new Map(factors.map(x=>[x.trade_date,x.adj_factor])),latestFactor=factors[0]?.adj_factor||1
 const rows=raw.map(r=>{const q=(fm.get(r.trade_date)||latestFactor)/latestFactor;return{date:r.trade_date,open:r.open*q,high:r.high*q,low:r.low*q,close:r.close*q,volume:r.amount/10000,pct_chg:r.pct_chg}}).reverse()
@@ -52,5 +55,11 @@ finalReport.summary.conclusion=`目前不追涨。等待收盘突破${fmt(trigge
 finalReport.technical.trigger=`收盘突破${fmt(trigger)}元且成交额≥20日均额1.2倍；或${alternativeEntry}`
 finalReport.technical.technicalDetail.plainConclusion=finalReport.summary.conclusion
 finalReport.executionPlan.trigger=`首次介入：收盘突破${fmt(trigger)}元且成交额≥20日均额1.2倍；备选为${alternativeEntry}`
+const nextDisclosure=disclosures.find(x=>x.pre_date&&x.pre_date>=latest.date)
+finalReport.catalysts=[...(nextDisclosure?[{date:`${nextDisclosure.pre_date.slice(0,4)}-${nextDisclosure.pre_date.slice(4,6)}-${nextDisclosure.pre_date.slice(6)}`,event:'2026年半年度报告预约披露',expectation:'核验收入、利润、毛利率、库存与经营现金流是否改善',status:'pending',statusLabel:'交易所预约日'}]:[]),...forecasts.map(x=>({date:`${x.ann_date.slice(0,4)}-${x.ann_date.slice(4,6)}-${x.ann_date.slice(6)}`,event:`${x.end_date.slice(0,4)}年业绩预告：${x.type}`,expectation:x.summary||x.change_reason||'核验盈利变化原因',status:'confirmed',statusLabel:'已披露'})),...expressRows.map(x=>({date:`${x.ann_date.slice(0,4)}-${x.ann_date.slice(4,6)}-${x.ann_date.slice(6)}`,event:`${x.end_date.slice(0,4)}年业绩快报`,expectation:`营收${fmt(x.revenue/1e8)}亿元，归母净利${fmt(x.n_income/1e8)}亿元${Number.isFinite(x.yoy_net_profit)?`，同比${fmt(x.yoy_net_profit)}%`:''}`,status:'confirmed',statusLabel:'已披露'}))]
+finalReport.marketResearch={fullTextStatus:'permission_required',statusNote:'本次为技术专项报告；交易所公告全文接口未接入，不用新闻转载补造消息面',period:`截至${finalReport.asOf}`,reportCount:0,institutionCount:0,companyForecastSampleCount:0,reportScope:'交易所预约披露日、业绩预告/快报和技术行情',consensus:'公告与机构研报样本不足',revisionTrend:'等待半年度报告和合法公告全文接入',integratedConclusion:'当前结论以真实行情为主，不能替代完整基本面与消息面研究。',evidenceCheck:'已调用disclosure_date、forecast、express；公告全文和机构研报未取得。',topReports:[],freeSources:[]}
+finalReport.bearCase=['成交额不足导致突破失败','价格跌破结构失效位并转弱','重要财报或公告低于预期造成跳空风险']
+finalReport.evidenceQuality=[{grade:'A',label:'行情与技术指标',note:`Tushare前复权OHLCV与腾讯实时行情，截至${latest.date}`},{grade:'A',label:'财报预约与业绩快报',note:'Tushare disclosure_date/forecast/express'},{grade:'A',label:'近5年审计意见',note:'Tushare fina_audit'},{grade:'C',label:'公告消息与机构研报',note:'全文接口未接入，本次不形成消息面共识'}]
+finalReport.dataGaps=[...new Set([...(finalReport.dataGaps||[]),'交易所公告全文与近90日重大事项尚未接入，消息面无法完整评级','同业估值和盈利情景需要完整基本面研究，本次技术专项报告不填充虚假数据'])]
 await fs.writeFile(path.join(root,`data/reports/${stockId}-stock.json`),JSON.stringify(finalReport,null,2)+'\n')
 console.log(JSON.stringify({asOf:report.asOf,close:fmt(latest.close),trigger:fmt(trigger),invalidation:fmt(invalidation),vr20:fmt(vr20),decisionLevel,rating,auditYears:auditHistory.length},null,2))

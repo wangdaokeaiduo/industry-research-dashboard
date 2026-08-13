@@ -4,10 +4,12 @@
   "industry": "中国中免（601888.SH）",
   "category": "mixed",
   "asOf": "2026-08-13",
-  "updatedAt": "2026-08-13T04:45:51.908Z",
+  "updatedAt": "2026-08-13T04:48:25.627Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
-    "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度"
+    "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度",
+    "交易所公告全文与近90日重大事项尚未接入，消息面无法完整评级",
+    "同业估值和盈利情景需要完整基本面研究，本次技术专项报告不填充虚假数据"
   ],
   "decisionOverview": {
     "items": [
@@ -8341,5 +8343,63 @@
     "leadingIndicator": "中国中免客流与销售、毛利率、库存周转、经营现金流，以及对应行业需求与价格变化。",
     "improvement": "行业需求改善，且中国中免毛利率、库存周转和经营现金流同步改善；同时股价完成量价突破。",
     "invalidation": "行业需求或价格继续恶化，或中国中免库存/现金流恶化，即使K线转强也应下调结论。"
-  }
+  },
+  "catalysts": [
+    {
+      "date": "2026-08-21",
+      "event": "2026年半年度报告预约披露",
+      "expectation": "核验收入、利润、毛利率、库存与经营现金流是否改善",
+      "status": "pending",
+      "statusLabel": "交易所预约日"
+    },
+    {
+      "date": "2026-07-15",
+      "event": "2026年业绩快报",
+      "expectation": "营收275.92亿元，归母净利31.06亿元，同比2599752900.00%",
+      "status": "confirmed",
+      "statusLabel": "已披露"
+    }
+  ],
+  "marketResearch": {
+    "fullTextStatus": "permission_required",
+    "statusNote": "本次为技术专项报告；交易所公告全文接口未接入，不用新闻转载补造消息面",
+    "period": "截至2026-08-13",
+    "reportCount": 0,
+    "institutionCount": 0,
+    "companyForecastSampleCount": 0,
+    "reportScope": "交易所预约披露日、业绩预告/快报和技术行情",
+    "consensus": "公告与机构研报样本不足",
+    "revisionTrend": "等待半年度报告和合法公告全文接入",
+    "integratedConclusion": "当前结论以真实行情为主，不能替代完整基本面与消息面研究。",
+    "evidenceCheck": "已调用disclosure_date、forecast、express；公告全文和机构研报未取得。",
+    "topReports": [],
+    "freeSources": []
+  },
+  "bearCase": [
+    "成交额不足导致突破失败",
+    "价格跌破结构失效位并转弱",
+    "重要财报或公告低于预期造成跳空风险"
+  ],
+  "evidenceQuality": [
+    {
+      "grade": "A",
+      "label": "行情与技术指标",
+      "note": "Tushare前复权OHLCV与腾讯实时行情，截至20260813"
+    },
+    {
+      "grade": "A",
+      "label": "财报预约与业绩快报",
+      "note": "Tushare disclosure_date/forecast/express"
+    },
+    {
+      "grade": "A",
+      "label": "近5年审计意见",
+      "note": "Tushare fina_audit"
+    },
+    {
+      "grade": "C",
+      "label": "公告消息与机构研报",
+      "note": "全文接口未接入，本次不形成消息面共识"
+    }
+  ]
 }
