@@ -4,42 +4,48 @@
   "industry": "吉比特（603444.SH）",
   "category": "mixed",
   "asOf": "2026-08-13",
-  "updatedAt": "2026-08-13T05:08:09.640Z",
+  "updatedAt": "2026-08-13T05:12:29.501Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
-    "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度",
-    "交易所公告全文与近90日重大事项尚未接入，消息面无法完整评级",
-    "同业估值和盈利情景需要完整基本面研究，本次技术专项报告不填充虚假数据"
+    "分钟级逐笔与筹码集中度没有可验证接口，不冒充主力资金或真实筹码",
+    "2026H1正式半年报尚未披露，当前盈利判断包含未经审计的业绩预告",
+    "部分券商报告仅取得合法公开摘要，未取得的付费正文不作推断"
   ],
   "decisionOverview": {
     "items": [
       {
-        "label": "技术趋势",
-        "value": "中长期偏强",
-        "score": 70,
-        "comment": "收盘385.50，MA60/145 353.41/380.25"
+        "label": "产业位置",
+        "value": "精品游戏研发发行",
+        "score": 78,
+        "comment": "新品周期与高自研毛利是主要驱动"
       },
       {
-        "label": "量能确认",
-        "value": "确认不足",
-        "score": 35,
-        "comment": "20日量比0.60倍"
+        "label": "盈利质量",
+        "value": "明显改善",
+        "score": 82,
+        "comment": "Q1收入/净利同比62.67%/82.68%"
       },
       {
-        "label": "动量状态",
-        "value": "偏多",
-        "score": 68,
-        "comment": "KDJ J=24.71，RSI6=40.76"
+        "label": "现金流与资产负债",
+        "value": "稳健",
+        "score": 80,
+        "comment": "货币资金46.83亿元，负债率21.60%"
       },
       {
-        "label": "综合评级",
-        "value": "等待量价触发，现在不追",
-        "score": 48,
-        "comment": "触发401.98，失效357.46"
+        "label": "估值",
+        "value": "中性",
+        "score": 62,
+        "comment": "PE-TTM 13.62倍，PB 4.60倍"
+      },
+      {
+        "label": "技术位置",
+        "value": "中长期修复、量能不足",
+        "score": 61,
+        "comment": "收盘384.39元，20日量比0.60倍"
       }
     ],
-    "coreConflict": "当前价格趋势与量能能否共同突破401.98元，是技术面从整理转向可试错的关键。",
-    "action": "等待量价触发，现在不追"
+    "coreConflict": "新品推动利润高速增长，但市场已经交易新品周期；当前股价站上中长期均线却没有突破量能，半年报能否证明增长质量决定估值能否继续扩张。",
+    "action": "基本面进入验证期，技术上等待回踩确认或放量突破，不在业绩披露前提前追价"
   },
   "weeklyChanges": {
     "period": "首次建立",
@@ -48,25 +54,50 @@
     "items": []
   },
   "prosperity": {
-    "level": "本次仅作技术研究",
-    "direction": "基本面需另行完整研究",
-    "directionTone": "neutral",
-    "score": 50,
-    "verdict": "本报告聚焦技术面，不用行业或公司基本面替代价格信号。",
-    "dimensions": [],
-    "driver": "价格、量能与趋势结构",
-    "improvement": "收盘突破401.98元且成交额≥20日均额1.2倍",
-    "deterioration": "收盘跌破357.46元"
+    "level": "新品周期扩张",
+    "direction": "盈利加速",
+    "directionTone": "positive",
+    "score": 78,
+    "verdict": "《杖剑传说》《道友来挖宝》《九牧之野》等新品进入贡献期，2026H1业绩预告显示利润高增长；但产品流水持续性与当前估值需要半年报验证。",
+    "dimensions": [
+      {
+        "name": "产品周期",
+        "value": "多款新品进入完整运营周期",
+        "change": "改善",
+        "tone": "positive"
+      },
+      {
+        "name": "盈利预告",
+        "value": "2026H1归母净利10.1–11亿元",
+        "change": "同比+57%至71%",
+        "tone": "positive"
+      },
+      {
+        "name": "现金流",
+        "value": "2026Q1经营现金流5.80亿元",
+        "change": "需与利润交叉验证",
+        "tone": "warning"
+      },
+      {
+        "name": "估值",
+        "value": "PE-TTM 13.62倍",
+        "change": "按H1预告中值粗算市值/半年利润26.17倍",
+        "tone": "warning"
+      }
+    ],
+    "driver": "新品流水、长线运营、自研占比、海外发行与联营企业投资收益",
+    "improvement": "半年报确认收入、扣非利润和经营现金流共同增长，且新品排名和流水延续",
+    "deterioration": "新品流水快速衰减、买量费用上升、老游戏下滑或投资收益不可持续"
   },
   "summary": {
     "stage": "中长期修复",
     "rating": "等待量价触发，现在不追",
     "confidence": "中",
-    "conclusion": "目前不追涨。等待收盘突破401.98元且成交额不低于20日均额1.2倍，或回踩MA20 372.36元附近缩量企稳后再评估。",
+    "conclusion": "目前不追涨。等待收盘突破401.98元且成交额不低于20日均额1.2倍，或回踩MA20 372.30元附近缩量企稳后再评估。",
     "evidence": [
-      "收盘385.50元，MA5/20/60/145=386.50/372.36/353.41/380.25",
+      "收盘384.39元，MA5/20/60/145=386.28/372.30/353.39/380.24",
       "20日量比0.60倍",
-      "MACD 多头，RSI6 40.76"
+      "MACD 多头，RSI6 38.83"
     ]
   },
   "cycle": {
@@ -84,7 +115,7 @@
     {
       "name": "价格突破确认",
       "dimension": "技术",
-      "current": "收盘385.50",
+      "current": "收盘384.39",
       "threshold": "收盘突破401.98",
       "status": "unmet",
       "trend": "up",
@@ -102,7 +133,7 @@
     {
       "name": "中长期均线确认",
       "dimension": "趋势",
-      "current": "MA60/145=353.41/380.25",
+      "current": "MA60/145=353.39/380.24",
       "threshold": "收盘同时站上MA60与MA145",
       "status": "met",
       "trend": "up",
@@ -111,57 +142,63 @@
   ],
   "metrics": [
     {
-      "label": "收盘价",
-      "value": "385.50",
-      "unit": "元",
-      "change": "+0.57%",
+      "label": "2026Q1营业收入",
+      "value": "18.47",
+      "unit": "亿元",
+      "change": "同比62.67%",
       "direction": "up",
       "series": [
-        340.74,
-        351.94,
-        356,
-        356.8,
-        358.68,
-        347.8,
-        352.66,
-        347.9,
-        376.43,
-        383.34,
-        389.35,
-        385.01,
-        392.49,
-        392,
-        383.52,
-        382.67,
-        394.8,
-        386.25,
-        383.3,
-        385.5
+        18.4735222876
       ]
     },
     {
-      "label": "20日量比",
-      "value": "0.60",
+      "label": "2026Q1归母净利润",
+      "value": "5.18",
+      "unit": "亿元",
+      "change": "同比82.68%",
+      "direction": "up",
+      "series": [
+        5.1754446711
+      ]
+    },
+    {
+      "label": "2026Q1经营现金流",
+      "value": "5.80",
+      "unit": "亿元",
+      "change": "与利润交叉核验",
+      "direction": "up",
+      "series": [
+        5.797981136900001
+      ]
+    },
+    {
+      "label": "毛利率",
+      "value": "93.77",
+      "unit": "%",
+      "change": "2026Q1",
+      "direction": "up",
+      "series": [
+        93.7666
+      ]
+    },
+    {
+      "label": "资产负债率",
+      "value": "21.60",
+      "unit": "%",
+      "change": "2026Q1",
+      "direction": "flat",
+      "series": [
+        21.6029
+      ]
+    },
+    {
+      "label": "PE-TTM",
+      "value": "13.62",
       "unit": "倍",
-      "change": "未显著放量",
+      "change": "20260812",
       "direction": "flat",
       "series": [
-        0.7438590609453798,
-        0.5758474084753924,
-        0.5975355351144366,
-        0.6774424075807469,
-        0.6411290950254347,
-        0.6767243333669818
-      ]
-    },
-    {
-      "label": "RSI6",
-      "value": "40.76",
-      "unit": "",
-      "change": "正常区间",
-      "direction": "flat",
-      "series": [
-        40.7565415244596
+        13.6167
       ]
     }
   ],
@@ -237,15 +274,15 @@
   "technical": {
     "instrument": "吉比特（603444.SH）真实前复权日线",
     "timeframe": "日线 · 前复权 · 875日",
-    "trend": "收盘385.50；MA5/10/20/60/90/145=386.50/387.49/372.36/353.41/361.60/380.25",
-    "volume": "当日成交额48.54百万元；相对20日均额0.60倍",
-    "wave": "主计数为筑底后的修复上升浪；备选为区间震荡，跌破357.46元切换防守。",
+    "trend": "收盘384.39；MA5/10/20/60/90/145=386.28/387.38/372.30/353.39/361.59/380.24",
+    "volume": "当日成交额49.02百万元；相对20日均额0.60倍",
+    "wave": "主计数为筑底后的修复上升浪；备选为区间震荡，跌破357.41元切换防守。",
     "fibonacci": "近250日高低646.88/318.00元；0.382/0.5/0.618回撤=521.25/482.44/443.63元",
-    "chan": "日线最近20日中枢上沿参考401.98元；收盘放量突破为三买候选，跌破357.46元结构失效。",
+    "chan": "日线最近20日中枢上沿参考401.98元；收盘放量突破为三买候选，跌破357.41元结构失效。",
     "rating": "等待量价触发，现在不追",
-    "riskReward": "0.6 : 1",
-    "trigger": "收盘突破401.98元且成交额≥20日均额1.2倍；或回踩MA20 372.36元附近缩量企稳",
-    "invalidation": "收盘跌破357.46元",
+    "riskReward": "0.7 : 1",
+    "trigger": "收盘突破401.98元且成交额≥20日均额1.2倍；或回踩MA20 372.30元附近缩量企稳",
+    "invalidation": "收盘跌破357.41元",
     "prices": [
       287.8657360406092,
       301.73846192893404,
@@ -1121,7 +1158,7 @@
       394.8,
       386.25,
       383.3,
-      385.5
+      384.39
     ],
     "volumes": [
       17.1448003,
@@ -1998,7 +2035,7 @@
       76.6039311,
       84.1075333,
       53.5680936,
-      48.5366507
+      49.0177412
     ],
     "ohlc": [
       {
@@ -8124,39 +8161,39 @@
         "open": 383,
         "high": 389.79,
         "low": 380.63,
-        "close": 385.5
+        "close": 384.39
       }
     ],
     "volumeAverages": [
       {
         "days": 5,
-        "average": 65.24979427999999,
-        "ratio": 0.7438590609453798
+        "average": 65.34601237999999,
+        "ratio": 0.7501259742515295
       },
       {
         "days": 10,
-        "average": 84.28734762999999,
-        "ratio": 0.5758474084753924
+        "average": 84.33545668,
+        "ratio": 0.5812234038880171
       },
       {
         "days": 20,
-        "average": 81.228057325,
-        "ratio": 0.5975355351144366
+        "average": 81.25211184999999,
+        "ratio": 0.6032795958644367
       },
       {
         "days": 60,
-        "average": 71.64690334833332,
-        "ratio": 0.6774424075807469
+        "average": 71.65492152333333,
+        "ratio": 0.6840805929016073
       },
       {
         "days": 90,
-        "average": 75.70495720222223,
-        "ratio": 0.6411290950254347
+        "average": 75.71030265222224,
+        "ratio": 0.6474381885007726
       },
       {
         "days": 145,
-        "average": 71.72292809172416,
-        "ratio": 0.6767243333669818
+        "average": 71.72624595724139,
+        "ratio": 0.6834003445436313
       }
     ],
     "volumeUnit": "百万元（吉比特成交额）",
@@ -8167,95 +8204,95 @@
         {
           "stage": "中期底部",
           "period": "近6个月低位区",
-          "range": "318.00–353.41元",
+          "range": "318.00–353.39元",
           "feature": "观察低点是否抬高、成交额是否逐步回升"
         },
         {
           "stage": "短线整理",
           "period": "最近20日",
           "range": "338.11–399.98元",
-          "feature": "价格围绕MA20 372.36元进行方向选择"
+          "feature": "价格围绕MA20 372.30元进行方向选择"
         },
         {
           "stage": "等待突破",
           "period": "当前",
-          "range": "收盘385.50元",
+          "range": "收盘384.39元",
           "feature": "尚需突破401.98元并放量确认"
         }
       ],
       "movingAverages": [
         {
           "period": 5,
-          "value": 386.504,
+          "value": 386.282,
           "relation": "价格在下方",
-          "bias": -0.2597644526318055
+          "bias": -0.48979760900067504
         },
         {
           "period": 10,
-          "value": 387.48900000000003,
+          "value": 387.37800000000004,
           "relation": "价格在下方",
-          "bias": -0.5133048938163465
+          "bias": -0.7713396217647994
         },
         {
           "period": 20,
-          "value": 372.35900000000004,
+          "value": 372.30350000000004,
           "relation": "价格在上方",
-          "bias": 3.529121090130749
+          "bias": 3.24641052259782
         },
         {
           "period": 60,
-          "value": 353.4078333333333,
+          "value": 353.3893333333333,
           "relation": "价格在上方",
-          "bias": 9.080774006612756
+          "bias": 8.772383244919691
         },
         {
           "period": 90,
-          "value": 361.598789702683,
+          "value": 361.58645636934966,
           "relation": "价格在上方",
-          "bias": 6.609870104092241
+          "bias": 6.3065259300965515
         },
         {
           "period": 145,
-          "value": 380.2521670875947,
+          "value": 380.24451191518096,
           "relation": "价格在上方",
-          "bias": 1.3800928348677521
+          "bias": 1.0902164146799675
         }
       ],
       "indicators": [
         {
           "name": "MACD",
           "state": "多头",
-          "value": "DIF 9.15 / DEA 8.69 / 柱 0.91",
+          "value": "DIF 9.06 / DEA 8.67 / 柱 0.77",
           "interpretation": "动能偏多，继续观察红柱是否扩张。",
           "tone": "positive"
         },
         {
           "name": "KDJ",
           "state": "中性",
-          "value": "K 50.54 / D 63.46 / J 24.71",
+          "value": "K 48.83 / D 62.89 / J 20.71",
           "interpretation": "尚未进入极端区。",
           "tone": "warning"
         },
         {
           "name": "RSI",
           "state": "中性",
-          "value": "RSI6 40.76 / RSI12 71.14",
+          "value": "RSI6 38.83 / RSI12 70.78",
           "interpretation": "用于识别动量强弱，不能单独作为买卖依据。",
           "tone": "warning"
         },
         {
           "name": "BOLL",
           "state": "轨道内",
-          "value": "上轨 407.85 / 中轨 372.36 / 下轨 336.86",
+          "value": "上轨 407.72 / 中轨 372.30 / 下轨 336.89",
           "interpretation": "观察价格能否稳定站上中轨。",
           "tone": "neutral"
         }
       ],
       "marketStats": {
-        "close": 385.5,
-        "changePct": 0.57,
-        "turnoverRate": 1.75,
-        "volumeRatio": 1.25
+        "close": 384.39,
+        "changePct": 0.28,
+        "turnoverRate": 1.77,
+        "volumeRatio": 1.22
       },
       "chip": {
         "status": "data_insufficient",
@@ -8275,14 +8312,14 @@
           "20日量比仅0.60倍，突破确认不足"
         ]
       },
-      "plainConclusion": "目前不追涨。等待收盘突破401.98元且成交额不低于20日均额1.2倍，或回踩MA20 372.36元附近缩量企稳后再评估。"
+      "plainConclusion": "目前不追涨。等待收盘突破401.98元且成交额不低于20日均额1.2倍，或回踩MA20 372.30元附近缩量企稳后再评估。"
     }
   },
   "executionPlan": {
     "action": "等待量价触发，现在不追",
-    "trigger": "首次介入：收盘突破401.98元且成交额≥20日均额1.2倍；备选为回踩MA20 372.36元附近缩量企稳",
+    "trigger": "首次介入：收盘突破401.98元且成交额≥20日均额1.2倍；备选为回踩MA20 372.30元附近缩量企稳",
     "add": "突破后回踩401.98元附近不破且量能温和，再考虑增加暴露",
-    "priceInvalidation": "收盘跌破357.46元退出技术观察",
+    "priceInvalidation": "收盘跌破357.41元退出技术观察",
     "fundamentalInvalidation": "若出现非标审计、重大监管风险或业绩显著恶化，技术信号降级",
     "nextReview": "下一交易日收盘或重要公告后"
   },
@@ -8302,7 +8339,10 @@
     "对应行业供需背景：中证指数：中证动漫游戏指数资料，数据截至2026-07-31 https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/indices/detail/files/zh_CN/930901factsheet.pdf",
     "对应行业供需背景：腾讯：2026年第一季度业绩，本土游戏收入+6%、国际游戏收入+13% https://static.www.tencent.com/uploads/2026/05/13/aaed028d215a9612da4b41aca17708b.pdf",
     "对应行业供需背景：国泰中证动漫游戏ETF 2026年一季报（成分参考） https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-04-22/516010_20260422_C8H7.pdf",
-    "对应行业供需背景：行情：AkShare公开行情接口；巨人网络、三七互娱、恺英网络、完美世界、神州泰岳、吉比特、掌趣科技、游族网络前复权等权篮子，截至2026-08-10"
+    "对应行业供需背景：行情：AkShare公开行情接口；巨人网络、三七互娱、恺英网络、完美世界、神州泰岳、吉比特、掌趣科技、游族网络前复权等权篮子，截至2026-08-10",
+    "吉比特投资者关系：https://www.g-bits.com/zh/investor.html",
+    "2026H1预增公告：https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12444745&stockid=603444",
+    "Tushare income/cashflow/balancesheet/fina_indicator/daily_basic，2026-08-13提取"
   ],
   "supplyDemand": {
     "state": "需求强、优质内容供给稀缺",
@@ -8360,55 +8400,123 @@
     }
   ],
   "marketResearch": {
-    "fullTextStatus": "permission_required",
-    "statusNote": "本次为技术专项报告；交易所公告全文接口未接入，不用新闻转载补造消息面",
-    "period": "截至2026-08-13",
-    "reportCount": 0,
-    "institutionCount": 0,
-    "companyForecastSampleCount": 0,
-    "reportScope": "交易所预约披露日、业绩预告/快报和技术行情",
-    "consensus": "公告与机构研报样本不足",
-    "revisionTrend": "等待半年度报告和合法公告全文接入",
-    "integratedConclusion": "当前结论以真实行情为主，不能替代完整基本面与消息面研究。",
-    "evidenceCheck": "已调用disclosure_date、forecast、express；公告全文和机构研报未取得。",
-    "topReports": [],
+    "fullTextStatus": "partial",
+    "statusNote": "已核验公司年报、一季报、半年度预增公告及两份公开券商报告；付费研报正文未绕过权限。",
+    "period": "2026-03-27—2026-08-13",
+    "reportCount": 5,
+    "institutionCount": 4,
+    "companyForecastSampleCount": 2,
+    "reportScope": "公司财报、业绩预告、产品周期、盈利预测与估值",
+    "consensus": "新品周期推动2025年以来盈利反转，高自研占比和分红能力构成支撑",
+    "revisionTrend": "2026H1预告进一步确认利润加速，但市场关注增长持续性与高基数",
+    "synthesis": {
+      "verdict": "机构共识偏多，但真正的预期差在新品流水能否跨季度保持及现金流能否跟上利润",
+      "confidence": "公告全文 + 公开研报摘要 · 中高置信度",
+      "confidenceTone": "positive",
+      "evidenceNote": "公司公告决定事实，券商报告仅用于识别市场预期。",
+      "commonPoints": [
+        {
+          "point": "新品周期驱动利润反转",
+          "reason": "多款产品从2025年陆续上线，2026年进入更完整贡献周期。",
+          "support": "公司预增公告、国信证券、中邮证券"
+        },
+        {
+          "point": "自研占比改善毛利率",
+          "reason": "自研产品增长提高利润弹性。",
+          "support": "2025年报、2026Q1及公开研报"
+        }
+      ],
+      "differences": [
+        {
+          "topic": "增长持续性",
+          "views": "乐观观点强调产品储备与长线运营；谨慎观点关注新品流水回落和高基数。",
+          "investmentMeaning": "不能只看H1增速，需跟踪下半年流水和费用率。"
+        },
+        {
+          "topic": "估值消化方式",
+          "views": "一种观点依赖利润高速增长消化PE，另一种强调高分红与现金资产提供底部。",
+          "investmentMeaning": "增长与分红都需财报现金流验证。"
+        }
+      ],
+      "integratedView": "吉比特基本面已从旧产品承压转向新品扩张，但股价交易的是未来持续性而非已经公布的高增长。",
+      "validation": "以8月14日半年报、后续产品流水、经营现金流和401.98元量价突破共同验证。"
+    },
+    "integratedConclusion": "基本面偏强、估值不便宜、技术未放量，适合等待财报和量价双确认。",
+    "evidenceCheck": "公司公告、财务接口、同业估值和真实K线已交叉核验。",
+    "topReports": [
+      {
+        "institution": "吉比特",
+        "date": "2026-03-27",
+        "title": "2025年年度报告",
+        "type": "公司公告",
+        "url": "https://www.g-bits.com/zh/investor.html"
+      },
+      {
+        "institution": "吉比特",
+        "date": "2026-04-24",
+        "title": "2026年第一季度报告",
+        "type": "公司公告",
+        "url": "https://www.g-bits.com/zh/investor.html"
+      },
+      {
+        "institution": "吉比特",
+        "date": "2026-07-15",
+        "title": "2026年半年度业绩预增公告",
+        "type": "公司公告",
+        "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12444745&stockid=603444"
+      },
+      {
+        "institution": "国信证券",
+        "date": "2026-03-30",
+        "title": "新品周期推动2025年利润增长90%",
+        "type": "券商研报",
+        "url": "https://pdf.dfcfw.com/pdf/H3_AP202603301820855207_1.pdf"
+      },
+      {
+        "institution": "中邮证券",
+        "date": "2026-06-09",
+        "title": "新游爆发驱动业绩反转",
+        "type": "券商研报",
+        "url": "https://pdf.dfcfw.com/pdf/H3_AP202606091823385840_1.pdf"
+      }
+    ],
     "freeSources": []
   },
   "bearCase": [
-    "成交额不足导致突破失败",
-    "价格跌破结构失效位并转弱",
-    "重要财报或公告低于预期造成跳空风险"
+    "新品流水和利润高增长可能已被股价提前定价，业绩兑现后存在利好出尽风险",
+    "游戏产品具有较强生命周期和爆款不确定性，单季高增长不能线性外推",
+    "当前PE需要持续增长消化，而技术突破缺少成交额确认"
   ],
   "evidenceQuality": [
     {
       "grade": "A",
-      "label": "行情与技术指标",
-      "note": "Tushare前复权OHLCV与腾讯实时行情，截至20260813"
+      "label": "财务与业绩预告",
+      "note": "公司年报、一季报、半年度业绩预增公告与Tushare财务三表"
     },
     {
       "grade": "A",
-      "label": "财报预约与业绩快报",
-      "note": "Tushare disclosure_date/forecast/express"
+      "label": "行情与估值",
+      "note": "Tushare前复权OHLCV/daily_basic，截至2026-08-13"
     },
     {
-      "grade": "A",
-      "label": "近5年审计意见",
-      "note": "Tushare fina_audit"
+      "grade": "B",
+      "label": "产品和机构预期",
+      "note": "公司公告、官网及合法公开券商报告摘要"
     },
     {
       "grade": "C",
-      "label": "公告消息与机构研报",
-      "note": "全文接口未接入，本次不形成消息面共识"
+      "label": "分钟资金与筹码",
+      "note": "无可验证接口，不纳入结论"
     }
   ],
   "tradeDecision": {
     "asOf": "2026-08-13",
     "verdict": "接近突破条件，但不能提前买入",
-    "reason": "结论由收盘385.50元、突破线401.98元、20日量比0.60倍、MA20 372.36元与MA145 380.25元共同计算，不由评级模板代替。",
+    "reason": "基本面已进入新品驱动的盈利扩张期，但截至2026-08-13收盘384.39元仍低于突破线401.98元，20日量比仅0.60倍；同时H1高增长仍待正式半年报和现金流验证。",
     "checks": [
       {
         "name": "价格突破",
-        "current": "收盘385.50元",
+        "current": "收盘384.39元",
         "threshold": "收盘≥401.98元",
         "status": "unmet"
       },
@@ -8420,22 +8528,104 @@
       },
       {
         "name": "短期趋势",
-        "current": "MA5/20=386.50/372.36元",
+        "current": "MA5/20=386.28/372.30元",
         "threshold": "收盘同时站上MA5与MA20",
         "status": "unmet"
       },
       {
         "name": "中长期趋势",
-        "current": "MA60/145=353.41/380.25元",
+        "current": "MA60/145=353.39/380.24元",
         "threshold": "收盘同时站上MA60与MA145",
         "status": "met"
       },
       {
         "name": "动量不过热",
-        "current": "RSI6 40.76，KDJ-J 24.71",
+        "current": "RSI6 38.83，KDJ-J 20.71",
         "threshold": "RSI6≤80、J≤95且MA5乖离≤10%",
         "status": "met"
+      },
+      {
+        "name": "盈利兑现",
+        "current": "2026H1归母净利预告10.1–11亿元，同比+57%至71%",
+        "threshold": "半年报不低于预告中值且扣非、现金流同步改善",
+        "status": "partial"
+      },
+      {
+        "name": "估值消化",
+        "current": "PE-TTM 13.62倍",
+        "threshold": "盈利预测持续上修或估值回到可接受区间",
+        "status": "partial"
       }
     ]
-  }
+  },
+  "companyComparison": [
+    {
+      "tier": "研究对象",
+      "tone": "positive",
+      "company": "吉比特",
+      "ticker": "603444.SH",
+      "driver": "精品自研、长线运营、新品周期和高分红",
+      "valuation": "PE-TTM 13.62倍；PB 4.60倍",
+      "risk": "单品生命周期、新品成功率、买量成本与投资收益波动"
+    },
+    {
+      "tier": "游戏可比",
+      "tone": "neutral",
+      "company": "三七互娱",
+      "ticker": "002555.SZ",
+      "driver": "业务结构和产品周期不同，仅用于估值参照",
+      "valuation": "PE-TTM 13.50倍；PB 3.00倍",
+      "risk": "不能用静态PE忽略新品周期差异"
+    },
+    {
+      "tier": "游戏可比",
+      "tone": "neutral",
+      "company": "完美世界",
+      "ticker": "002624.SZ",
+      "driver": "业务结构和产品周期不同，仅用于估值参照",
+      "valuation": "PE-TTM 43.56倍；PB 3.21倍",
+      "risk": "不能用静态PE忽略新品周期差异"
+    },
+    {
+      "tier": "游戏可比",
+      "tone": "neutral",
+      "company": "芒果超媒",
+      "ticker": "300413.SZ",
+      "driver": "业务结构和产品周期不同，仅用于估值参照",
+      "valuation": "PE-TTM 28.60倍；PB 1.27倍",
+      "risk": "不能用静态PE忽略新品周期差异"
+    },
+    {
+      "tier": "游戏可比",
+      "tone": "neutral",
+      "company": "巨人网络",
+      "ticker": "002558.SZ",
+      "driver": "业务结构和产品周期不同，仅用于估值参照",
+      "valuation": "PE-TTM 21.99倍；PB 3.35倍",
+      "risk": "不能用静态PE忽略新品周期差异"
+    }
+  ],
+  "valuationScenarios": [
+    {
+      "name": "乐观",
+      "weight": "25%",
+      "assumption": "H1预告上沿兑现，新品流水延续且现金流同步改善",
+      "valuation": "用2026H1净利11亿元与后续产品持续性检验当前PE 13.62倍是否可消化",
+      "signal": "半年报收入、扣非利润、经营现金流均超预告中枢"
+    },
+    {
+      "name": "基准",
+      "weight": "50%",
+      "assumption": "H1落在预告中值，后续流水正常回落",
+      "valuation": "维持增长股估值但不接受无量追价",
+      "signal": "利润兑现但收入/现金流仅温和改善"
+    },
+    {
+      "name": "悲观",
+      "weight": "25%",
+      "assumption": "新品流水衰减、费用上升或投资收益贡献偏高",
+      "valuation": "盈利预期下修并压缩估值",
+      "signal": "半年报低于预告中枢或经营现金流明显落后利润"
+    }
+  ]
 }

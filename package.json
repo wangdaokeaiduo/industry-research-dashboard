@@ -22,7 +22,7 @@
     "report:yixintang": "node scripts/build-yixintang-report.mjs && npm run reports:docs",
     "report:ctg-duty-free": "STOCK_CODE=601888.SH STOCK_NAME=中国中免 STOCK_ID=601888 QUOTE_SYMBOL=sh601888 INDUSTRY_REPORT=tourism-hotel.json node scripts/build-yixintang-report.mjs && npm run reports:docs",
     "report:giant-network": "STOCK_CODE=002558.SZ STOCK_NAME=巨人网络 STOCK_ID=002558 QUOTE_SYMBOL=sz002558 INDUSTRY_REPORT=game-sector.json node scripts/build-yixintang-report.mjs && npm run reports:docs",
-    "report:g-bits": "STOCK_CODE=603444.SH STOCK_NAME=吉比特 STOCK_ID=603444 QUOTE_SYMBOL=sh603444 INDUSTRY_REPORT=game-sector.json node scripts/build-yixintang-report.mjs && npm run reports:docs",
+    "report:g-bits": "STOCK_CODE=603444.SH STOCK_NAME=吉比特 STOCK_ID=603444 QUOTE_SYMBOL=sh603444 INDUSTRY_REPORT=game-sector.json node scripts/build-yixintang-report.mjs && node scripts/enrich-gbits-full-report.mjs && npm run reports:docs",
     "test": "node --test"
   },
   "dependencies": {
