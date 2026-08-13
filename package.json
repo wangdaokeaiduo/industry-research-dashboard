@@ -18,8 +18,8 @@
     "report:pcb": "node scripts/build-pcb-report.mjs",
     "report:food-beverage": "node scripts/build-food-beverage-report.mjs",
     "report:power": "node scripts/build-power-report.mjs",
-    "report:yaoyigou": "node scripts/build-yaoyigou-report.mjs",
-    "report:yixintang": "node scripts/build-yixintang-report.mjs",
+    "report:yaoyigou": "node scripts/build-yaoyigou-report.mjs && npm run reports:docs",
+    "report:yixintang": "node scripts/build-yixintang-report.mjs && npm run reports:docs",
     "test": "node --test"
   },
   "dependencies": {

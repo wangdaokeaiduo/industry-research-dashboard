@@ -4,7 +4,7 @@
   "industry": "一心堂（002727.SZ）",
   "category": "mixed",
   "asOf": "2026-08-13",
-  "updatedAt": "2026-08-13T04:39:36.786Z",
+  "updatedAt": "2026-08-13T04:42:09.674Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度"
@@ -8294,6 +8294,51 @@
   ],
   "sources": [
     "Tushare Pro daily/adj_factor/daily_basic/fina_audit，20260813提取",
-    "腾讯证券实时行情用于补齐最新交易日；前复权历史由Tushare计算"
-  ]
+    "腾讯证券实时行情用于补齐最新交易日；前复权历史由Tushare计算",
+    "医药连锁行业供需背景：国家医保局、财政部 20260519：https://www.nhsa.gov.cn/art/2026/5/19/art_53_20546.html",
+    "医药连锁行业供需背景：国务院办公厅 20260414：https://www.nhsa.gov.cn/art/2026/4/14/art_53_20215.html",
+    "医药连锁行业供需背景：国家医保局 20260202：https://www.nhsa.gov.cn/art/2026/2/2/art_53_19557.html",
+    "医药连锁行业供需背景：国家医保局 20250420：https://www.nhsa.gov.cn/art/2025/4/20/art_52_16312.html",
+    "医药连锁行业供需背景：国家医保局门诊统筹政策：https://www.nhsa.gov.cn/art/2023/2/15/art_104_10166.html",
+    "医药连锁行业供需背景：Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260812提取"
+  ],
+  "supplyDemand": {
+    "state": "需求刚性、渠道供给过剩",
+    "tone": "warning",
+    "direction": "行业出清",
+    "conclusion": "行业层面：居民用药需求具有韧性，但零售药店的有效需求受医院渠道、线上平台和医保支付分流；门店供给相对过剩，竞争焦点从开店转向处方获取、专业服务、采购效率和合规能力。 公司层面：一心堂的技术面改善能否持续，仍需用同店销售、门店净增减、毛利率、库存周转和经营现金流验证，不能只由K线推断。",
+    "demand": {
+      "status": "刚性但增量有限",
+      "evidence": "慢病与老龄化支撑需求，门诊统筹和处方外流提供增量。",
+      "change": "向专业药房迁移",
+      "tone": "positive"
+    },
+    "supply": {
+      "status": "门店偏多",
+      "evidence": "全国统一高频门店净增数据缺失，但上市公司已更重视闭店和单店效率。",
+      "change": "从扩张转出清",
+      "tone": "warning"
+    },
+    "inventory": {
+      "status": "需重点核验",
+      "evidence": "药品效期、集采降价与门店备货会影响减值和周转。",
+      "change": "高库存风险",
+      "tone": "warning"
+    },
+    "price": {
+      "status": "持续承压",
+      "evidence": "医保要求药店价格不得明显高于医院、实体与线上渠道。",
+      "change": "价差收窄",
+      "tone": "warning"
+    },
+    "profit": {
+      "status": "边际改善",
+      "evidence": "样本最新净利增速中位数9.83%。",
+      "change": "同店和费用率决定弹性",
+      "tone": "positive"
+    },
+    "leadingIndicator": "一心堂同店销售、门店净增/净关、医保统筹收入、毛利率、库存周转、经营现金流、单店人效，以及连锁药店行业价格与监管变化。",
+    "improvement": "行业同店销售转正，且一心堂毛利率、库存周转和经营现金流同步改善；同时股价完成量价突破。",
+    "invalidation": "行业同店继续下降、医保比价压缩毛利，或一心堂库存/现金流恶化，即使K线转强也应下调结论。"
+  }
 }
