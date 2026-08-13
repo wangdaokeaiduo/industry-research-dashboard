@@ -206,6 +206,14 @@ function Metrics({ items=[] }) {
   return <div className="metrics-strip">{items.map(item=><div className="metric" key={item.label}><div><small>{item.label} · {item.unit}</small><strong>{item.value}</strong><span className={item.direction}>{item.change}</span></div><Sparkline values={item.series} direction={item.direction}/></div>)}</div>
 }
 
+function AuditRiskHistory({ data={} }) {
+  return <div className="audit-risk-history">
+    <div className={`audit-risk-summary ${data.tone||'warning'}`}><div><small>近5年综合风险</small><strong>{data.overallRisk||'待核验'}</strong><span>{data.period}</span></div><p>{data.summary}</p></div>
+    <div className="audit-risk-list"><div className="audit-risk-row head"><span>年度</span><span>审计意见 / 风险</span><span>审计机构与签字会计师</span><span>审计费</span><span>主要风险与变化</span></div>{data.items?.map(item=><div className="audit-risk-row" key={item.year}><strong>{item.year}</strong><span><b className={`audit-badge ${item.risk}`}>{item.opinion}</b><small>{item.riskLabel}风险 · {item.annDate}</small></span><span><b>{item.agency}</b><small>{item.signers||'签字信息未取得'}</small></span><span>{Number.isFinite(item.fee)?`${item.fee.toFixed(0)}万元`:'未披露'}</span><p><b>{item.change}</b>{item.issue}</p></div>)}</div>
+    <div className="audit-risk-watch"><small>怎样才算风险解除</small><p>{data.watch}</p></div>
+  </div>
+}
+
 function Chain({ items=[] }) {
   return <div className="chain">{items.map((item,i)=><div className="chain-wrap" key={item.stage}><div className="chain-node"><div><small>{item.stage}</small><strong>{item.title}</strong></div><ul>{item.items.map(x=><li key={x}>{x}</li>)}</ul></div>{i<items.length-1&&<span className="chain-arrow"><Icon name="arrow" size={25}/></span>}</div>)}</div>
 }
@@ -275,7 +283,7 @@ function Scenarios({ scenarios=[], risks=[] }) {
 }
 
 const articleLinks = [
-  ['trade','交易结论'],['decision','决策总览'],['weekly','本周变化'],['prosperity','景气度'],['supply','供需关系'],['research','市场研报'],['summary','摘要'],['cycle','周期阶段'],['conditions','反转条件'],['metrics','真实数据'],
+  ['trade','交易结论'],['decision','决策总览'],['weekly','本周变化'],['prosperity','景气度'],['supply','供需关系'],['research','市场研报'],['summary','摘要'],['cycle','周期阶段'],['conditions','反转条件'],['metrics','真实数据'],['audit','审计风险'],
   ['chain','产业链'],['companies','公司筛选'],['valuation','估值情景'],['technical','技术面'],['actions','执行风控'],['scenarios','情景风险']
 ]
 
@@ -300,6 +308,7 @@ function ReportView({ report, readingLarge, setReadingLarge }) {
       <Section id="cycle" title="周期阶段" action={`当前 · ${report.cycle?.current}`}><CycleTrack cycle={report.cycle}/></Section>
       <Section id="conditions" title="反转条件" action={`${report.reversalConditions?.length||0} 项监测`}><Conditions items={report.reversalConditions}/></Section>
       {report.metrics?.length>0&&<Section id="metrics" title="真实数据" action={`截至 ${report.asOf}`}><Metrics items={report.metrics}/></Section>}
+      {stock&&report.auditRiskHistory?.items?.length>0&&<Section id="audit" title="近5年财报审计风险" action="审计意见 · 机构变更 · 风险是否解除"><AuditRiskHistory data={report.auditRiskHistory}/></Section>}
       {report.industryChain?.length>0&&<Section id="chain" title="产业链"><Chain items={report.industryChain}/></Section>}
       {report.companyComparison?.length>0&&<Section id="companies" title={stock?'同行估值与经营比较':'公司横向比较'} action="分层而非无条件荐股"><CompanyComparison items={report.companyComparison}/></Section>}
       {report.valuationScenarios?.length>0&&<Section id="valuation" title="盈利与估值情景" action="假设公开可验证"><ValuationScenarios items={report.valuationScenarios}/></Section>}

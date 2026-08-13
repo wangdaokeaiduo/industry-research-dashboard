@@ -39,6 +39,7 @@ function render(report) {
   out.push('## 6. 执行摘要','',safe(report.summary?.conclusion),'',...(report.summary?.evidence||[]).map(x=>`- ${x}`),'')
   out.push('## 7. 反转条件','')
   if (report.reversalConditions?.length) out.push(table(['条件','维度','当前','阈值','状态'],report.reversalConditions.map(x=>[x.name,x.dimension,x.current,x.threshold,x.status])),'')
+  if(report.auditRiskHistory?.items?.length){const a=report.auditRiskHistory;out.push('### 近5年财报审计风险','',`- 综合风险：${safe(a.overallRisk)}`,`- 总结：${safe(a.summary)}`,`- 风险解除条件：${safe(a.watch)}`,'',table(['年度','审计意见','风险','审计机构','签字会计师','审计费','变化与主要问题'],a.items.map(x=>[x.year,x.opinion,x.riskLabel,x.agency,x.signers,Number.isFinite(x.fee)?`${x.fee.toFixed(0)}万元`:'未披露',`${x.change}；${x.issue}`])),'')}
   out.push('## 8. 公司分层','')
   if (report.companyComparison?.length) out.push(table(['分层','公司','代码','驱动','估值观察','风险'],report.companyComparison.map(x=>[x.tier,x.company,x.ticker,x.driver,x.valuation,x.risk])),'')
   out.push('## 9. 盈利与估值情景','')
