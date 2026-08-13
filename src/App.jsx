@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 
 const categoryName = { cycle: '周期', growth: '成长', mixed: '混合' }
+const isStockReport = report => report?.reportType === 'stock' || report?.id?.endsWith('-stock')
 const statusMeta = {
   met: ['已达成', 'positive'], partial: ['部分达成', 'warning'],
   unmet: ['未达成', 'negative'], unknown: ['待验证', 'muted']
@@ -68,19 +69,23 @@ function PriceChart({ prices = [], volumes = [], ohlc = [], levels = [] }) {
   </svg>{hoverIndex!=null&&<div className={`chart-tooltip ${hoverX>plotWidth*.62?'left':''}`} style={{left:`${hoverX/width*100}%`,top:`${Math.max(4,y(hoverClose)/230*100)}%`}} role="status"><strong>{hoverBar?.date || `第 ${sourceIndex+1} 个交易日`}</strong>{hoverBar?<><span>开盘 <b>{hoverBar.open.toFixed(2)}</b></span><span>最高 <b>{hoverBar.high.toFixed(2)}</b></span><span>最低 <b>{hoverBar.low.toFixed(2)}</b></span><span>收盘 <b>{hoverBar.close.toFixed(2)}</b></span></>:<span>收盘 <b>{hoverClose.toFixed(2)}</b></span>}<span>涨跌 <b className={change>=0?'up':'down'}>{Number.isFinite(change)?`${change>=0?'+':''}${change.toFixed(2)}%`:'—'}</b></span><span>成交量 <b>{Number.isFinite(visibleVolumes[hoverIndex])?visibleVolumes[hoverIndex].toFixed(2):'—'}</b></span></div>}</div><div className="chart-scrubber"><button onClick={()=>setStart(value=>Math.max(0,value-50))} disabled={!start}>← 扩大50日</button><div className="zoom-range" style={{'--zoom-left':`${start/Math.max(prices.length,1)*100}%`,'--zoom-right':`${100-end/Math.max(prices.length,1)*100}%`}}><div className="zoom-selection"/><input className="zoom-start" type="range" min="0" max={Math.max(0,end-minWindow)} value={start} onChange={event=>setStart(Math.min(Number(event.target.value),end-minWindow))} aria-label="左侧缩放手柄"/><input className="zoom-end" type="range" min={Math.min(prices.length,start+minWindow)} max={prices.length} value={end} onChange={event=>setEnd(Math.max(Number(event.target.value),start+minWindow))} aria-label="右侧缩放手柄"/></div><button onClick={()=>{setStart(Math.max(0,prices.length-defaultWindow));setEnd(prices.length)}} disabled={end===prices.length&&visiblePrices.length===defaultWindow}>最新50日</button><output>第 {start+1}–{end} / {prices.length} · {visiblePrices.length}日</output></div></div>
 }
 
-function Sidebar({ reports, selected, onSelect, query, setQuery, filter, setFilter }) {
-  const filtered = reports.filter(r => (filter === 'all' || r.category === filter) && r.industry.toLowerCase().includes(query.toLowerCase()))
+function Sidebar({ reports, selected, onSelect, query, setQuery, filter, setFilter, reportType, onTypeChange }) {
+  const filtered = reports.filter(r => (reportType === 'stock' ? isStockReport(r) : !isStockReport(r)) && (filter === 'all' || r.category === filter) && r.industry.toLowerCase().includes(query.toLowerCase()))
   return <aside className="sidebar">
     <div className="brand"><span className="brand-mark"><Icon name="pulse" size={21}/></span><span>周期信号</span></div>
-    <label className="search"><Icon name="search" size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="搜索行业报告"/><kbd>⌘K</kbd></label>
-    <div className="filters" role="tablist">
-      {[['all','全部'],['cycle','周期'],['growth','成长']].map(([key,label]) => <button key={key} className={filter===key?'active':''} onClick={()=>setFilter(key)}>{label}</button>)}
+    <div className="research-tabs" role="tablist" aria-label="研究类型">
+      <button role="tab" aria-selected={reportType==='sector'} className={reportType==='sector'?'active':''} onClick={()=>onTypeChange('sector')}>板块研究</button>
+      <button role="tab" aria-selected={reportType==='stock'} className={reportType==='stock'?'active':''} onClick={()=>onTypeChange('stock')}>个股研究</button>
     </div>
-    <div className="report-label"><span>报告列表</span><span>{filtered.length}</span></div>
+    <label className="search"><Icon name="search" size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder={reportType==='stock'?'搜索个股或代码':'搜索行业报告'}/><kbd>⌘K</kbd></label>
+    {reportType==='sector'&&<div className="filters" role="tablist">
+      {[['all','全部'],['cycle','周期'],['growth','成长']].map(([key,label]) => <button key={key} className={filter===key?'active':''} onClick={()=>setFilter(key)}>{label}</button>)}
+    </div>}
+    <div className="report-label"><span>{reportType==='stock'?'个股报告':'板块报告'}</span><span>{filtered.length}</span></div>
     <nav className="report-list">
       {filtered.map(report => <button key={report.id} className={`report-row ${selected===report.id?'selected':''}`} onClick={()=>onSelect(report.id)}>
         <span className={`report-symbol ${report.category}`}>{report.industry.slice(0,1)}</span>
-        <span className="report-copy"><strong>{report.industry}</strong><small>{report.asOf} · {categoryName[report.category]}</small></span>
+        <span className="report-copy"><strong>{report.industry}</strong><small>{report.asOf} · {isStockReport(report)?'个股':categoryName[report.category]}</small></span>
         <Icon name="chevron" size={16}/>
       </button>)}
       {!filtered.length && <p className="side-empty">没有匹配的报告</p>}
@@ -105,9 +110,9 @@ function Executive({ summary }) {
   </div>
 }
 
-function Prosperity({ data={} }) {
+function Prosperity({ data={}, label='行业景气度' }) {
   const score = Math.max(0, Math.min(100, Number(data.score) || 0))
-  return <div className="prosperity-card"><div className="prosperity-verdict"><small>行业景气度</small><strong>{data.level || '待判断'}</strong><span className={`prosperity-direction ${data.directionTone || 'neutral'}`}>{data.direction || '方向待验证'}</span><div className="prosperity-score"><i style={{width:`${score}%`}}/><b>{score}<em>/100</em></b></div><p>{data.verdict}</p></div><div className="prosperity-signals">{data.dimensions?.map(item=><div key={item.name}><span>{item.name}</span><strong>{item.value}</strong><small className={item.tone || 'neutral'}>{item.change}</small></div>)}</div><div className="prosperity-watch"><div><small>核心驱动</small><p>{data.driver}</p></div><div><small>进一步改善需要</small><p>{data.improvement}</p></div><div><small>景气恶化信号</small><p>{data.deterioration}</p></div></div></div>
+  return <div className="prosperity-card"><div className="prosperity-verdict"><small>{label}</small><strong>{data.level || '待判断'}</strong><span className={`prosperity-direction ${data.directionTone || 'neutral'}`}>{data.direction || '方向待验证'}</span><div className="prosperity-score"><i style={{width:`${score}%`}}/><b>{score}<em>/100</em></b></div><p>{data.verdict}</p></div><div className="prosperity-signals">{data.dimensions?.map(item=><div key={item.name}><span>{item.name}</span><strong>{item.value}</strong><small className={item.tone || 'neutral'}>{item.change}</small></div>)}</div><div className="prosperity-watch"><div><small>核心驱动</small><p>{data.driver}</p></div><div><small>进一步改善需要</small><p>{data.improvement}</p></div><div><small>恶化信号</small><p>{data.deterioration}</p></div></div></div>
 }
 
 function SupplyDemand({ data={} }) {
@@ -120,16 +125,16 @@ function SupplyDemand({ data={} }) {
   </div>
 }
 
-function MarketResearch({ data={} }) {
+function MarketResearch({ data={}, stock=false }) {
   const status = data.fullTextStatus === 'available' ? '完整研报已接入' : data.fullTextStatus === 'permission_required' ? '完整研报权限未开通' : '研报数据待连接'
   return <div className="market-research">
-    <div className="research-summary"><div><small>行业研报连接</small><strong>{status}</strong><span>{data.statusNote}</span></div><div><small>行业研报覆盖</small><strong>{data.reportCount ?? 0}<em>份</em></strong><span>{data.institutionCount ?? 0} 家机构 · {data.period||'—'}</span></div><div><small>行业温度</small><strong>{data.consensus||'样本不足'}</strong><span>{data.revisionTrend||'尚未形成可验证趋势'}</span></div></div>
+    <div className="research-summary"><div><small>{stock?'公告消息连接':'行业研报连接'}</small><strong>{status}</strong><span>{data.statusNote}</span></div><div><small>{stock?'公告与事件覆盖':'行业研报覆盖'}</small><strong>{data.reportCount ?? 0}<em>份</em></strong><span>{data.institutionCount ?? 0} 家机构 · {data.period||'—'}</span></div><div><small>{stock?'消息面判断':'行业温度'}</small><strong>{data.consensus||'样本不足'}</strong><span>{data.revisionTrend||'尚未形成可验证趋势'}</span></div></div>
     {data.reportScope&&<div className="research-scope"><b>统计口径</b><span>{data.reportScope}</span>{Number.isFinite(data.companyForecastSampleCount)&&<em>个股盈利预测仅汇总：{data.companyForecastSampleCount}条</em>}</div>}
     {data.synthesis&&<ReportSynthesis data={data.synthesis}/>} 
     {!data.synthesis&&(data.commonViews?.length||data.disagreements?.length)&&<div className="research-views"><div><h3>共同观点</h3>{data.commonViews?.map((item,i)=><p key={item}><b>0{i+1}</b>{item}</p>)}</div><div><h3>核心分歧</h3>{data.disagreements?.map((item,i)=><p key={item}><b>0{i+1}</b>{item}</p>)}</div></div>}
     {data.integratedConclusion&&<div className="integrated-conclusion"><small>综合研判</small><strong>{data.integratedConclusion}</strong><p>{data.evidenceCheck}</p></div>}
     {data.freeSources?.length>0&&<div className="free-source-panel"><div className="free-source-head"><div><small>免费公开来源</small><strong>合法入口与事实核验库</strong></div><span>只收录原文链接，不绕过付费墙</span></div><div className="free-source-grid">{data.freeSources.map(source=><a key={source.name} href={source.url} target="_blank" rel="noreferrer"><span className={`source-type ${source.type}`}>{source.typeLabel}</span><strong>{source.name}</strong><p>{source.description}</p><small>{source.coverage}</small></a>)}</div></div>}
-    {data.topReports?.length>0&&<div className="research-list"><div className="research-list-head"><span>日期 / 机构</span><span>行业研报标题</span><span>类型</span></div>{data.topReports.map((item,i)=><a key={`${item.date}-${item.title}-${i}`} href={item.url||undefined} target={item.url?'_blank':undefined} rel="noreferrer"><span>{item.date}<small>{item.institution}</small></span><strong>{item.title}</strong><em>{item.type||'行业研究'}</em></a>)}</div>}
+    {data.topReports?.length>0&&<div className="research-list"><div className="research-list-head"><span>日期 / 机构</span><span>{stock?'公告 / 消息标题':'行业研报标题'}</span><span>类型</span></div>{data.topReports.map((item,i)=><a key={`${item.date}-${item.title}-${i}`} href={item.url||undefined} target={item.url?'_blank':undefined} rel="noreferrer"><span>{item.date}<small>{item.institution}</small></span><strong>{item.title}</strong><em>{item.type||(stock?'公告消息':'行业研究')}</em></a>)}</div>}
   </div>
 }
 
@@ -142,9 +147,10 @@ function DecisionOverview({ data={} }) {
 }
 
 function TradeDecision({ report }) {
+  const stock = isStockReport(report)
   const action = report.executionPlan?.action || report.technical?.rating || report.summary?.rating || '观察'
   const explicit = {
-    no_trade: ['现在不适合交易','negative','先回避'],
+    no_trade: [stock?'现在不适合介入':'现在不适合交易','negative','先回避'],
     data_insufficient: ['关键数据不足，暂不判断','negative','补齐数据'],
     wait_trigger: ['等待触发，现在不追','warning','条件观察'],
     trial: ['可以小仓试错','positive','小仓试错'],
@@ -152,7 +158,7 @@ function TradeDecision({ report }) {
   }[report.decisionLevel]
   const normalized = action.toLowerCase()
   const fallbackTone = normalized.includes('不适合') || normalized.includes('降低') ? 'negative' : normalized.startsWith('条件性加仓') || normalized.startsWith('试仓') ? 'positive' : 'warning'
-  const [verdict,tone,badge] = explicit || [fallbackTone === 'negative' ? '现在不适合交易' : fallbackTone === 'positive' ? '可以交易，但必须按条件执行' : '等待触发，现在不追',fallbackTone,action]
+  const [verdict,tone,badge] = explicit || [fallbackTone === 'negative' ? (stock?'现在不适合介入':'现在不适合交易') : fallbackTone === 'positive' ? (stock?'可以介入，但必须按条件执行':'可以交易，但必须按条件执行') : '等待触发，现在不追',fallbackTone,action]
   const reasons = [report.decisionOverview?.coreConflict, ...(report.summary?.evidence || []).slice(0, 2)].filter(Boolean)
   const invalidation = [report.executionPlan?.priceInvalidation, report.executionPlan?.fundamentalInvalidation].filter(Boolean).join('；')
   const technicalDecision = [report.technical?.rating,report.technical?.trend,report.technical?.volume].filter(Boolean).join('；')
@@ -240,10 +246,24 @@ function PlainTechnicalReadout({ data={} }) {
   return <div className="plain-tech"><div className="plain-tech-lead"><small>一句话结论</small><strong>{rating}</strong><p>{action}</p></div><div><small>现在是什么状态</small><p>{structure}</p></div><div><small>资金有没有进场</small><p>{volume}</p></div><div><small>什么时候可以做</small><p>{data.trigger||'等待价格与量能共同确认。'}</p></div><div><small>什么情况说明看错</small><p>{data.invalidation||'跌破关键支撑或基本面继续恶化。'}</p></div></div>
 }
 
+function StockTechnicalDetail({ data={} }) {
+  const detail=data.technicalDetail
+  if(!detail)return null
+  const stats=detail.marketStats||{},chip=detail.chip||{}
+  return <div className="stock-technical-detail">
+    <div className="stock-tech-head"><div><small>个股技术面总览</small><strong>{detail.headline}</strong><p>{detail.plainConclusion}</p></div><div className="stock-market-stats"><span><small>收盘</small><b>{Number.isFinite(stats.close)?stats.close.toFixed(2):'—'}</b></span><span><small>涨跌幅</small><b className={stats.changePct>=0?'positive':'negative'}>{Number.isFinite(stats.changePct)?`${stats.changePct>=0?'+':''}${stats.changePct.toFixed(2)}%`:'—'}</b></span><span><small>换手率</small><b>{Number.isFinite(stats.turnoverRate)?`${stats.turnoverRate.toFixed(2)}%`:'—'}</b></span><span><small>量比</small><b>{Number.isFinite(stats.volumeRatio)?stats.volumeRatio.toFixed(2):'—'}</b></span></div></div>
+    <div className="stock-tech-block"><h3>一、趋势结构</h3><div className="structure-table"><div className="structure-row head"><span>阶段</span><span>时间</span><span>价格区间</span><span>形态特征</span></div>{detail.structure?.map(item=><div className="structure-row" key={`${item.stage}-${item.period}`}><strong>{item.stage}</strong><span>{item.period}</span><b>{item.range}</b><p>{item.feature}</p></div>)}</div></div>
+    <div className="stock-tech-block"><h3>二、均线系统</h3><div className="ma-cards">{detail.movingAverages?.map(item=><div key={item.period} className={item.bias>=0?'above':'below'}><small>MA{item.period}</small><strong>{item.value.toFixed(2)}</strong><span>{item.relation}</span><em>乖离 {item.bias>=0?'+':''}{item.bias.toFixed(2)}%</em></div>)}</div></div>
+    <div className="stock-tech-block"><h3>三、核心指标</h3><div className="indicator-grid">{detail.indicators?.map(item=><article key={item.name} className={item.tone||'neutral'}><div><strong>{item.name}</strong><span>{item.state}</span></div><b>{item.value}</b><p>{item.interpretation}</p></article>)}</div></div>
+    <div className="stock-tech-block"><h3>四、筹码与数据边界</h3><div className={`chip-panel ${chip.status==='data_insufficient'?'missing':''}`}><div><small>平均成本</small><strong>{Number.isFinite(chip.averageCost)?chip.averageCost.toFixed(2):'数据不足'}</strong></div><div><small>获利比例</small><strong>{Number.isFinite(chip.winnerRate)?`${chip.winnerRate.toFixed(2)}%`:'数据不足'}</strong></div><div><small>90%集中度</small><strong>{Number.isFinite(chip.concentration90)?chip.concentration90.toFixed(2):'数据不足'}</strong></div><p>{chip.note}</p></div></div>
+    <div className="stock-tech-block signal-block"><h3>五、多空信号与直白结论</h3><div><section><strong>多头信号</strong>{detail.signals?.bull?.map((item,i)=><p key={item}><b>0{i+1}</b>{item}</p>)}</section><section><strong>风险信号</strong>{detail.signals?.risk?.map((item,i)=><p key={item}><b>0{i+1}</b>{item}</p>)}</section></div></div>
+  </div>
+}
+
 function Technical({ data={} }) {
   const levelFrom = (text, words) => { for (const word of words) { const match=text?.match(new RegExp(`${word}[^0-9]*(\\d+(?:\\.\\d+)?)`)); if (match) return Number(match[1]) } }
-  const levels = [{label:'触发位',value:levelFrom(data.trigger,['突破','站上']),tone:'trigger'},{label:'失效位',value:levelFrom(data.invalidation,['跌破','失效']),tone:'invalidation'}]
-  return <><PlainTechnicalReadout data={data}/><div className="technical-grid"><div className="chart-panel"><div className="chart-toolbar"><div><strong>{data.instrument}</strong><span>{data.timeframe}{data.ohlc?.length?'':' · 收盘线'}</span></div><div className="ma-legend">{[[5,'#e85d3f'],[10,'#d99a2b'],[20,'#8c63c7'],[60,'#2f80c9'],[90,'#25a59a'],[145,'#586473']].map(([period,color])=><span key={period} style={{color}}><i/>MA{period}</span>)}</div></div><PriceChart prices={data.prices} volumes={data.volumes} ohlc={data.ohlc} levels={levels}/></div>
+  const levels = [{label:'触发位',value:levelFrom(data.trigger,['突破','站上','等待']),tone:'trigger'},{label:'失效位',value:levelFrom(data.invalidation,['跌破','失效']),tone:'invalidation'}]
+  return <><StockTechnicalDetail data={data}/><PlainTechnicalReadout data={data}/><div className="technical-grid"><div className="chart-panel"><div className="chart-toolbar"><div><strong>{data.instrument}</strong><span>{data.timeframe}{data.ohlc?.length?'':' · 收盘线'}</span></div><div className="ma-legend">{[[5,'#e85d3f'],[10,'#d99a2b'],[20,'#8c63c7'],[60,'#2f80c9'],[90,'#25a59a'],[145,'#586473']].map(([period,color])=><span key={period} style={{color}}><i/>MA{period}</span>)}</div></div><PriceChart prices={data.prices} volumes={data.volumes} ohlc={data.ohlc} levels={levels}/></div>
     <div className="tech-analysis"><div className="trade-rating"><small>左侧交易评级</small><strong>{data.rating}</strong><span>风险收益比 {data.riskReward}</span></div><dl>
       {[['趋势',data.trend],['量能',data.volume],['波浪',data.wave],['斐波那契',data.fibonacci],['缠论',data.chan]].map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
     </dl><div className="trade-level"><span><small>触发条件</small>{data.trigger}</span><span><small>失效条件</small>{data.invalidation}</span></div></div></div><VolumeMatrix data={data}/></>
@@ -264,22 +284,23 @@ function ArticleNav({ readingLarge, setReadingLarge }) {
 
 function ReportView({ report, readingLarge, setReadingLarge }) {
   if (!report) return <main className="loading-screen">正在读取报告…</main>
+  const stock=isStockReport(report)
   return <main className={`main ${readingLarge?'reading-large':''}`}>
     <header className="topbar"><div><h1>{report.industry}</h1><span className={`category-tag ${report.category}`}>{categoryName[report.category]}</span></div><div className="report-meta"><span>数据截止 <strong>{report.asOf}</strong></span><span>最后更新 <strong>{new Date(report.updatedAt).toLocaleString('zh-CN',{hour12:false})}</strong></span></div></header>
     <div className="report-layout"><div className="content">
-      <Section id="trade" title="是否可以交易" action="结论 · 理由 · 操作"><TradeDecision report={report}/></Section>
+      <Section id="trade" title={stock?'是否可以介入':'是否可以交易'} action="结论 · 理由 · 操作"><TradeDecision report={report}/></Section>
       <DataGaps items={report.dataGaps}/>
       {report.decisionOverview&&<Section id="decision" title="投资决策总览" action="产业 · 估值 · 技术 · 执行"><DecisionOverview data={report.decisionOverview}/></Section>}
       {report.weeklyChanges&&<Section id="weekly" title="与上周相比" action={report.weeklyChanges.period}><WeeklyChanges data={report.weeklyChanges}/></Section>}
-      <Section id="prosperity" title="行业景气度" action="报告第一判断"><Prosperity data={report.prosperity}/></Section>
+      <Section id="prosperity" title={stock?'公司基本面状态':'行业景气度'} action="报告第一判断"><Prosperity data={report.prosperity} label={stock?'公司状态':'行业景气度'}/></Section>
       {report.supplyDemand&&<Section id="supply" title="供需关系" action="需求 · 供给 · 库存 · 价格 · 利润"><SupplyDemand data={report.supplyDemand}/></Section>}
-      {report.marketResearch&&<Section id="research" title="行业研报与行业温度" action="行业共识 · 分歧 · 盈利预期"><MarketResearch data={report.marketResearch}/></Section>}
+      {report.marketResearch&&<Section id="research" title={stock?'公告、监管与消息面':'行业研报与行业温度'} action={stock?'事实 · 影响 · 预期差':'行业共识 · 分歧 · 盈利预期'}><MarketResearch data={report.marketResearch} stock={stock}/></Section>}
       <Section id="summary" title="执行摘要"><Executive summary={report.summary}/></Section>
       <Section id="cycle" title="周期阶段" action={`当前 · ${report.cycle?.current}`}><CycleTrack cycle={report.cycle}/></Section>
       <Section id="conditions" title="反转条件" action={`${report.reversalConditions?.length||0} 项监测`}><Conditions items={report.reversalConditions}/></Section>
       {report.metrics?.length>0&&<Section id="metrics" title="真实数据" action={`截至 ${report.asOf}`}><Metrics items={report.metrics}/></Section>}
       {report.industryChain?.length>0&&<Section id="chain" title="产业链"><Chain items={report.industryChain}/></Section>}
-      {report.companyComparison?.length>0&&<Section id="companies" title="公司横向比较" action="分层而非无条件荐股"><CompanyComparison items={report.companyComparison}/></Section>}
+      {report.companyComparison?.length>0&&<Section id="companies" title={stock?'同行估值与经营比较':'公司横向比较'} action="分层而非无条件荐股"><CompanyComparison items={report.companyComparison}/></Section>}
       {report.valuationScenarios?.length>0&&<Section id="valuation" title="盈利与估值情景" action="假设公开可验证"><ValuationScenarios items={report.valuationScenarios}/></Section>}
       {report.technical&&<Section id="technical" title="技术面"><Technical data={report.technical}/></Section>}
       {(report.catalysts?.length||report.executionPlan||report.bearCase?.length)&&<Section id="actions" title="催化剂、执行与风控"><DecisionActions catalysts={report.catalysts} execution={report.executionPlan} bearCase={report.bearCase} evidence={report.evidenceQuality}/></Section>}
@@ -292,11 +313,12 @@ function ReportView({ report, readingLarge, setReadingLarge }) {
 
 export default function App() {
   const [reports,setReports]=useState([]), [errors,setErrors]=useState([]), [selected,setSelected]=useState('')
-  const [query,setQuery]=useState(''), [filter,setFilter]=useState('all'), [online,setOnline]=useState(false), [updated,setUpdated]=useState(0)
+  const [query,setQuery]=useState(''), [filter,setFilter]=useState('all'), [reportType,setReportType]=useState('sector'), [online,setOnline]=useState(false), [updated,setUpdated]=useState(0)
   const [readingLarge,setReadingLarge]=useState(()=>localStorage.getItem('reading-size')==='large')
-  const load = async () => { const res=await fetch('/api/reports'); const data=await res.json(); setReports(data.reports||[]); setErrors(data.errors||[]); setSelected(value=>data.reports?.some(r=>r.id===value)?value:(data.reports?.[0]?.id||'')); setUpdated(Date.now()) }
+  const load = async () => { const res=await fetch('/api/reports'); const data=await res.json(), next=data.reports||[]; setReports(next); setErrors(data.errors||[]); setSelected(value=>next.some(r=>r.id===value)?value:(next.find(r=>!isStockReport(r))?.id||next[0]?.id||'')); setUpdated(Date.now()) }
   useEffect(()=>{ load().catch(()=>setOnline(false)); const events=new EventSource('/api/events'); events.addEventListener('connected',()=>setOnline(true)); events.addEventListener('reports-updated',()=>load()); events.onerror=()=>setOnline(false); return()=>events.close() },[])
   const report=useMemo(()=>reports.find(r=>r.id===selected),[reports,selected])
+  const changeReportType=type=>{setReportType(type);setFilter('all');setQuery('');setSelected(reports.find(r=>type==='stock'?isStockReport(r):!isStockReport(r))?.id||'')}
   useEffect(()=>{localStorage.setItem('reading-size',readingLarge?'large':'standard')},[readingLarge])
-  return <div className="app-shell"><Sidebar reports={reports} selected={selected} onSelect={setSelected} query={query} setQuery={setQuery} filter={filter} setFilter={setFilter}/><ReportView key={report?.id||'loading'} report={report} readingLarge={readingLarge} setReadingLarge={setReadingLarge}/><div className={`live-status ${online?'online':''}`}><span/>{online?'实时同步':'正在重连'}<small>{updated?new Date(updated).toLocaleTimeString('zh-CN',{hour12:false}):''}</small></div>{errors.length>0&&<div className="error-toast"><Icon name="alert"/><div><strong>{errors.length} 个报告未载入</strong><span>{errors[0].file} · {errors[0].message}</span></div></div>}</div>
+  return <div className="app-shell"><Sidebar reports={reports} selected={selected} onSelect={setSelected} query={query} setQuery={setQuery} filter={filter} setFilter={setFilter} reportType={reportType} onTypeChange={changeReportType}/><ReportView key={report?.id||'loading'} report={report} readingLarge={readingLarge} setReadingLarge={setReadingLarge}/><div className={`live-status ${online?'online':''}`}><span/>{online?'实时同步':'正在重连'}<small>{updated?new Date(updated).toLocaleTimeString('zh-CN',{hour12:false}):''}</small></div>{errors.length>0&&<div className="error-toast"><Icon name="alert"/><div><strong>{errors.length} 个报告未载入</strong><span>{errors[0].file} · {errors[0].message}</span></div></div>}</div>
 }
