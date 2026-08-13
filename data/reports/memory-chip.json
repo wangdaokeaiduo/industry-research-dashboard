@@ -6265,5 +6265,66 @@
     "TrendForce 20260202：https://www.trendforce.com/presscenter/news/20260202-12911.html",
     "Samsung Electronics 20260212：https://news.samsung.com/global/samsung-ships-industry-first-commercial-hbm4-with-ultimate-performance-for-ai-computing",
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260812提取"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-12",
+    "verdict": "扩张—价格加速，但K线放量确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-12，4/6项条件达成。主要缺口：消费终端同步改善（PC和手机受存储涨价挤压，需求分化；标准：出货与存储搭载量同步增长）；K线放量确认（篮子402.13，量比0.73；标准：放量突破413.91）",
+    "checks": [
+      {
+        "name": "DRAM合约价持续上涨",
+        "dimension": "价格",
+        "current": "2026Q2预计环比+58%至63%",
+        "threshold": "连续两个季度上涨且非单一规格驱动",
+        "status": "met",
+        "trend": "up",
+        "source": "TrendForce 2026-03-31"
+      },
+      {
+        "name": "NAND合约价持续上涨",
+        "dimension": "价格",
+        "current": "2026Q2预计环比+70%至75%",
+        "threshold": "企业级与通用产品价格共同上涨",
+        "status": "met",
+        "trend": "up",
+        "source": "TrendForce 2026-03-31"
+      },
+      {
+        "name": "位元供需保持紧张",
+        "dimension": "供需",
+        "current": "Micron预计DRAM/NAND紧张延续至2026年以后",
+        "threshold": "行业位元需求不低于供给且库存继续下降",
+        "status": "met",
+        "trend": "up",
+        "source": "Micron FQ2 2026"
+      },
+      {
+        "name": "消费终端同步改善",
+        "dimension": "需求",
+        "current": "PC和手机受存储涨价挤压，需求分化",
+        "threshold": "出货与存储搭载量同步增长",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Samsung 2026Q1"
+      },
+      {
+        "name": "A股盈利兑现",
+        "dimension": "盈利",
+        "current": "样本收入/净利同比中位数136.26%/522.79%",
+        "threshold": "多数样本收入利润毛利率同步改善",
+        "status": "met",
+        "trend": "up",
+        "source": "Tushare fina_indicator/公司定期报告"
+      },
+      {
+        "name": "K线放量确认",
+        "dimension": "技术",
+        "current": "篮子402.13，量比0.73",
+        "threshold": "放量突破413.91",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Tushare前复权5股等权篮子"
+      }
+    ]
+  }
 }

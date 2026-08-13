@@ -6204,5 +6204,57 @@
     "国家统计局 20260715：https://www.stats.gov.cn/zwfwck/sjfb/202607/t20260715_1964128.html",
     "国家发展改革委/国家能源局 20251217：https://zfxxgk.ndrc.gov.cn/web/iteminfo.jsp?id=20581",
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260812提取"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-12",
+    "verdict": "需求扩张—供给更快，但K线放量确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-12，1/5项条件达成。主要缺口：利用小时企稳（H1平均1392小时，同比-113小时；标准：同比降幅连续收窄并转正）；清洁电源电量增长（6月水电+4.8%、核电+8.5%、太阳能+14.2%，风电-5.6%；标准：主要清洁电源发电量多数保持正增长）",
+    "checks": [
+      {
+        "name": "用电需求保持中高速增长",
+        "dimension": "需求",
+        "current": "2026H1全社会用电量同比+5.3%",
+        "threshold": "连续两个季度≥5%",
+        "status": "met",
+        "trend": "up",
+        "source": "国家能源局 2026-07-17"
+      },
+      {
+        "name": "利用小时企稳",
+        "dimension": "供需",
+        "current": "H1平均1392小时，同比-113小时",
+        "threshold": "同比降幅连续收窄并转正",
+        "status": "unmet",
+        "trend": "down",
+        "source": "国家能源局 2026-07-22"
+      },
+      {
+        "name": "清洁电源电量增长",
+        "dimension": "结构",
+        "current": "6月水电+4.8%、核电+8.5%、太阳能+14.2%，风电-5.6%",
+        "threshold": "主要清洁电源发电量多数保持正增长",
+        "status": "partial",
+        "trend": "up",
+        "source": "国家统计局 2026-07-15"
+      },
+      {
+        "name": "上市公司盈利兑现",
+        "dimension": "盈利",
+        "current": "样本收入/净利同比中位数-6.27%/-9.88%",
+        "threshold": "多数样本利润与经营现金流同步改善",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Tushare/公司定期报告"
+      },
+      {
+        "name": "K线放量确认",
+        "dimension": "技术",
+        "current": "篮子108.37，量比0.50",
+        "threshold": "突破111.68且量比≥1.2",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Tushare前复权6股等权篮子"
+      }
+    ]
+  }
 }

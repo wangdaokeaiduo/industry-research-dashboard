@@ -6253,5 +6253,57 @@
     "国家医保局 20250420：https://www.nhsa.gov.cn/art/2025/4/20/art_52_16312.html",
     "国家医保局门诊统筹政策：https://www.nhsa.gov.cn/art/2023/2/15/art_104_10166.html",
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260812提取"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-12",
+    "verdict": "规范化出清—磨底，但K线放量确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-12，0/5项条件达成。主要缺口：处方与医保支付流向药店（门诊统筹、双通道和电子处方持续推进；标准：统筹收入占比与处方客流连续提升）；同店销售恢复（行业统一高频口径缺失；标准：多数样本同店销售连续两个季度正增长）",
+    "checks": [
+      {
+        "name": "处方与医保支付流向药店",
+        "dimension": "需求",
+        "current": "门诊统筹、双通道和电子处方持续推进",
+        "threshold": "统筹收入占比与处方客流连续提升",
+        "status": "partial",
+        "trend": "up",
+        "source": "国家医保局"
+      },
+      {
+        "name": "同店销售恢复",
+        "dimension": "经营",
+        "current": "行业统一高频口径缺失",
+        "threshold": "多数样本同店销售连续两个季度正增长",
+        "status": "unmet",
+        "trend": "flat",
+        "source": "公司定期报告待核验"
+      },
+      {
+        "name": "价格与毛利率企稳",
+        "dimension": "价格",
+        "current": "医保与跨渠道比价约束增强",
+        "threshold": "毛利率不再下降且品类结构改善",
+        "status": "partial",
+        "trend": "flat",
+        "source": "国务院药价机制意见/公司财报"
+      },
+      {
+        "name": "盈利和现金流改善",
+        "dimension": "盈利",
+        "current": "样本收入/净利同比中位数0.25%/9.83%",
+        "threshold": "多数样本收入、利润、经营现金流同步增长",
+        "status": "partial",
+        "trend": "up",
+        "source": "Tushare fina_indicator/公司定期报告"
+      },
+      {
+        "name": "K线放量确认",
+        "dimension": "技术",
+        "current": "篮子61.56，量比2.06",
+        "threshold": "放量突破65.92",
+        "status": "partial",
+        "trend": "up",
+        "source": "Tushare前复权5股等权篮子"
+      }
+    ]
+  }
 }

@@ -6133,5 +6133,57 @@
     "TrendForce 20260518：https://www.trendforce.com/presscenter/news/20260518-13046.html",
     "TrendForce 20260205：https://www.trendforce.com/presscenter/news/20260205-12914.html",
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，2026-08-11提取"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-10",
+    "verdict": "结构性复苏—高端趋紧，但K线放量确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-10，2/5项条件达成。主要缺口：MLCC价格企稳回升（整体平均降幅收窄，部分厂商提价6%–13%；标准：连续两个季度不再降价并出现扩散提价）；消费电子需求同步改善（手机、笔电需求仍偏弱；标准：主要终端出货与补库共同回升）",
+    "checks": [
+      {
+        "name": "高端MLCC订单持续大于出货",
+        "dimension": "需求",
+        "current": "主要日、韩厂商BB Ratio约1.25–1.31",
+        "threshold": "BB Ratio连续高于1",
+        "status": "met",
+        "trend": "up",
+        "source": "TrendForce 2026-07-06"
+      },
+      {
+        "name": "MLCC价格企稳回升",
+        "dimension": "价格",
+        "current": "整体平均降幅收窄，部分厂商提价6%–13%",
+        "threshold": "连续两个季度不再降价并出现扩散提价",
+        "status": "partial",
+        "trend": "up",
+        "source": "TrendForce 2026-05-18"
+      },
+      {
+        "name": "消费电子需求同步改善",
+        "dimension": "需求",
+        "current": "手机、笔电需求仍偏弱",
+        "threshold": "主要终端出货与补库共同回升",
+        "status": "unmet",
+        "trend": "flat",
+        "source": "TrendForce 2026-02-05"
+      },
+      {
+        "name": "A股样本盈利改善",
+        "dimension": "盈利",
+        "current": "2026Q1收入/净利同比中位数22.52%/41.59%",
+        "threshold": "多数样本收入利润同步正增长",
+        "status": "met",
+        "trend": "up",
+        "source": "Tushare fina_indicator/公司定期报告"
+      },
+      {
+        "name": "K线放量确认",
+        "dimension": "技术",
+        "current": "篮子302.62，量比1.29",
+        "threshold": "放量突破306.58",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Tushare前复权5股等权篮子"
+      }
+    ]
+  }
 }

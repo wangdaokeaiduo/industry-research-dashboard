@@ -6275,5 +6275,57 @@
   "dataGaps": [
     "800G/1.6T全行业出货量缺少统一官方口径",
     "客户订单金额多为商业秘密，使用财报、盈利预测与存货周转交叉验证"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-10",
+    "verdict": "景气扩张—估值消化，但价格与量能确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-10，3/5项条件达成。主要缺口：估值由盈利消化（PE-TTM中位数112.02倍；标准：盈利上修且PE不继续扩张）；价格与量能确认（篮子893.96；MA20 981.00；量比1.06；标准：放量站上995.07）",
+    "checks": [
+      {
+        "name": "海外AI资本开支持续扩张",
+        "dimension": "需求",
+        "current": "微软约1900亿美元；Alphabet 1750–1850亿美元",
+        "threshold": "年度指引维持增长",
+        "status": "met",
+        "trend": "up",
+        "source": "微软与Alphabet投资者关系官网"
+      },
+      {
+        "name": "样本收入继续增长",
+        "dimension": "盈利",
+        "current": "2026Q1收入同比中位数40.82%",
+        "threshold": "多数样本保持正增长",
+        "status": "met",
+        "trend": "up",
+        "source": "Tushare fina_indicator / 公司定期报告"
+      },
+      {
+        "name": "样本利润兑现",
+        "dimension": "盈利",
+        "current": "2026Q1净利润同比中位数59.76%",
+        "threshold": "利润增速不低于收入增速",
+        "status": "met",
+        "trend": "up",
+        "source": "Tushare fina_indicator / 公司定期报告"
+      },
+      {
+        "name": "估值由盈利消化",
+        "dimension": "估值",
+        "current": "PE-TTM中位数112.02倍",
+        "threshold": "盈利上修且PE不继续扩张",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Tushare daily_basic"
+      },
+      {
+        "name": "价格与量能确认",
+        "dimension": "技术",
+        "current": "篮子893.96；MA20 981.00；量比1.06",
+        "threshold": "放量站上995.07",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Tushare daily，5股等权篮子"
+      }
+    ]
+  }
 }

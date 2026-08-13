@@ -6251,5 +6251,57 @@
     "NMPA 20251014：https://english.nmpa.gov.cn/2025-10/14/c_1132769.htm",
     "NMPA 2026新版药物临床试验质量管理规范：https://english.nmpa.gov.cn/2026-06/12/c_1190202.htm",
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260810提取"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-10",
+    "verdict": "产业上行—价值重估，但K线放量确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-10，2/5项条件达成。主要缺口：研发活动全面扩张（中国总部企业临床试验启动数2025年下降；标准：I–III期启动数和融资同步回升）；上市公司盈利与现金流改善（样本收入/净利同比中位数31.02%/229.06%；标准：多数样本收入增长且经营现金流/现金储备改善）",
+    "checks": [
+      {
+        "name": "中国创新资产获得全球验证",
+        "dimension": "需求",
+        "current": "中国相关跨境交易创历史新高",
+        "threshold": "BD数量、首付款与全球多中心开发持续扩散",
+        "status": "met",
+        "trend": "up",
+        "source": "IQVIA Global R&D Trends 2026"
+      },
+      {
+        "name": "监管继续提高研发效率",
+        "dimension": "政策",
+        "current": "符合条件的创新药IND进入30个工作日审评路径",
+        "threshold": "审评提速并支持全球同步开发",
+        "status": "met",
+        "trend": "up",
+        "source": "NMPA 2025-10-14"
+      },
+      {
+        "name": "研发活动全面扩张",
+        "dimension": "供给",
+        "current": "中国总部企业临床试验启动数2025年下降",
+        "threshold": "I–III期启动数和融资同步回升",
+        "status": "partial",
+        "trend": "flat",
+        "source": "IQVIA 2026"
+      },
+      {
+        "name": "上市公司盈利与现金流改善",
+        "dimension": "盈利",
+        "current": "样本收入/净利同比中位数31.02%/229.06%",
+        "threshold": "多数样本收入增长且经营现金流/现金储备改善",
+        "status": "partial",
+        "trend": "up",
+        "source": "Tushare fina_indicator/公司定期报告"
+      },
+      {
+        "name": "K线放量确认",
+        "dimension": "技术",
+        "current": "篮子176.65，量比1.44",
+        "threshold": "放量突破179.79",
+        "status": "partial",
+        "trend": "up",
+        "source": "Tushare前复权5股等权篮子"
+      }
+    ]
+  }
 }

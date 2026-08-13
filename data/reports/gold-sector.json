@@ -6226,5 +6226,57 @@
     "USGS 20260527：https://pubs.usgs.gov/publication/mcs2026",
     "World Bank Commodity Markets Outlook April 2026：https://thedocs.worldbank.org/en/doc/f3138644a1e8e2bb631399ae11d6c408-0050012026/original/CMO-April-2026.pdf",
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260810提取"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-10",
+    "verdict": "牛市高位—强势震荡与量价初步共振，可以小仓试错",
+    "reason": "截至2026-08-10，3/5项条件达成。主要缺口：实物首饰需求企稳（Q1首饰消费同比-23%；标准：同比降幅连续收窄）；K线放量确认（篮子243.00，量比1.12；标准：放量突破240.60）",
+    "checks": [
+      {
+        "name": "央行维持结构性净买入",
+        "dimension": "需求",
+        "current": "2026Q1净购金244吨，同比+3%",
+        "threshold": "季度净购金保持在五年均值附近或以上",
+        "status": "met",
+        "trend": "up",
+        "source": "WGC 2026-04-29"
+      },
+      {
+        "name": "投资需求保持净流入",
+        "dimension": "需求",
+        "current": "Q1 ETF增加62吨、金条金币474吨",
+        "threshold": "ETF与金条金币合计需求保持正贡献",
+        "status": "met",
+        "trend": "up",
+        "source": "WGC Gold Demand Trends Q1 2026"
+      },
+      {
+        "name": "实物首饰需求企稳",
+        "dimension": "需求",
+        "current": "Q1首饰消费同比-23%",
+        "threshold": "同比降幅连续收窄",
+        "status": "unmet",
+        "trend": "down",
+        "source": "WGC 2026Q1"
+      },
+      {
+        "name": "矿企盈利兑现",
+        "dimension": "盈利",
+        "current": "样本收入/净利同比中位数37.41%/100.89%",
+        "threshold": "多数样本收入、利润及现金流同步改善",
+        "status": "met",
+        "trend": "up",
+        "source": "Tushare fina_indicator/公司定期报告"
+      },
+      {
+        "name": "K线放量确认",
+        "dimension": "技术",
+        "current": "篮子243.00，量比1.12",
+        "threshold": "放量突破240.60",
+        "status": "partial",
+        "trend": "up",
+        "source": "Tushare前复权5股等权篮子"
+      }
+    ]
+  }
 }

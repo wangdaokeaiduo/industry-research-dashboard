@@ -4300,5 +4300,66 @@
     }
   },
   "decisionLevel": "wait_trigger",
-  "dataGaps": []
+  "dataGaps": [],
+  "tradeDecision": {
+    "asOf": "2026-08-10",
+    "verdict": "需求扩张—盈利修复分化，但技术趋势确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-10，2/6项条件达成。主要缺口：人均旅游消费改善（Q1花费+2.9%低于人次+6.0%；标准：花费增速连续两个季度高于人次增速）；酒店RevPAR普遍转正（首旅Q1 RevPAR+1.7%，行业公司仍分化；标准：核心酒店集团连续两季RevPAR正增长）",
+    "checks": [
+      {
+        "name": "国内旅游需求持续增长",
+        "dimension": "需求",
+        "current": "2026Q1人次+6.0%，五一+3.6%，端午+4.4%",
+        "threshold": "连续两个季度/假期人次保持正增长",
+        "status": "met",
+        "trend": "up",
+        "source": "文化和旅游部，2026Q1及假期数据"
+      },
+      {
+        "name": "人均旅游消费改善",
+        "dimension": "价格",
+        "current": "Q1花费+2.9%低于人次+6.0%",
+        "threshold": "花费增速连续两个季度高于人次增速",
+        "status": "unmet",
+        "trend": "down",
+        "source": "文化和旅游部，2026Q1"
+      },
+      {
+        "name": "酒店RevPAR普遍转正",
+        "dimension": "酒店盈利",
+        "current": "首旅Q1 RevPAR+1.7%，行业公司仍分化",
+        "threshold": "核心酒店集团连续两季RevPAR正增长",
+        "status": "partial",
+        "trend": "up",
+        "source": "首旅、锦江2026Q1报告"
+      },
+      {
+        "name": "入境游高增长",
+        "dimension": "结构需求",
+        "current": "H1外国人入境2291万人次，同比+20.4%",
+        "threshold": "外国人入境维持双位数增长",
+        "status": "met",
+        "trend": "up",
+        "source": "国家移民管理局，2026H1"
+      },
+      {
+        "name": "上市公司利润扩散",
+        "dimension": "盈利",
+        "current": "酒店改善，演艺、免税与景区表现分化",
+        "threshold": "多数样本利润和经营现金流同步增长",
+        "status": "partial",
+        "trend": "flat",
+        "source": "2025年报与2026Q1财报"
+      },
+      {
+        "name": "技术趋势确认",
+        "dimension": "市场定价",
+        "current": "篮子77.01，MA20/60/145=74.08/74.73/85.88",
+        "threshold": "放量突破83.03并回踩不破",
+        "status": "partial",
+        "trend": "up",
+        "source": "腾讯证券前复权行情，截至2026-08-10"
+      }
+    ]
+  }
 }

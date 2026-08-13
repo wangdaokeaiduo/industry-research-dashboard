@@ -1175,5 +1175,75 @@
     }
   },
   "decisionLevel": "wait_trigger",
-  "dataGaps": []
+  "dataGaps": [],
+  "tradeDecision": {
+    "asOf": "2026-08-10",
+    "verdict": "景气扩张—头部分化，但中期趋势反转未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-10，3/7项条件达成。主要缺口：用户与付费质量改善（用户6.84亿，同比+0.82%；增长主要依赖ARPU；标准：收入增速持续高于用户增速且利润同步改善）；出海恢复高增长（2026Q1自研游戏海外收入63.31亿美元，同比+31.76%；标准：连续两个季度保持双位数增长）",
+    "checks": [
+      {
+        "name": "国内市场保持双位数增长",
+        "dimension": "需求",
+        "current": "2026H1收入1884.5亿元，同比+12.17%",
+        "threshold": "连续两个统计期收入同比>10%",
+        "status": "met",
+        "trend": "up",
+        "source": "中国音数协游戏工委，2026-07-30"
+      },
+      {
+        "name": "用户与付费质量改善",
+        "dimension": "变现",
+        "current": "用户6.84亿，同比+0.82%；增长主要依赖ARPU",
+        "threshold": "收入增速持续高于用户增速且利润同步改善",
+        "status": "partial",
+        "trend": "up",
+        "source": "中国游戏产业报告，2026H1"
+      },
+      {
+        "name": "版号供给常态化",
+        "dimension": "政策供给",
+        "current": "截至7月累计1147款；7月197款",
+        "threshold": "月度持续发放且重点产品可预期",
+        "status": "met",
+        "trend": "up",
+        "source": "国家新闻出版署；游戏日报汇总"
+      },
+      {
+        "name": "出海恢复高增长",
+        "dimension": "海外",
+        "current": "2026Q1自研游戏海外收入63.31亿美元，同比+31.76%",
+        "threshold": "连续两个季度保持双位数增长",
+        "status": "partial",
+        "trend": "up",
+        "source": "游戏工委数据，新华社2026-05-07转引"
+      },
+      {
+        "name": "利润修复扩散",
+        "dimension": "盈利",
+        "current": "头部与部分老牌公司利润改善，但18家A股公司分化明显",
+        "threshold": "多数样本公司利润增速高于收入且经营现金流改善",
+        "status": "partial",
+        "trend": "up",
+        "source": "上市公司2026Q1财报汇总"
+      },
+      {
+        "name": "估值具备安全边际",
+        "dimension": "定价",
+        "current": "中证动漫游戏指数PE 19.82倍",
+        "threshold": "低于近年中枢且盈利预期停止下修",
+        "status": "met",
+        "trend": "up",
+        "source": "中证指数，2026-07-31"
+      },
+      {
+        "name": "中期趋势反转",
+        "dimension": "技术",
+        "current": "8股篮子站上MA20/60/90，仍低于MA120/145/250",
+        "threshold": "放量突破212.59并回踩不破",
+        "status": "partial",
+        "trend": "up",
+        "source": "AkShare前复权行情计算，截至2026-08-10"
+      }
+    ]
+  }
 }

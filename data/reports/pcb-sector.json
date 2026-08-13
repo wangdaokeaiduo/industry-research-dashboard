@@ -6295,5 +6295,57 @@
     "TrendForce 20251120：https://www.trendforce.com/presscenter/news/20251120-12790.html",
     "TrendForce AI服务器出货展望：https://www.trendforce.com/presscenter/news/20251030-12762.html",
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260812提取"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-12",
+    "verdict": "结构性扩张—高阶趋紧，但K线放量确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-12，3/5项条件达成。主要缺口：高端材料供给缓解（T-glass与HVLP4紧缺、CCL多次涨价；标准：新增产能投产且交期、价格企稳）；K线放量确认（篮子873.46，量比0.89；标准：放量突破909.51）",
+    "checks": [
+      {
+        "name": "AI服务器需求持续增长",
+        "dimension": "需求",
+        "current": "TrendForce预计2026年AI服务器出货增长超过20%",
+        "threshold": "CSP资本开支与AI服务器出货保持双位数增长",
+        "status": "met",
+        "trend": "up",
+        "source": "TrendForce 2025-10-30/2026服务器报告"
+      },
+      {
+        "name": "PCB价值量持续升级",
+        "dimension": "产品",
+        "current": "Rubin高阶板最高104层、单机价值量超过翻倍",
+        "threshold": "层数、HDI面积和低损耗材料用量同步提升",
+        "status": "met",
+        "trend": "up",
+        "source": "TrendForce 2025-11-20"
+      },
+      {
+        "name": "高端材料供给缓解",
+        "dimension": "供给",
+        "current": "T-glass与HVLP4紧缺、CCL多次涨价",
+        "threshold": "新增产能投产且交期、价格企稳",
+        "status": "unmet",
+        "trend": "down",
+        "source": "TrendForce 2026-05-06"
+      },
+      {
+        "name": "A股盈利兑现",
+        "dimension": "盈利",
+        "current": "样本收入/净利同比中位数37.90%/62.90%",
+        "threshold": "多数样本收入、利润、毛利率同步改善",
+        "status": "met",
+        "trend": "up",
+        "source": "Tushare fina_indicator/公司定期报告"
+      },
+      {
+        "name": "K线放量确认",
+        "dimension": "技术",
+        "current": "篮子873.46，量比0.89",
+        "threshold": "放量突破909.51",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Tushare前复权5股等权篮子"
+      }
+    ]
+  }
 }

@@ -1112,5 +1112,75 @@
     }
   },
   "decisionLevel": "wait_trigger",
-  "dataGaps": []
+  "dataGaps": [],
+  "tradeDecision": {
+    "asOf": "2026-08-10",
+    "verdict": "技术条件已有改善，但商品猪供给转为收缩未达成，继续观察",
+    "reason": "截至2026-08-10，1/7项条件达成。主要缺口：商品猪供给转为收缩（上半年出栏3.7246亿头，同比+1.7%；标准：出栏或猪肉产量同比转负）；猪肉产量下降（3119万吨，同比+3.3%；标准：同比连续转负）",
+    "checks": [
+      {
+        "name": "能繁母猪降至合理区间",
+        "dimension": "领先供给",
+        "current": "3780万头，同比-6.5%；为正常保有量100.8%",
+        "threshold": "接近3750万头且不快速补栏",
+        "status": "met",
+        "trend": "down",
+        "source": "国家统计局，2026年二季度末"
+      },
+      {
+        "name": "商品猪供给转为收缩",
+        "dimension": "同步供给",
+        "current": "上半年出栏3.7246亿头，同比+1.7%",
+        "threshold": "出栏或猪肉产量同比转负",
+        "status": "unmet",
+        "trend": "up",
+        "source": "国家统计局，2026年上半年"
+      },
+      {
+        "name": "猪肉产量下降",
+        "dimension": "同步供给",
+        "current": "3119万吨，同比+3.3%",
+        "threshold": "同比连续转负",
+        "status": "unmet",
+        "trend": "up",
+        "source": "国家统计局，2026年上半年"
+      },
+      {
+        "name": "生猪价格形成持续反转",
+        "dimension": "价格",
+        "current": "10.48元/kg，周环比+4.2%，同比-29.9%",
+        "threshold": "连续4周抬升并修复养殖现金成本",
+        "status": "partial",
+        "trend": "up",
+        "source": "农业农村部，采集日2026-07-02"
+      },
+      {
+        "name": "仔猪价格止跌",
+        "dimension": "领先价格",
+        "current": "21.64元/kg，周环比-0.1%，同比-40.1%",
+        "threshold": "连续数周环比上涨且补栏不失控",
+        "status": "unmet",
+        "trend": "down",
+        "source": "农业农村部，采集日2026-07-02"
+      },
+      {
+        "name": "行业利润修复",
+        "dimension": "利润",
+        "current": "区域猪粮比仍偏低，行业处亏损压力区",
+        "threshold": "自繁自养利润持续转正",
+        "status": "unmet",
+        "trend": "flat",
+        "source": "官方价格与猪粮比代理判断"
+      },
+      {
+        "name": "板块中期趋势反转",
+        "dimension": "市场定价",
+        "current": "站上MA20/MA60，仍低于MA120/MA250",
+        "threshold": "突破0.382回撤位并回踩缩量",
+        "status": "partial",
+        "trend": "up",
+        "source": "5股等权篮子，截至2026-08-10"
+      }
+    ]
+  }
 }

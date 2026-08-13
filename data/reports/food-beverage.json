@@ -6289,5 +6289,57 @@
     "国家统计局 20260715：https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964129.html",
     "国家统计局 20260709：https://www.stats.gov.cn/sj/zxfb/202607/t20260709_1964084.html",
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260812提取"
-  ]
+  ],
+  "tradeDecision": {
+    "asOf": "2026-08-12",
+    "verdict": "弱复苏—结构分化，但K线放量确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-12，2/5项条件达成。主要缺口：行业价格企稳（6月食品烟酒及在外餐饮价格同比-0.8%；标准：同比转正且非季节性连续改善）；酒饮料利润止跌（上半年利润同比-17.7%；标准：利润降幅连续收窄并转正）",
+    "checks": [
+      {
+        "name": "居民食品饮料需求保持增长",
+        "dimension": "需求",
+        "current": "食品烟酒人均支出+4.2%，粮油食品零售+7.4%",
+        "threshold": "支出与零售连续两个季度快于总社零",
+        "status": "met",
+        "trend": "up",
+        "source": "国家统计局 2026-07-15"
+      },
+      {
+        "name": "行业价格企稳",
+        "dimension": "价格",
+        "current": "6月食品烟酒及在外餐饮价格同比-0.8%",
+        "threshold": "同比转正且非季节性连续改善",
+        "status": "unmet",
+        "trend": "down",
+        "source": "国家统计局 2026-07-09"
+      },
+      {
+        "name": "酒饮料利润止跌",
+        "dimension": "盈利",
+        "current": "上半年利润同比-17.7%",
+        "threshold": "利润降幅连续收窄并转正",
+        "status": "unmet",
+        "trend": "down",
+        "source": "国家统计局 2026-07-27"
+      },
+      {
+        "name": "上市公司盈利扩散",
+        "dimension": "盈利",
+        "current": "样本收入/净利增速中位数12.23%/15.84%",
+        "threshold": "多数样本收入、利润和经营现金流同步改善",
+        "status": "met",
+        "trend": "up",
+        "source": "Tushare fina_indicator/公司定期报告"
+      },
+      {
+        "name": "K线放量确认",
+        "dimension": "技术",
+        "current": "篮子97.83，20日量比0.71",
+        "threshold": "收盘突破100.96且量比≥1.2",
+        "status": "partial",
+        "trend": "flat",
+        "source": "Tushare前复权6股等权篮子"
+      }
+    ]
+  }
 }

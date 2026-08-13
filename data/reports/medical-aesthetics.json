@@ -3368,5 +3368,57 @@
     }
   },
   "decisionLevel": "no_trade",
-  "dataGaps": []
+  "dataGaps": [],
+  "tradeDecision": {
+    "asOf": "2026-08-10",
+    "verdict": "景气磨底—等待产品周期反转，但盈利质量反转未达成，当前不交易",
+    "reason": "截至2026-08-10，1/5项条件达成。主要缺口：终端需求恢复（市场规模增长，但上市公司收入未同步；标准：龙头收入连续两季同比>10%）；新品形成第二增长曲线（重组胶原蛋白、再生材料等处于放量/导入期；标准：新品收入占比提升且不靠明显降价）",
+    "checks": [
+      {
+        "name": "终端需求恢复",
+        "dimension": "需求",
+        "current": "市场规模增长，但上市公司收入未同步",
+        "threshold": "龙头收入连续两季同比>10%",
+        "status": "partial",
+        "trend": "flat",
+        "source": "2025年报与第三方行业统计"
+      },
+      {
+        "name": "新品形成第二增长曲线",
+        "dimension": "产品",
+        "current": "重组胶原蛋白、再生材料等处于放量/导入期",
+        "threshold": "新品收入占比提升且不靠明显降价",
+        "status": "partial",
+        "trend": "up",
+        "source": "公司年报与注册信息"
+      },
+      {
+        "name": "盈利质量反转",
+        "dimension": "利润",
+        "current": "爱美客、昊海生科2025利润明显下降",
+        "threshold": "利润增速连续两季高于收入，经营现金流改善",
+        "status": "unmet",
+        "trend": "down",
+        "source": "2025年报"
+      },
+      {
+        "name": "合规集中度提升",
+        "dimension": "监管",
+        "current": "十一部门综合监管与UDI追溯持续推进",
+        "threshold": "正规机构与持证产品份额持续提升",
+        "status": "met",
+        "trend": "up",
+        "source": "市场监管总局、国家药监局"
+      },
+      {
+        "name": "技术趋势确认",
+        "dimension": "交易",
+        "current": "篮子60.50；MA20/60/145=67.34/74.40/81.64",
+        "threshold": "放量突破97.63且回踩不破",
+        "status": "unmet",
+        "trend": "flat",
+        "source": "腾讯证券前复权日线，截至2026-08-10"
+      }
+    ]
+  }
 }
