@@ -2,9 +2,9 @@
   "id": "mlcc-sector",
   "industry": "MLCC板块",
   "category": "mixed",
-  "asOf": "2026-08-10",
-  "updatedAt": "2026-08-11T05:47:52.455Z",
-  "decisionLevel": "wait_trigger",
+  "asOf": "2026-08-11",
+  "updatedAt": "2026-08-13T05:15:54.573Z",
+  "decisionLevel": "trial",
   "dataGaps": [
     "A股样本并非全部为纯MLCC业务，篮子同时包含电子陶瓷与上游载带暴露",
     "全球厂商产能利用率和渠道库存缺少统一免费口径"
@@ -27,23 +27,23 @@
         "label": "估值吸引力",
         "value": "偏低",
         "score": 42,
-        "comment": "PE-TTM中位数96.97倍"
+        "comment": "PE-TTM中位数95.01倍"
       },
       {
         "label": "技术位置",
-        "value": "等待修复",
-        "score": 48,
-        "comment": "篮子302.62，MA60 303.79"
+        "value": "中长期偏强",
+        "score": 68,
+        "comment": "篮子316.77，MA60 305.79"
       },
       {
         "label": "综合评级",
-        "value": "等待触发",
-        "score": 54,
+        "value": "小仓试错",
+        "score": 64,
         "comment": "高端景气真实，但消费端与估值仍需验证"
       }
     ],
     "coreConflict": "AI服务器带动高端规格紧缺和价格改善，但消费电子需求仍弱，A股公司能否获得高端产品份额是利润兑现关键。",
-    "action": "等待放量突破与盈利改善共同确认"
+    "action": "允许小仓试错，等待回踩确认"
   },
   "weeklyChanges": {
     "period": "首次建立",
@@ -89,9 +89,9 @@
   },
   "summary": {
     "stage": "结构性复苏—高端趋紧",
-    "rating": "等待触发",
+    "rating": "小仓试错",
     "confidence": "中高",
-    "conclusion": "MLCC已不是单纯库存反弹，高端规格出现结构性紧缺；但A股映射纯度和消费端需求仍有限。等权篮子302.62，MA20/60/145=260.95/303.79/216.20，量比1.29倍。",
+    "conclusion": "MLCC已不是单纯库存反弹，高端规格出现结构性紧缺；但A股映射纯度和消费端需求仍有限。等权篮子316.77，MA20/60/145=261.58/305.79/217.54，量比1.58倍。",
     "evidence": [
       "主要日、韩厂商2026年6月BB Ratio达疫情后高位",
       "AI服务器单机MLCC用量和规格显著提升",
@@ -150,10 +150,10 @@
     {
       "name": "K线放量确认",
       "dimension": "技术",
-      "current": "篮子302.62，量比1.29",
-      "threshold": "放量突破306.58",
-      "status": "partial",
-      "trend": "flat",
+      "current": "篮子316.77，量比1.58",
+      "threshold": "放量突破311.11",
+      "status": "met",
+      "trend": "up",
       "source": "Tushare前复权5股等权篮子"
     }
   ],
@@ -212,26 +212,25 @@
     },
     {
       "label": "PE-TTM中位数",
-      "value": "96.97",
+      "value": "95.01",
       "unit": "倍",
-      "change": "截至20260810",
+      "change": "截至20260811",
       "direction": "down",
       "series": [
-        232.3052,
-        88.0834,
-        96.9705,
-        41.9476,
-        143.4177
+        247.9303,
+        90.2699,
+        95.0138,
+        42.6828,
+        157.7537
       ]
     },
     {
       "label": "等权篮子",
-      "value": "302.62",
+      "value": "316.77",
       "unit": "点",
-      "change": "量比1.29倍",
+      "change": "量比1.58倍",
       "direction": "up",
       "series": [
-        304.09434242172114,
         285.6772940131016,
         269.49453841255917,
         246.5622185909846,
@@ -250,7 +249,8 @@
         288.0945521238299,
         290.13703776367777,
         294.0328724592035,
-        302.6214273561851
+        302.6214273561851,
+        316.77135252505684
       ]
     }
   ],
@@ -329,7 +329,7 @@
       "company": "风华高科",
       "ticker": "000636.SZ",
       "driver": "2026Q1营收同比18.90%，净利同比37.14%",
-      "valuation": "PE-TTM 232.31倍；毛利率16.78%",
+      "valuation": "PE-TTM 247.93倍；毛利率16.78%",
       "risk": "业务纯度、客户结构、价格竞争与扩产风险"
     },
     {
@@ -338,7 +338,7 @@
       "company": "三环集团",
       "ticker": "300408.SZ",
       "driver": "2026Q1营收同比46.25%，净利同比48.48%",
-      "valuation": "PE-TTM 88.08倍；毛利率43.49%",
+      "valuation": "PE-TTM 90.27倍；毛利率43.49%",
       "risk": "业务纯度、客户结构、价格竞争与扩产风险"
     },
     {
@@ -347,7 +347,7 @@
       "company": "火炬电子",
       "ticker": "603678.SH",
       "driver": "2026Q1营收同比77.16%，净利同比-62.82%",
-      "valuation": "PE-TTM 96.97倍；毛利率17.58%",
+      "valuation": "PE-TTM 95.01倍；毛利率17.58%",
       "risk": "业务纯度、客户结构、价格竞争与扩产风险"
     },
     {
@@ -356,7 +356,7 @@
       "company": "鸿远电子",
       "ticker": "603267.SH",
       "driver": "2026Q1营收同比-11.98%，净利同比60.00%",
-      "valuation": "PE-TTM 41.95倍；毛利率46.51%",
+      "valuation": "PE-TTM 42.68倍；毛利率46.51%",
       "risk": "业务纯度、客户结构、价格竞争与扩产风险"
     },
     {
@@ -365,7 +365,7 @@
       "company": "洁美科技",
       "ticker": "002859.SZ",
       "driver": "2026Q1营收同比22.52%，净利同比41.59%",
-      "valuation": "PE-TTM 143.42倍；毛利率32.59%",
+      "valuation": "PE-TTM 157.75倍；毛利率32.59%",
       "risk": "业务纯度、客户结构、价格竞争与扩产风险"
     }
   ],
@@ -381,7 +381,7 @@
       "name": "基准",
       "weight": "50%",
       "assumption": "高端强、消费弱，行业结构性复苏",
-      "valuation": "PE围绕样本中位数96.97倍波动",
+      "valuation": "PE围绕样本中位数95.01倍波动",
       "signal": "高端订单维持、消费端不再恶化"
     },
     {
@@ -394,16 +394,16 @@
   ],
   "technical": {
     "instrument": "MLCC产业链5股等权篮子（风华高科/三环集团/火炬电子/鸿远电子/洁美科技）",
-    "timeframe": "日线 · 前复权等权标准化指数 · 620日",
-    "trend": "收盘302.62；MA20/60/90/145=260.95/303.79/258.85/216.20，中长期尚未共振",
-    "volume": "当日成交额2643.27百万元，为20日均额1.29倍",
+    "timeframe": "日线 · 前复权等权标准化指数 · 621日",
+    "trend": "收盘316.77；MA20/60/90/145=261.58/305.79/260.77/217.54，中长期偏强",
+    "volume": "当日成交额3352.40百万元，为20日均额1.58倍",
     "wave": "主计数为底部推动浪或修复浪，备选为区间反弹；跌破失效位转弱。",
     "fibonacci": "近250日高低446.29/106.18，0.382/0.5/0.618回撤为316.37/276.23/236.10",
-    "chan": "以最近20日中枢观察，放量突破306.58为三买候选，跌破257.03失效。",
-    "rating": "等待触发",
-    "riskReward": "0.1 : 1",
-    "trigger": "放量突破306.58，成交额≥20日均额1.2倍",
-    "invalidation": "收盘跌破257.03",
+    "chan": "以最近20日中枢观察，放量突破311.11为三买候选，跌破257.66失效。",
+    "rating": "小仓试错",
+    "riskReward": "-0.1 : 1",
+    "trigger": "放量突破311.11，成交额≥20日均额1.2倍",
+    "invalidation": "收盘跌破257.66",
     "prices": [
       100,
       97.4951782498018,
@@ -1024,7 +1024,8 @@
       288.0945521238299,
       290.13703776367777,
       294.0328724592035,
-      302.6214273561851
+      302.6214273561851,
+      316.77135252505684
     ],
     "volumes": [
       75.1256364,
@@ -1646,7 +1647,8 @@
       2703.1929957149996,
       2584.679150784,
       2612.07029212,
-      2643.2667353029997
+      2643.2667353029997,
+      3352.404097429
     ],
     "ohlc": [
       {
@@ -5988,15 +5990,54 @@
         "high": 309.5598067893765,
         "low": 278.4948571520552,
         "close": 302.6214273561851
+      },
+      {
+        "date": "20260811",
+        "open": 296.8764693067573,
+        "high": 329.0462597074589,
+        "low": 296.222717197897,
+        "close": 316.77135252505684
       }
     ],
-    "volumeUnit": "百万元（5股成交额合计）"
+    "volumeUnit": "百万元（5股成交额合计）",
+    "volumeAverages": [
+      {
+        "days": 5,
+        "average": 2779.1226542701997,
+        "ratio": 1.2062814472322543
+      },
+      {
+        "days": 10,
+        "average": 2655.1078266785,
+        "ratio": 1.262624464341551
+      },
+      {
+        "days": 20,
+        "average": 2121.0669186965997,
+        "ratio": 1.5805272657258074
+      },
+      {
+        "days": 60,
+        "average": 2378.373626109801,
+        "ratio": 1.4095363573772792
+      },
+      {
+        "days": 90,
+        "average": 1764.2430465720897,
+        "ratio": 1.9001940259550376
+      },
+      {
+        "days": 145,
+        "average": 1262.0912894323312,
+        "ratio": 2.656229486328884
+      }
+    ]
   },
   "executionPlan": {
-    "action": "等待价格、量能与盈利共同触发",
-    "trigger": "放量突破306.58且成交额≥20日均额1.2倍；同时价格改善延续",
-    "add": "突破后回踩306.58附近不破，样本毛利率或盈利预测继续改善",
-    "priceInvalidation": "收盘跌破257.03",
+    "action": "可以小仓试错，优先高MLCC业务暴露公司",
+    "trigger": "放量突破311.11且成交额≥20日均额1.2倍；同时价格改善延续",
+    "add": "突破后回踩311.11附近不破，样本毛利率或盈利预测继续改善",
+    "priceInvalidation": "收盘跌破257.66",
     "fundamentalInvalidation": "BB Ratio跌破1、价格重新下降或渠道库存快于终端需求",
     "nextReview": "下一交易周及2026年中报"
   },
@@ -6039,15 +6080,25 @@
     }
   ],
   "marketResearch": {
-    "fullTextStatus": "available",
-    "statusNote": "已接入3份公开MLCC行业专题；不展示个股研报",
-    "period": "20260205—20260706",
-    "reportCount": 3,
-    "institutionCount": 1,
-    "companyForecastSampleCount": 0,
-    "reportScope": "仅MLCC行业供需、价格与策略研究；个股报告不逐条展示",
+    "fullTextStatus": "permission_required",
+    "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
+    "period": "20260415—20260813",
+    "reportCount": 2,
+    "institutionCount": 3,
+    "companyForecastSampleCount": 20,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
     "consensus": "高端AI需求强、消费端分化",
-    "revisionTrend": "行业温度从一季度分化走向二季度价格改善、三季度高端缺货风险上升",
+    "revisionTrend": "代表公司盈利预测样本20条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "commonViews": [
+      "机构观点仅作为预期证据，不替代产业供需和公司财报",
+      "优先观察盈利预测是否连续上修，而不是单篇研报标题"
+    ],
+    "disagreements": [
+      "需求增长能否转化为利润",
+      "当前估值是否已经提前反映乐观预期"
+    ],
+    "integratedConclusion": "高端规格的订单与价格正在改善，但消费端并未全面复苏；需用BB Ratio、价格、样本公司毛利率和板块量价突破共同确认。",
+    "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
     "synthesis": {
       "verdict": "共同确认高端景气，差异主要来自时间阶段与消费端判断",
       "confidence": "摘要级归纳 · 中高置信度",
@@ -6075,9 +6126,101 @@
       "integratedView": "MLCC由高端结构性复苏进入价格改善阶段，但尚不能定义为消费端全面繁荣；A股机会取决于高端份额和利润兑现。",
       "validation": "以BB Ratio、价格、消费终端出货、样本毛利率和K线触发共同验证。"
     },
-    "integratedConclusion": "行业温度中高，高端优于消费；先验证A股盈利映射，再按K线触发执行。",
-    "evidenceCheck": "供需结论已与A股财务、估值和真实前复权篮子交叉检查。",
+    "freeSources": [
+      {
+        "name": "东方财富研报中心",
+        "url": "https://data.eastmoney.com/report/",
+        "type": "research",
+        "typeLabel": "研报索引",
+        "description": "公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。",
+        "coverage": "A股券商研报"
+      },
+      {
+        "name": "券商官方网站研究栏目",
+        "url": "https://www.sac.net.cn/hyfw/hydt/",
+        "type": "research",
+        "typeLabel": "券商公开",
+        "description": "从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。",
+        "coverage": "中国券商公开观点"
+      },
+      {
+        "name": "World Bank Documents & Reports",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。",
+        "coverage": "全球宏观与产业"
+      },
+      {
+        "name": "IMF eLibrary",
+        "url": "https://www.elibrary.imf.org/",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "IMF公开出版物、国别报告、专题研究与金融稳定资料。",
+        "coverage": "全球宏观、金融与政策"
+      },
+      {
+        "name": "McKinsey Insights",
+        "url": "https://www.mckinsey.com/featured-insights",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。",
+        "coverage": "消费、科技、医疗、工业"
+      },
+      {
+        "name": "BCG Publications",
+        "url": "https://www.bcg.com/publications",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "BCG公开行业报告与企业战略研究。",
+        "coverage": "全球行业与竞争格局"
+      },
+      {
+        "name": "Bain Insights",
+        "url": "https://www.bain.com/insights/",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "贝恩公开行业洞察，消费品、零售和技术覆盖较多。",
+        "coverage": "消费、零售、科技"
+      },
+      {
+        "name": "Deloitte Insights",
+        "url": "https://www.deloitte.com/us/en/insights.html",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "德勤公开行业展望、调查和专题分析。",
+        "coverage": "TMT、消费、医疗、制造"
+      },
+      {
+        "name": "巨潮资讯",
+        "url": "https://www.cninfo.com.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "上市公司法定公告与财报，用于核验研报中的经营与财务判断。",
+        "coverage": "A股公司公告"
+      },
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "宏观、消费、工业产量和行业统计的官方来源。",
+        "coverage": "中国官方统计"
+      }
+    ],
     "topReports": [
+      {
+        "date": "20260804",
+        "institution": "华鑫证券",
+        "title": "全球CSP资本开支上修，长鑫存储LPDDR6量产在即：半导体行业周报",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260803",
+        "institution": "浙商证券",
+        "title": "科技成长AI引领，周期价值将修复————机械行业2026年中期策略",
+        "type": "行业研究索引"
+      },
       {
         "date": "20260706",
         "institution": "TrendForce",
@@ -6099,8 +6242,7 @@
         "type": "行业专题",
         "url": "https://www.trendforce.com/presscenter/news/20260205-12914.html"
       }
-    ],
-    "freeSources": []
+    ]
   },
   "scenarios": [
     {
@@ -6135,9 +6277,9 @@
     "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，2026-08-11提取"
   ],
   "tradeDecision": {
-    "asOf": "2026-08-10",
-    "verdict": "结构性复苏—高端趋紧，但K线放量确认未达到交易门槛，当前不交易",
-    "reason": "截至2026-08-10，2/5项条件达成。主要缺口：MLCC价格企稳回升（整体平均降幅收窄，部分厂商提价6%–13%；标准：连续两个季度不再降价并出现扩散提价）；消费电子需求同步改善（手机、笔电需求仍偏弱；标准：主要终端出货与补库共同回升）",
+    "asOf": "2026-08-11",
+    "verdict": "结构性复苏—高端趋紧与量价初步共振，可以小仓试错",
+    "reason": "截至2026-08-11，3/5项条件达成。主要缺口：MLCC价格企稳回升（整体平均降幅收窄，部分厂商提价6%–13%；标准：连续两个季度不再降价并出现扩散提价）；消费电子需求同步改善（手机、笔电需求仍偏弱；标准：主要终端出货与补库共同回升）",
     "checks": [
       {
         "name": "高端MLCC订单持续大于出货",
@@ -6178,10 +6320,10 @@
       {
         "name": "K线放量确认",
         "dimension": "技术",
-        "current": "篮子302.62，量比1.29",
-        "threshold": "放量突破306.58",
-        "status": "partial",
-        "trend": "flat",
+        "current": "篮子316.77，量比1.58",
+        "threshold": "放量突破311.11",
+        "status": "met",
+        "trend": "up",
         "source": "Tushare前复权5股等权篮子"
       }
     ]

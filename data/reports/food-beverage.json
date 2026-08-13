@@ -3,7 +3,7 @@
   "industry": "食品饮料板块",
   "category": "mixed",
   "asOf": "2026-08-12",
-  "updatedAt": "2026-08-13T02:07:49.740Z",
+  "updatedAt": "2026-08-13T05:15:57.760Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "食品饮料子行业跨度大，白酒、乳品、调味品、饮料、速冻和休闲食品不能用单一周期概括",
@@ -6132,7 +6132,39 @@
         "close": 97.83128689144725
       }
     ],
-    "volumeUnit": "百万元（5股成交额合计）"
+    "volumeUnit": "百万元（5股成交额合计）",
+    "volumeAverages": [
+      {
+        "days": 5,
+        "average": 855.9126813801998,
+        "ratio": 0.9280217360013228
+      },
+      {
+        "days": 10,
+        "average": 1032.2153322735,
+        "ratio": 0.7695153788216911
+      },
+      {
+        "days": 20,
+        "average": 1123.6561592339,
+        "ratio": 0.7068938001297046
+      },
+      {
+        "days": 60,
+        "average": 1009.9703904401001,
+        "ratio": 0.7864642171280656
+      },
+      {
+        "days": 90,
+        "average": 989.7755414778447,
+        "ratio": 0.8025108109400377
+      },
+      {
+        "days": 145,
+        "average": 1008.457492264179,
+        "ratio": 0.7876440787371543
+      }
+    ]
   },
   "executionPlan": {
     "action": "当前观察，不直接追高",
@@ -6186,15 +6218,25 @@
     }
   ],
   "marketResearch": {
-    "fullTextStatus": "partial",
-    "statusNote": "当前接入4份官方行业事实资料；未取得多家券商行业全文授权，因此不将官方数据冒充市场研报",
-    "period": "20260709—20260727",
-    "reportCount": 4,
-    "institutionCount": 1,
-    "companyForecastSampleCount": 0,
-    "reportScope": "食品消费、零售、价格与制造业利润事实核验",
-    "consensus": "样本不足，不能形成多机构券商共识；官方数据共同指向必选需求稳健、价格和酒饮料利润承压",
-    "revisionTrend": "等待合法行业研报导入与2026年中报更新",
+    "fullTextStatus": "permission_required",
+    "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
+    "period": "20260415—20260813",
+    "reportCount": 7,
+    "institutionCount": 8,
+    "companyForecastSampleCount": 207,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
+    "consensus": "必选消费有韧性、子行业景气和利润明显分化",
+    "revisionTrend": "代表公司盈利预测样本207条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "commonViews": [
+      "机构观点仅作为预期证据，不替代产业供需和公司财报",
+      "优先观察盈利预测是否连续上修，而不是单篇研报标题"
+    ],
+    "disagreements": [
+      "需求增长能否转化为利润",
+      "当前估值是否已经提前反映乐观预期"
+    ],
+    "integratedConclusion": "食品饮料并非全面复苏；需分别验证终端零售、价格、渠道库存、毛利率、经营现金流和板块量价。",
+    "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
     "synthesis": {
       "verdict": "食品饮料不是全面复苏，而是必选稳、可选与利润分化",
       "confidence": "官方全文级事实归纳 · 中高置信度",
@@ -6222,9 +6264,119 @@
       "integratedView": "行业配置价值来自防御和细分增长，不是总量供不应求；优先盈利、现金流和渠道质量，避免只看销量。",
       "validation": "每月核对零售、CPI和工业利润；中报核对库存、合同负债、毛利率和现金流；每周核对篮子量价。"
     },
-    "integratedConclusion": "基本面允许进入观察池，试仓与加仓必须由真实篮子和中报盈利共同确认。",
-    "evidenceCheck": "官方需求、价格和利润已与A股财务估值及真实前复权篮子交叉检查。",
+    "freeSources": [
+      {
+        "name": "东方财富研报中心",
+        "url": "https://data.eastmoney.com/report/",
+        "type": "research",
+        "typeLabel": "研报索引",
+        "description": "公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。",
+        "coverage": "A股券商研报"
+      },
+      {
+        "name": "券商官方网站研究栏目",
+        "url": "https://www.sac.net.cn/hyfw/hydt/",
+        "type": "research",
+        "typeLabel": "券商公开",
+        "description": "从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。",
+        "coverage": "中国券商公开观点"
+      },
+      {
+        "name": "World Bank Documents & Reports",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。",
+        "coverage": "全球宏观与产业"
+      },
+      {
+        "name": "IMF eLibrary",
+        "url": "https://www.elibrary.imf.org/",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "IMF公开出版物、国别报告、专题研究与金融稳定资料。",
+        "coverage": "全球宏观、金融与政策"
+      },
+      {
+        "name": "McKinsey Insights",
+        "url": "https://www.mckinsey.com/featured-insights",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。",
+        "coverage": "消费、科技、医疗、工业"
+      },
+      {
+        "name": "BCG Publications",
+        "url": "https://www.bcg.com/publications",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "BCG公开行业报告与企业战略研究。",
+        "coverage": "全球行业与竞争格局"
+      },
+      {
+        "name": "Bain Insights",
+        "url": "https://www.bain.com/insights/",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "贝恩公开行业洞察，消费品、零售和技术覆盖较多。",
+        "coverage": "消费、零售、科技"
+      },
+      {
+        "name": "Deloitte Insights",
+        "url": "https://www.deloitte.com/us/en/insights.html",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "德勤公开行业展望、调查和专题分析。",
+        "coverage": "TMT、消费、医疗、制造"
+      },
+      {
+        "name": "巨潮资讯",
+        "url": "https://www.cninfo.com.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "上市公司法定公告与财报，用于核验研报中的经营与财务判断。",
+        "coverage": "A股公司公告"
+      },
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "宏观、消费、工业产量和行业统计的官方来源。",
+        "coverage": "中国官方统计"
+      }
+    ],
     "topReports": [
+      {
+        "date": "20260810",
+        "institution": "招商证券",
+        "title": "茅五批价共振回升，关注酵母蛋白替代投资机会--食品饮料行业周报（8.9）",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260808",
+        "institution": "申万宏源证券",
+        "title": "食品饮料：临近旺季，重视高端白酒价格变化——食品饮料行业周报20260803-20260807",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260803",
+        "institution": "国金证券",
+        "title": "食品饮料行业研究－26Q2基金持仓分析：板块全面转向低配，白酒仓位大幅回落",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260803",
+        "institution": "国泰海通",
+        "title": "聚焦科技制造真龙头与大金融--国泰海通策略2026年8月金股组合",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260803",
+        "institution": "中信证券",
+        "title": "东鹏饮料2026年中报点评：行业承压，收入业绩稳健成长",
+        "type": "行业研究索引"
+      },
       {
         "date": "20260727",
         "institution": "国家统计局",
@@ -6233,28 +6385,18 @@
         "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260727_1964194.html"
       },
       {
-        "date": "20260715",
-        "institution": "国家统计局",
-        "title": "2026年上半年社会消费品零售总额",
-        "type": "消费需求事实核验",
-        "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964127.html"
+        "date": "20260725",
+        "institution": "中泰证券",
+        "title": "东鹏饮料：二季度饮料行业略有承压，看好下半年加速修复",
+        "type": "行业研究索引"
       },
       {
-        "date": "20260715",
-        "institution": "国家统计局",
-        "title": "2026年上半年居民收入和消费支出",
-        "type": "居民消费事实核验",
-        "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964129.html"
-      },
-      {
-        "date": "20260709",
-        "institution": "国家统计局",
-        "title": "2026年6月份居民消费价格",
-        "type": "价格事实核验",
-        "url": "https://www.stats.gov.cn/sj/zxfb/202607/t20260709_1964084.html"
+        "date": "20260721",
+        "institution": "东兴证券",
+        "title": "食品饮料行业：茅台提价或推动白酒估值重估",
+        "type": "行业研究索引"
       }
-    ],
-    "freeSources": []
+    ]
   },
   "scenarios": [
     {

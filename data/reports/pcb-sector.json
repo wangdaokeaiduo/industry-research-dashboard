@@ -3,7 +3,7 @@
   "industry": "PCB板块",
   "category": "mixed",
   "asOf": "2026-08-12",
-  "updatedAt": "2026-08-13T01:43:35.293Z",
+  "updatedAt": "2026-08-13T05:15:57.233Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "全球高阶PCB产能利用率、订单能见度与良率缺少统一免费实时口径",
@@ -6129,7 +6129,39 @@
         "close": 873.4555844058284
       }
     ],
-    "volumeUnit": "百万元（5股成交额合计）"
+    "volumeUnit": "百万元（5股成交额合计）",
+    "volumeAverages": [
+      {
+        "days": 5,
+        "average": 3117.0838042748,
+        "ratio": 0.7719293194886696
+      },
+      {
+        "days": 10,
+        "average": 2814.1910930427002,
+        "ratio": 0.8550124352861387
+      },
+      {
+        "days": 20,
+        "average": 2693.1808599768005,
+        "ratio": 0.8934299272584786
+      },
+      {
+        "days": 60,
+        "average": 3769.5341954271166,
+        "ratio": 0.638319817536597
+      },
+      {
+        "days": 90,
+        "average": 3558.8174029736333,
+        "ratio": 0.6761145929578974
+      },
+      {
+        "days": 145,
+        "average": 2996.779429402255,
+        "ratio": 0.8029180780591983
+      }
+    ]
   },
   "executionPlan": {
     "action": "等待放量突破，不因扩产公告追高",
@@ -6183,15 +6215,25 @@
     }
   ],
   "marketResearch": {
-    "fullTextStatus": "available",
-    "statusNote": "已接入5份PCB行业、服务器需求、材料与扩产资料；不展示个股研报",
-    "period": "20251120—20260728",
-    "reportCount": 5,
-    "institutionCount": 2,
-    "companyForecastSampleCount": 0,
-    "reportScope": "仅PCB全球市场、AI服务器架构、上游材料和高阶产能研究",
-    "consensus": "AI推动PCB从数量增长转向层数、材料、良率和价值量升级",
-    "revisionTrend": "从Rubin架构升级演变为材料紧缺、价格上涨和大规模高阶扩产",
+    "fullTextStatus": "permission_required",
+    "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
+    "period": "20260415—20260813",
+    "reportCount": 2,
+    "institutionCount": 4,
+    "companyForecastSampleCount": 59,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
+    "consensus": "AI服务器推动高阶PCB层数、材料和单机价值量升级",
+    "revisionTrend": "代表公司盈利预测样本59条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "commonViews": [
+      "机构观点仅作为预期证据，不替代产业供需和公司财报",
+      "优先观察盈利预测是否连续上修，而不是单篇研报标题"
+    ],
+    "disagreements": [
+      "需求增长能否转化为利润",
+      "当前估值是否已经提前反映乐观预期"
+    ],
+    "integratedConclusion": "AI高阶PCB景气明确，但普通消费板并非同步繁荣；需用高端材料供给、扩产良率、AI收入、样本毛利率和板块量价共同确认。",
+    "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
     "synthesis": {
       "verdict": "共同确认AI高阶PCB景气，分歧集中在材料成本传导、良率和扩产后的持续性",
       "confidence": "摘要/全文级归纳 · 中高置信度",
@@ -6219,15 +6261,107 @@
       "integratedView": "PCB处于AI高阶结构性扩张期，产业价值较高，但普通板与高阶板严重分化，交易必须绑定AI收入和盈利兑现。",
       "validation": "每季核对AI收入、良率、毛利率、材料价格和资本开支；每周核对篮子量价。"
     },
-    "integratedConclusion": "基本面支持进入交易池，是否试仓由真实篮子突破与量能决定。",
-    "evidenceCheck": "需求、材料和市场规模结论已与A股财务估值及真实前复权篮子交叉检查。",
+    "freeSources": [
+      {
+        "name": "东方财富研报中心",
+        "url": "https://data.eastmoney.com/report/",
+        "type": "research",
+        "typeLabel": "研报索引",
+        "description": "公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。",
+        "coverage": "A股券商研报"
+      },
+      {
+        "name": "券商官方网站研究栏目",
+        "url": "https://www.sac.net.cn/hyfw/hydt/",
+        "type": "research",
+        "typeLabel": "券商公开",
+        "description": "从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。",
+        "coverage": "中国券商公开观点"
+      },
+      {
+        "name": "World Bank Documents & Reports",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。",
+        "coverage": "全球宏观与产业"
+      },
+      {
+        "name": "IMF eLibrary",
+        "url": "https://www.elibrary.imf.org/",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "IMF公开出版物、国别报告、专题研究与金融稳定资料。",
+        "coverage": "全球宏观、金融与政策"
+      },
+      {
+        "name": "McKinsey Insights",
+        "url": "https://www.mckinsey.com/featured-insights",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。",
+        "coverage": "消费、科技、医疗、工业"
+      },
+      {
+        "name": "BCG Publications",
+        "url": "https://www.bcg.com/publications",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "BCG公开行业报告与企业战略研究。",
+        "coverage": "全球行业与竞争格局"
+      },
+      {
+        "name": "Bain Insights",
+        "url": "https://www.bain.com/insights/",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "贝恩公开行业洞察，消费品、零售和技术覆盖较多。",
+        "coverage": "消费、零售、科技"
+      },
+      {
+        "name": "Deloitte Insights",
+        "url": "https://www.deloitte.com/us/en/insights.html",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "德勤公开行业展望、调查和专题分析。",
+        "coverage": "TMT、消费、医疗、制造"
+      },
+      {
+        "name": "巨潮资讯",
+        "url": "https://www.cninfo.com.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "上市公司法定公告与财报，用于核验研报中的经营与财务判断。",
+        "coverage": "A股公司公告"
+      },
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "宏观、消费、工业产量和行业统计的官方来源。",
+        "coverage": "中国官方统计"
+      }
+    ],
     "topReports": [
+      {
+        "date": "20260804",
+        "institution": "国泰海通",
+        "title": "天津普林公司首次覆盖：津门PCB龙头企业，重回增长并布局产业高地",
+        "type": "行业研究索引"
+      },
       {
         "date": "20260728",
         "institution": "TrendForce",
         "title": "深圳新增AI服务器高端PCB重大扩产项目",
         "type": "行业产能",
         "url": "https://www.trendforce.com/news/2026/07/28/news-shenzhen-adds-two-rmb-10-billion-semiconductor-projects-targeting-ai-servers-and-12-inch-wafers/"
+      },
+      {
+        "date": "20260719",
+        "institution": "华创证券",
+        "title": "机械行业周报（20260713-20260719）：关注PCB钻针、人形机器人",
+        "type": "行业研究索引"
       },
       {
         "date": "20260506",
@@ -6257,8 +6391,7 @@
         "type": "技术升级",
         "url": "https://www.trendforce.com/presscenter/news/20251120-12790.html"
       }
-    ],
-    "freeSources": []
+    ]
   },
   "scenarios": [
     {

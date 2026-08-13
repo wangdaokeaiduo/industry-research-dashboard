@@ -434,33 +434,33 @@
     "volumeAverages": [
       {
         "days": 5,
-        "average": 340.65,
-        "ratio": 1.03
+        "average": 340.64799999999997,
+        "ratio": 1.0263967497240554
       },
       {
         "days": 10,
-        "average": 383.84,
-        "ratio": 0.91
+        "average": 383.84499999999997,
+        "ratio": 0.9108885096848989
       },
       {
         "days": 20,
-        "average": 474.39,
-        "ratio": 0.74
+        "average": 474.3924999999999,
+        "ratio": 0.7370268290497848
       },
       {
         "days": 60,
-        "average": 432.61,
-        "ratio": 0.81
+        "average": 432.6051666666665,
+        "ratio": 0.8082196583412669
       },
       {
         "days": 90,
-        "average": 543.55,
-        "ratio": 0.64
+        "average": 543.5512222222222,
+        "ratio": 0.643251244235185
       },
       {
         "days": 145,
-        "average": 531.29,
-        "ratio": 0.66
+        "average": 531.2942758620691,
+        "ratio": 0.6580910352039462
       }
     ],
     "prices": [
@@ -3207,53 +3207,16 @@
     "昊海生科2025年年度报告 https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12008334&stockid=688366",
     "行情：腾讯证券公开前复权日线；5股等权篮子，截至2026-08-10"
   ],
-  "supplyDemand": {
-    "state": "终端需求存在，上市公司兑现偏弱",
-    "tone": "warning",
-    "direction": "等待出清",
-    "conclusion": "市场规模估算增长与头部公司收入下降并存，说明需求、渠道和供给之间存在明显错配。",
-    "demand": {
-      "status": "有增长预期",
-      "evidence": "第三方估算2025年医美服务规模3,701亿元。",
-      "change": "证据等级有限",
-      "tone": "warning"
-    },
-    "supply": {
-      "status": "竞争偏强",
-      "evidence": "产品同质化、机构经营和获客压力仍需核验。",
-      "change": "等待合规出清",
-      "tone": "warning"
-    },
-    "inventory": {
-      "status": "渠道待核验",
-      "evidence": "缺少统一可比的渠道库存数据。",
-      "change": "无法验证",
-      "tone": "muted"
-    },
-    "price": {
-      "status": "价格承压",
-      "evidence": "头部公司收入下降，终端促销与产品结构压力未消失。",
-      "change": "议价未确认",
-      "tone": "negative"
-    },
-    "profit": {
-      "status": "同比走弱",
-      "evidence": "爱美客、华熙生物和昊海相关收入均同比下降。",
-      "change": "尚未反转",
-      "tone": "negative"
-    },
-    "leadingIndicator": "机构客流、客单价、新品放量和头部公司收入增速。",
-    "improvement": "头部公司连续两个季度收入与利润同步改善。",
-    "invalidation": "低价竞争加剧、监管趋严或新品销售不及预期。"
-  },
   "marketResearch": {
     "fullTextStatus": "permission_required",
     "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
-    "period": "20260413—20260811",
+    "period": "20260415—20260813",
     "reportCount": 1,
     "institutionCount": 1,
+    "companyForecastSampleCount": 13,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
     "consensus": "等待需求与业绩修复",
-    "revisionTrend": "代表公司盈利预测样本5条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "revisionTrend": "代表公司盈利预测样本13条，用于观察行业盈利预期扩散，不作为行业研报展示",
     "commonViews": [
       "机构观点仅作为预期证据，不替代产业供需和公司财报",
       "优先观察盈利预测是否连续上修，而不是单篇研报标题"
@@ -3264,6 +3227,7 @@
     ],
     "integratedConclusion": "机构关注新品和合规红利，但上市公司收入与利润修复仍是必须通过的事实检验。",
     "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
+    "synthesis": null,
     "freeSources": [
       {
         "name": "东方财富研报中心",
@@ -3353,25 +3317,11 @@
         "title": "美容护理：业绩预告彰显板块韧性，中报季将至建议关注——化妆品医美行业周报",
         "type": "行业研究索引"
       }
-    ],
-    "companyForecastSampleCount": 5,
-    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
-    "synthesis": {
-      "verdict": "单机构关注板块韧性，尚不能形成行业共识",
-      "confidence": "标题级归纳 · 低置信度",
-      "confidenceTone": "negative",
-      "evidenceNote": "只有1份行业周报，不能比较跨机构共性或分歧。",
-      "commonPoints": [],
-      "differences": [],
-      "integratedView": "目前只能确认该机构关注中报业绩韧性，不能据此判断全行业反转。",
-      "validation": "等待更多独立机构样本，并用头部公司收入、利润、机构客流和价格竞争验证。"
-    }
+    ]
   },
-  "decisionLevel": "no_trade",
-  "dataGaps": [],
   "tradeDecision": {
     "asOf": "2026-08-10",
-    "verdict": "景气磨底—等待产品周期反转，但盈利质量反转未达成，当前不交易",
+    "verdict": "景气磨底—等待产品周期反转，但技术趋势确认未达到交易门槛，当前不交易",
     "reason": "截至2026-08-10，1/5项条件达成。主要缺口：终端需求恢复（市场规模增长，但上市公司收入未同步；标准：龙头收入连续两季同比>10%）；新品形成第二增长曲线（重组胶原蛋白、再生材料等处于放量/导入期；标准：新品收入占比提升且不靠明显降价）",
     "checks": [
       {
@@ -3420,5 +3370,44 @@
         "source": "腾讯证券前复权日线，截至2026-08-10"
       }
     ]
+  },
+  "supplyDemand": {
+    "state": "景气磨底",
+    "tone": "warning",
+    "direction": "弱复苏预期、结构分化",
+    "conclusion": "2025年行业消费规模仍增长，但上市上游龙头业绩显示供给竞争与终端需求压力：爱美客收入同比-18.94%，华熙生物主营收入-21.75%，昊海生科医美收入-12.97%。因此当前不是全行业反转，而是重组胶原蛋白、再生材料、合规高端产品与强新品可能率先突围。",
+    "demand": {
+      "status": "见需求证据矩阵",
+      "evidence": "市场规模增长，但上市公司收入未同步",
+      "change": "弱复苏预期、结构分化",
+      "tone": "warning"
+    },
+    "supply": {
+      "status": "见供给证据矩阵",
+      "evidence": "缺少统一供给口径",
+      "change": "待验证",
+      "tone": "warning"
+    },
+    "inventory": {
+      "status": "库存需持续核验",
+      "evidence": "无统一免费实时库存口径",
+      "change": "待验证",
+      "tone": "warning"
+    },
+    "price": {
+      "status": "价格决定利润传导",
+      "evidence": "参见行业指标",
+      "change": "待验证",
+      "tone": "warning"
+    },
+    "profit": {
+      "status": "利润分化",
+      "evidence": "爱美客、昊海生科2025利润明显下降",
+      "change": "待验证",
+      "tone": "warning"
+    },
+    "leadingIndicator": "终端需求恢复、新品形成第二增长曲线、盈利质量反转、合规集中度提升、技术趋势确认",
+    "improvement": "龙头收入连续两个季度恢复双位数增长，毛利率稳定、销售费用率不恶化，且新品收入占比提升。",
+    "invalidation": "新品放量不及预期、终端降价传导至出厂价、获客费用持续上升或监管安全事件。"
   }
 }

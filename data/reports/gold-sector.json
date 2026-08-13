@@ -2,9 +2,9 @@
   "id": "gold-sector",
   "industry": "黄金板块",
   "category": "cycle",
-  "asOf": "2026-08-10",
-  "updatedAt": "2026-08-11T07:06:49.429Z",
-  "decisionLevel": "trial",
+  "asOf": "2026-08-11",
+  "updatedAt": "2026-08-13T05:15:55.098Z",
+  "decisionLevel": "wait_trigger",
   "dataGaps": [
     "全球金矿AISC缺少统一免费实时口径",
     "紫金矿业含铜等多金属业务，板块篮子并非纯黄金指数"
@@ -27,23 +27,23 @@
         "label": "估值吸引力",
         "value": "中等",
         "score": 60,
-        "comment": "PE-TTM中位数20.56倍"
+        "comment": "PE-TTM中位数19.60倍"
       },
       {
         "label": "技术位置",
-        "value": "中长期偏强",
-        "score": 72,
-        "comment": "篮子243.00，MA60 196.59"
+        "value": "等待修复",
+        "score": 50,
+        "comment": "篮子227.95，MA60 196.81"
       },
       {
         "label": "综合评级",
-        "value": "小仓试错",
-        "score": 68,
+        "value": "等待触发",
+        "score": 57,
         "comment": "长期逻辑强，但高位波动与估值需要量价确认"
       }
     ],
     "coreConflict": "央行和投资需求支撑黄金长期配置价值，但高金价压制首饰需求并刺激矿山供给与回收，黄金股还受成本、品位和资本开支影响。",
-    "action": "允许小仓试错，优先低成本增储公司"
+    "action": "等待板块放量突破后再试错"
   },
   "weeklyChanges": {
     "period": "首次建立",
@@ -89,9 +89,9 @@
   },
   "summary": {
     "stage": "牛市高位—强势震荡",
-    "rating": "小仓试错",
+    "rating": "等待触发",
     "confidence": "中高",
-    "conclusion": "黄金长期配置逻辑仍强，但不是无风险追涨阶段。A股等权篮子243.00，MA20/60/145=208.06/196.59/230.41，量比1.12倍；当前满足初步试错。",
+    "conclusion": "黄金长期配置逻辑仍强，但不是无风险追涨阶段。A股等权篮子227.95，MA20/60/145=209.89/196.81/230.49，量比1.59倍；当前等待放量突破。",
     "evidence": [
       "2026Q1全球黄金需求1231吨、价值创纪录",
       "央行Q1净购金244吨，过去四年年均购金约1000吨",
@@ -150,10 +150,10 @@
     {
       "name": "K线放量确认",
       "dimension": "技术",
-      "current": "篮子243.00，量比1.12",
-      "threshold": "放量突破240.60",
+      "current": "篮子227.95，量比1.59",
+      "threshold": "放量突破245.97",
       "status": "partial",
-      "trend": "up",
+      "trend": "flat",
       "source": "Tushare前复权5股等权篮子"
     }
   ],
@@ -218,26 +218,25 @@
     },
     {
       "label": "PE-TTM中位数",
-      "value": "20.56",
+      "value": "19.60",
       "unit": "倍",
-      "change": "截至20260810",
+      "change": "截至20260811",
       "direction": "up",
       "series": [
-        28.1215,
-        20.5613,
-        23.1671,
-        20.4938,
-        15.2803
+        26.8526,
+        19.2714,
+        21.35,
+        19.6028,
+        14.3018
       ]
     },
     {
       "label": "黄金股等权篮子",
-      "value": "243.00",
+      "value": "227.95",
       "unit": "点",
-      "change": "量比1.12倍",
+      "change": "量比1.59倍",
       "direction": "up",
       "series": [
-        191.33433270519603,
         186.7445726853035,
         188.90182803763423,
         179.47559101601013,
@@ -256,7 +255,8 @@
         225.36944703050887,
         231.13215321134993,
         237.11708146814053,
-        243.00435400277053
+        243.00435400277053,
+        227.9539275285142
       ]
     }
   ],
@@ -335,7 +335,7 @@
       "company": "山东黄金",
       "ticker": "600547.SH",
       "driver": "最新营收同比25.37%，净利同比40.87%",
-      "valuation": "PE-TTM 28.12倍；毛利率18.30%",
+      "valuation": "PE-TTM 26.85倍；毛利率18.30%",
       "risk": "产量、品位、AISC、矿权与资本开支风险"
     },
     {
@@ -344,7 +344,7 @@
       "company": "中金黄金",
       "ticker": "600489.SH",
       "driver": "最新营收同比52.01%，净利同比129.23%",
-      "valuation": "PE-TTM 20.56倍；毛利率20.47%",
+      "valuation": "PE-TTM 19.27倍；毛利率20.47%",
       "risk": "产量、品位、AISC、矿权与资本开支风险"
     },
     {
@@ -353,7 +353,7 @@
       "company": "赤峰黄金",
       "ticker": "600988.SH",
       "driver": "最新营收同比47.65%，净利同比104.43%",
-      "valuation": "PE-TTM 23.17倍；毛利率59.27%",
+      "valuation": "PE-TTM 21.35倍；毛利率59.27%",
       "risk": "产量、品位、AISC、矿权与资本开支风险"
     },
     {
@@ -362,7 +362,7 @@
       "company": "山金国际",
       "ticker": "000975.SZ",
       "driver": "最新营收同比37.41%，净利同比100.89%",
-      "valuation": "PE-TTM 20.49倍；毛利率40.67%",
+      "valuation": "PE-TTM 19.60倍；毛利率40.67%",
       "risk": "产量、品位、AISC、矿权与资本开支风险"
     },
     {
@@ -371,7 +371,7 @@
       "company": "紫金矿业",
       "ticker": "601899.SH",
       "driver": "最新营收同比24.79%，净利同比97.50%",
-      "valuation": "PE-TTM 15.28倍；毛利率36.33%",
+      "valuation": "PE-TTM 14.30倍；毛利率36.33%",
       "risk": "铜等多金属暴露降低黄金纯度"
     }
   ],
@@ -387,7 +387,7 @@
       "name": "基准",
       "weight": "50%",
       "assumption": "金价高位震荡、央行买盘延续、首饰偏弱",
-      "valuation": "PE围绕样本中位数20.56倍波动",
+      "valuation": "PE围绕样本中位数19.60倍波动",
       "signal": "盈利兑现但估值不再扩张"
     },
     {
@@ -400,16 +400,16 @@
   ],
   "technical": {
     "instrument": "A股黄金5股等权篮子（山东黄金/中金黄金/赤峰黄金/山金国际/紫金矿业）",
-    "timeframe": "日线 · 前复权等权标准化指数 · 628日",
-    "trend": "收盘243.00；MA20/60/90/145=208.06/196.59/212.76/230.41，中长期偏强",
-    "volume": "当日成交额2089.57百万元，为20日均额1.12倍",
+    "timeframe": "日线 · 前复权等权标准化指数 · 629日",
+    "trend": "收盘227.95；MA20/60/90/145=209.89/196.81/212.55/230.49，中长期尚未共振",
+    "volume": "当日成交额3048.55百万元，为20日均额1.59倍",
     "wave": "主计数为牛市推动浪后的高位延伸，备选为复杂调整；跌破失效位转为防守。",
     "fibonacci": "近250日高低349.45/143.02，0.382/0.5/0.618回撤为270.60/246.24/221.88",
-    "chan": "以最近20日中枢观察，放量突破240.60为三买候选，跌破236.99失效。",
-    "rating": "小仓试错",
-    "riskReward": "-0.4 : 1",
-    "trigger": "放量突破240.60，成交额≥20日均额1.2倍",
-    "invalidation": "收盘跌破236.99",
+    "chan": "以最近20日中枢观察，放量突破245.97为三买候选，跌破224.53失效。",
+    "rating": "等待触发",
+    "riskReward": "5.3 : 1",
+    "trigger": "放量突破245.97，成交额≥20日均额1.2倍",
+    "invalidation": "收盘跌破224.53",
     "prices": [
       100,
       100.12531973295032,
@@ -1038,7 +1038,8 @@
       225.36944703050887,
       231.13215321134993,
       237.11708146814053,
-      243.00435400277053
+      243.00435400277053,
+      227.9539275285142
     ],
     "volumes": [
       325.4504639,
@@ -1668,7 +1669,8 @@
       2464.806042308,
       2786.3421416029996,
       1965.263014171,
-      2089.566536709
+      2089.566536709,
+      3048.545331627
     ],
     "ohlc": [
       {
@@ -6066,15 +6068,54 @@
         "high": 244.74585701521013,
         "low": 232.42962506208195,
         "close": 243.00435400277053
+      },
+      {
+        "date": "20260811",
+        "open": 247.05746844791383,
+        "high": 250.26206708753563,
+        "low": 226.15398546879882,
+        "close": 227.9539275285142
       }
     ],
-    "volumeUnit": "百万元（5股成交额合计）"
+    "volumeUnit": "百万元（5股成交额合计）",
+    "volumeAverages": [
+      {
+        "days": 5,
+        "average": 2470.9046132836,
+        "ratio": 1.2337770204636793
+      },
+      {
+        "days": 10,
+        "average": 2014.0599132564998,
+        "ratio": 1.5136318992109117
+      },
+      {
+        "days": 20,
+        "average": 1921.9379969626,
+        "ratio": 1.5861829759570143
+      },
+      {
+        "days": 60,
+        "average": 1695.6213379397334,
+        "ratio": 1.7978927626206558
+      },
+      {
+        "days": 90,
+        "average": 1682.4120454087113,
+        "ratio": 1.812008740633102
+      },
+      {
+        "days": 145,
+        "average": 1966.720931050234,
+        "ratio": 1.5500650262562006
+      }
+    ]
   },
   "executionPlan": {
-    "action": "可以小仓试错，优先低成本、增储和现金流改善公司",
-    "trigger": "收盘放量突破240.60且成交额≥20日均额1.2倍；同时ETF/央行需求未转弱",
-    "add": "突破后回踩240.60附近不破，且中报验证产量增长、AISC受控和现金流改善",
-    "priceInvalidation": "收盘跌破236.99",
+    "action": "等待价格与量能共同触发，不在高位追涨",
+    "trigger": "收盘放量突破245.97且成交额≥20日均额1.2倍；同时ETF/央行需求未转弱",
+    "add": "突破后回踩245.97附近不破，且中报验证产量增长、AISC受控和现金流改善",
+    "priceInvalidation": "收盘跌破224.53",
     "fundamentalInvalidation": "实际利率和美元持续上行、央行与ETF同步转弱，或矿企AISC上升吞噬金价红利",
     "nextReview": "下一交易周及2026年中报"
   },
@@ -6108,7 +6149,7 @@
     {
       "grade": "A",
       "label": "A股行情、估值和财务",
-      "note": "Tushare/公司定期报告，截至20260810"
+      "note": "Tushare/公司定期报告，截至20260811"
     },
     {
       "grade": "B",
@@ -6122,15 +6163,25 @@
     }
   ],
   "marketResearch": {
-    "fullTextStatus": "available",
-    "statusNote": "已接入4份公开黄金行业专题；不展示个股研报",
-    "period": "20260429—20260701",
-    "reportCount": 4,
-    "institutionCount": 2,
-    "companyForecastSampleCount": 0,
-    "reportScope": "仅黄金宏观、供需、央行与矿产行业研究",
-    "consensus": "央行与投资需求构成支撑，高价压制首饰需求并增加供给响应",
-    "revisionTrend": "从Q1需求创纪录转向年中高位波动与央行购金速度观察",
+    "fullTextStatus": "permission_required",
+    "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
+    "period": "20260415—20260813",
+    "reportCount": 2,
+    "institutionCount": 4,
+    "companyForecastSampleCount": 17,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
+    "consensus": "央行和投资需求提供结构支撑",
+    "revisionTrend": "代表公司盈利预测样本17条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "commonViews": [
+      "机构观点仅作为预期证据，不替代产业供需和公司财报",
+      "优先观察盈利预测是否连续上修，而不是单篇研报标题"
+    ],
+    "disagreements": [
+      "需求增长能否转化为利润",
+      "当前估值是否已经提前反映乐观预期"
+    ],
+    "integratedConclusion": "黄金长期配置逻辑仍强，但黄金股投资价值必须继续核验实际利率、ETF和央行买盘，以及矿企产量、AISC与现金流。",
+    "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
     "synthesis": {
       "verdict": "长期配置逻辑仍强，但短期由趋势上行进入高位双向波动",
       "confidence": "全文/摘要级归纳 · 中高置信度",
@@ -6158,9 +6209,101 @@
       "integratedView": "黄金处于结构性牛市的高位阶段，配置价值仍在，但交易价值取决于实际利率、ETF/央行买盘以及黄金股盈利兑现。",
       "validation": "每周核对ETF、实际利率、美元、央行购金和板块量价；中报核对产量、AISC与现金流。"
     },
-    "integratedConclusion": "基本面支持进入观察池，是否试仓由真实篮子突破和量能确认决定。",
-    "evidenceCheck": "需求结论已与供给、A股财务估值和真实前复权篮子交叉检查。",
+    "freeSources": [
+      {
+        "name": "东方财富研报中心",
+        "url": "https://data.eastmoney.com/report/",
+        "type": "research",
+        "typeLabel": "研报索引",
+        "description": "公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。",
+        "coverage": "A股券商研报"
+      },
+      {
+        "name": "券商官方网站研究栏目",
+        "url": "https://www.sac.net.cn/hyfw/hydt/",
+        "type": "research",
+        "typeLabel": "券商公开",
+        "description": "从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。",
+        "coverage": "中国券商公开观点"
+      },
+      {
+        "name": "World Bank Documents & Reports",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。",
+        "coverage": "全球宏观与产业"
+      },
+      {
+        "name": "IMF eLibrary",
+        "url": "https://www.elibrary.imf.org/",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "IMF公开出版物、国别报告、专题研究与金融稳定资料。",
+        "coverage": "全球宏观、金融与政策"
+      },
+      {
+        "name": "McKinsey Insights",
+        "url": "https://www.mckinsey.com/featured-insights",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。",
+        "coverage": "消费、科技、医疗、工业"
+      },
+      {
+        "name": "BCG Publications",
+        "url": "https://www.bcg.com/publications",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "BCG公开行业报告与企业战略研究。",
+        "coverage": "全球行业与竞争格局"
+      },
+      {
+        "name": "Bain Insights",
+        "url": "https://www.bain.com/insights/",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "贝恩公开行业洞察，消费品、零售和技术覆盖较多。",
+        "coverage": "消费、零售、科技"
+      },
+      {
+        "name": "Deloitte Insights",
+        "url": "https://www.deloitte.com/us/en/insights.html",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "德勤公开行业展望、调查和专题分析。",
+        "coverage": "TMT、消费、医疗、制造"
+      },
+      {
+        "name": "巨潮资讯",
+        "url": "https://www.cninfo.com.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "上市公司法定公告与财报，用于核验研报中的经营与财务判断。",
+        "coverage": "A股公司公告"
+      },
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "宏观、消费、工业产量和行业统计的官方来源。",
+        "coverage": "中国官方统计"
+      }
+    ],
     "topReports": [
+      {
+        "date": "20260803",
+        "institution": "国泰海通",
+        "title": "聚焦科技制造真龙头与大金融--国泰海通策略2026年8月金股组合",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260724",
+        "institution": "申万宏源证券",
+        "title": "森合高科：环保型贵金属选矿剂“小巨人”——北交所新股申购策略报告之一百九十六",
+        "type": "行业研究索引"
+      },
       {
         "date": "20260701",
         "institution": "World Gold Council",
@@ -6176,21 +6319,20 @@
         "url": "https://www.gold.org/goldhub/research/central-bank-gold-reserves-survey-2026"
       },
       {
-        "date": "20260429",
-        "institution": "World Gold Council",
-        "title": "Gold Demand Trends: Q1 2026",
-        "type": "行业供需",
-        "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-q1-2026"
-      },
-      {
         "date": "20260527",
         "institution": "USGS",
         "title": "Mineral Commodity Summaries 2026 — Gold",
         "type": "供给与储量",
         "url": "https://pubs.usgs.gov/publication/mcs2026"
+      },
+      {
+        "date": "20260429",
+        "institution": "World Gold Council",
+        "title": "Gold Demand Trends: Q1 2026",
+        "type": "行业供需",
+        "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-q1-2026"
       }
-    ],
-    "freeSources": []
+    ]
   },
   "scenarios": [
     {
@@ -6225,12 +6367,12 @@
     "World Gold Council 20260429：https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-q1-2026",
     "USGS 20260527：https://pubs.usgs.gov/publication/mcs2026",
     "World Bank Commodity Markets Outlook April 2026：https://thedocs.worldbank.org/en/doc/f3138644a1e8e2bb631399ae11d6c408-0050012026/original/CMO-April-2026.pdf",
-    "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260810提取"
+    "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260811提取"
   ],
   "tradeDecision": {
-    "asOf": "2026-08-10",
-    "verdict": "牛市高位—强势震荡与量价初步共振，可以小仓试错",
-    "reason": "截至2026-08-10，3/5项条件达成。主要缺口：实物首饰需求企稳（Q1首饰消费同比-23%；标准：同比降幅连续收窄）；K线放量确认（篮子243.00，量比1.12；标准：放量突破240.60）",
+    "asOf": "2026-08-11",
+    "verdict": "牛市高位—强势震荡，但K线放量确认未达到交易门槛，当前不交易",
+    "reason": "截至2026-08-11，3/5项条件达成。主要缺口：实物首饰需求企稳（Q1首饰消费同比-23%；标准：同比降幅连续收窄）；K线放量确认（篮子227.95，量比1.59；标准：放量突破245.97）",
     "checks": [
       {
         "name": "央行维持结构性净买入",
@@ -6271,10 +6413,10 @@
       {
         "name": "K线放量确认",
         "dimension": "技术",
-        "current": "篮子243.00，量比1.12",
-        "threshold": "放量突破240.60",
+        "current": "篮子227.95，量比1.59",
+        "threshold": "放量突破245.97",
         "status": "partial",
-        "trend": "up",
+        "trend": "flat",
         "source": "Tushare前复权5股等权篮子"
       }
     ]

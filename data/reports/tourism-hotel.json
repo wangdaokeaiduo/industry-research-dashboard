@@ -82,6 +82,45 @@
     "improvement": "国内旅游花费增速连续两个季度高于人次，酒店RevPAR普遍转正，景区客单价与免税毛利率同步改善。",
     "deterioration": "客流仍增但人均消费继续下降、酒店供给快于需求、极端天气或入境政策边际收紧。"
   },
+  "supplyDemand": {
+    "state": "需求扩张、供给分化",
+    "tone": "warning",
+    "direction": "客流增长但人均消费偏弱",
+    "conclusion": "旅游客流与入境需求真实增长，但酒店房间、景区承载和旅行产品供给也在扩张；当前利润传导受人均花费、RevPAR和折扣约束，尚非全面紧缺。",
+    "demand": {
+      "status": "扩张",
+      "evidence": "2026Q1国内出游19.01亿人次同比+6.0%，H1外国人入境同比+20.4%。",
+      "change": "休闲和入境需求增长",
+      "tone": "positive"
+    },
+    "supply": {
+      "status": "酒店与目的地供给扩张",
+      "evidence": "加盟酒店和目的地项目持续增加，供给可能稀释RevPAR。",
+      "change": "供给同步增加",
+      "tone": "warning"
+    },
+    "inventory": {
+      "status": "服务业无统一库存",
+      "evidence": "以可售房晚、景区承载、免税库存和预订提前期替代观察。",
+      "change": "细分差异大",
+      "tone": "neutral"
+    },
+    "price": {
+      "status": "人均消费偏弱",
+      "evidence": "Q1旅游花费+2.9%低于人次+6.0%。",
+      "change": "价格/客单恢复落后",
+      "tone": "warning"
+    },
+    "profit": {
+      "status": "酒店改善、免税演艺分化",
+      "evidence": "首旅Q1 RevPAR同比+1.7%，但免税毛利率和演艺盈利仍需验证。",
+      "change": "利润扩散不足",
+      "tone": "warning"
+    },
+    "leadingIndicator": "出游人次与花费、人均消费、核心酒店RevPAR、入境客流、免税毛利率和经营现金流。",
+    "improvement": "花费增速持续高于人次、核心酒店RevPAR连续两季为正且利润现金流扩散。",
+    "invalidation": "客流放缓、人均消费继续下降、酒店供给过快或免税折扣恶化。"
+  },
   "summary": {
     "stage": "需求扩张—盈利修复分化",
     "rating": "观察；酒店龙头领先于板块",
@@ -435,33 +474,33 @@
     "volumeAverages": [
       {
         "days": 5,
-        "average": 118.96,
-        "ratio": 1.11
+        "average": 118.95600000000002,
+        "ratio": 1.1062914018628736
       },
       {
         "days": 10,
-        "average": 133.38,
-        "ratio": 0.99
+        "average": 133.381,
+        "ratio": 0.9866472735996881
       },
       {
         "days": 20,
-        "average": 140.96,
-        "ratio": 0.93
+        "average": 140.95700000000002,
+        "ratio": 0.9336180537326985
       },
       {
         "days": 60,
-        "average": 133.5,
-        "ratio": 0.99
+        "average": 133.49766666666667,
+        "ratio": 0.9857850199628956
       },
       {
         "days": 90,
-        "average": 127.56,
-        "ratio": 1.03
+        "average": 127.56433333333337,
+        "ratio": 1.0316363246780054
       },
       {
         "days": 145,
-        "average": 141.8,
-        "ratio": 0.93
+        "average": 141.79979310344822,
+        "ratio": 0.9280690551078089
       }
     ],
     "prices": [
@@ -4110,53 +4149,16 @@
     "中国中免2025年年度报告 https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12047992",
     "行情：腾讯证券前复权日线；8股等权篮子，截至2026-08-10"
   ],
-  "supplyDemand": {
-    "state": "需求增长，供给与价格决定利润弹性",
-    "tone": "positive",
-    "direction": "温和改善",
-    "conclusion": "客流与入境需求继续增长，但旅游花费增速慢于人次；酒店利润修复仍依赖RevPAR而非单纯客流。",
-    "demand": {
-      "status": "稳健",
-      "evidence": "Q1国内出游19.01亿人次，同比+6.0%；入境外国人H1同比+20.4%。",
-      "change": "持续增长",
-      "tone": "positive"
-    },
-    "supply": {
-      "status": "局部扩张",
-      "evidence": "酒店新增房量和加盟扩张需与入住率共同观察。",
-      "change": "可能稀释收益",
-      "tone": "warning"
-    },
-    "inventory": {
-      "status": "即时产能",
-      "evidence": "酒店空房不可储存，入住率是核心库存代理指标。",
-      "change": "旺季验证",
-      "tone": "warning"
-    },
-    "price": {
-      "status": "温和修复",
-      "evidence": "首旅RevPAR Q1为143元，同比+1.7%。",
-      "change": "弱于客流增长",
-      "tone": "warning"
-    },
-    "profit": {
-      "status": "存在弹性",
-      "evidence": "固定成本行业在RevPAR改善时具有经营杠杆。",
-      "change": "尚需财报确认",
-      "tone": "positive"
-    },
-    "leadingIndicator": "入住率、ADR、RevPAR、航班量和提前预订。",
-    "improvement": "RevPAR连续提升且同店利润率扩张。",
-    "invalidation": "新增供给快于需求、房价下降导致RevPAR转负。"
-  },
   "marketResearch": {
     "fullTextStatus": "permission_required",
     "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
-    "period": "20260413—20260811",
+    "period": "20260415—20260813",
     "reportCount": 3,
     "institutionCount": 3,
+    "companyForecastSampleCount": 22,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
     "consensus": "需求韧性、利润弹性分化",
-    "revisionTrend": "代表公司盈利预测样本5条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "revisionTrend": "代表公司盈利预测样本22条，用于观察行业盈利预期扩散，不作为行业研报展示",
     "commonViews": [
       "机构观点仅作为预期证据，不替代产业供需和公司财报",
       "优先观察盈利预测是否连续上修，而不是单篇研报标题"
@@ -4167,6 +4169,7 @@
     ],
     "integratedConclusion": "客流继续增长，但投资价值取决于房价、入住率和新增供给能否转化为RevPAR与利润。",
     "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
+    "synthesis": null,
     "freeSources": [
       {
         "name": "东方财富研报中心",
@@ -4268,39 +4271,8 @@
         "title": "消费者服务Ⅱ：风起云涌处，静待曙色明——社服行业2026年度中期投资策略",
         "type": "行业研究索引"
       }
-    ],
-    "companyForecastSampleCount": 5,
-    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
-    "synthesis": {
-      "verdict": "共同指向修复窗口，但对主导驱动的判断不同",
-      "confidence": "标题级归纳 · 中等置信度",
-      "confidenceTone": "warning",
-      "evidenceNote": "3份行业策略/周报；标题足以识别研究焦点，但不能替代正文。",
-      "commonPoints": [
-        {
-          "point": "行业处在底部修复或拐点观察窗口",
-          "reason": "国金证券使用“见拐点”，长江证券使用“静待曙色明”，共同指向低位修复。",
-          "support": "2份 / 2家机构"
-        },
-        {
-          "point": "机会更偏结构性选择",
-          "reason": "三份报告分别聚焦酒店周期、AI应用和社服中期策略，并非一致看多所有子行业。",
-          "support": "3份 / 3家机构"
-        }
-      ],
-      "differences": [
-        {
-          "topic": "最重要的上涨驱动",
-          "views": "国金证券强调酒店周期拐点；国信证券强调AI应用扩散；长江证券从整体消费者服务修复寻找机会。",
-          "investmentMeaning": "应分别验证RevPAR、AI带来的效率或流量改善，以及整体客单价和利润修复，不能用一个逻辑覆盖全板块。"
-        }
-      ],
-      "integratedView": "旅游酒店行业温度温和回升，酒店经营数据是当前最可量化的主线；AI属于附加催化，客流增长能否转化为RevPAR和利润仍是核心。",
-      "validation": "用入住率、ADR、RevPAR、同店利润率和旅游花费增速验证，并等待篮子技术触发。"
-    }
+    ]
   },
-  "decisionLevel": "wait_trigger",
-  "dataGaps": [],
   "tradeDecision": {
     "asOf": "2026-08-10",
     "verdict": "需求扩张—盈利修复分化，但技术趋势确认未达到交易门槛，当前不交易",

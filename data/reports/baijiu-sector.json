@@ -452,33 +452,33 @@
     "volumeAverages": [
       {
         "days": 5,
-        "average": 119.74,
-        "ratio": 1.18
+        "average": 119.742,
+        "ratio": 1.1835446209350102
       },
       {
         "days": 10,
-        "average": 129.2,
-        "ratio": 1.1
+        "average": 129.19800000000004,
+        "ratio": 1.096921004969117
       },
       {
         "days": 20,
-        "average": 127.96,
-        "ratio": 1.11
+        "average": 127.96349999999995,
+        "ratio": 1.1075033114911679
       },
       {
         "days": 60,
-        "average": 112.2,
-        "ratio": 1.26
+        "average": 112.20116666666667,
+        "ratio": 1.2630884705595753
       },
       {
         "days": 90,
-        "average": 98,
-        "ratio": 1.45
+        "average": 97.997,
+        "ratio": 1.446166719389369
       },
       {
         "days": 145,
-        "average": 89.46,
-        "ratio": 1.58
+        "average": 89.46144827586205,
+        "ratio": 1.5841460509670513
       }
     ],
     "prices": [
@@ -4125,53 +4125,16 @@
     "国家统计局：2026H1居民收入与消费支出 https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964129.html",
     "行情：腾讯证券公开前复权日线；8股等权篮子，截至2026-08-10"
   ],
-  "supplyDemand": {
-    "state": "需求数据改善，渠道库存仍过重",
-    "tone": "warning",
-    "direction": "弱修复",
-    "conclusion": "烟酒零售额增长，但行业周转天数继续上升；消费端改善尚未完全转化为渠道去库存。",
-    "demand": {
-      "status": "表观改善",
-      "evidence": "烟酒类零售额H1为3,547亿元，同比+13.2%。",
-      "change": "同比增长",
-      "tone": "positive"
-    },
-    "supply": {
-      "status": "刚性偏强",
-      "evidence": "酒企产能与年度经营目标使供给调整相对滞后。",
-      "change": "收缩不明显",
-      "tone": "warning"
-    },
-    "inventory": {
-      "status": "偏高",
-      "evidence": "行业周转天数约900天，同比继续上升。",
-      "change": "仍在累积",
-      "tone": "negative"
-    },
-    "price": {
-      "status": "分化承压",
-      "evidence": "需求增长尚未带来全行业稳定提价。",
-      "change": "等待批价确认",
-      "tone": "warning"
-    },
-    "profit": {
-      "status": "龙头尚稳",
-      "evidence": "茅台Q1收入增长6.54%，净利增长1.47%，利润增速低于收入。",
-      "change": "增速放缓",
-      "tone": "warning"
-    },
-    "leadingIndicator": "批价、渠道库存、合同负债和经营现金流。",
-    "improvement": "库存天数回落、批价企稳且回款同步改善。",
-    "invalidation": "零售增速回落而库存继续升高、核心产品批价下破。"
-  },
   "marketResearch": {
     "fullTextStatus": "permission_required",
     "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
-    "period": "20260413—20260811",
-    "reportCount": 2,
-    "institutionCount": 2,
+    "period": "20260415—20260813",
+    "reportCount": 3,
+    "institutionCount": 3,
+    "companyForecastSampleCount": 89,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
     "consensus": "关注动销与库存",
-    "revisionTrend": "代表公司盈利预测样本31条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "revisionTrend": "代表公司盈利预测样本89条，用于观察行业盈利预期扩散，不作为行业研报展示",
     "commonViews": [
       "机构观点仅作为预期证据，不替代产业供需和公司财报",
       "优先观察盈利预测是否连续上修，而不是单篇研报标题"
@@ -4182,6 +4145,7 @@
     ],
     "integratedConclusion": "消费数据改善不能替代渠道去库存，批价、库存和现金回款需同时转强才是可靠反转。",
     "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
+    "synthesis": null,
     "freeSources": [
       {
         "name": "东方财富研报中心",
@@ -4276,35 +4240,15 @@
         "institution": "国金证券",
         "title": "食品饮料行业研究－26Q2基金持仓分析：板块全面转向低配，白酒仓位大幅回落",
         "type": "行业研究索引"
+      },
+      {
+        "date": "20260721",
+        "institution": "东兴证券",
+        "title": "食品饮料行业：茅台提价或推动白酒估值重估",
+        "type": "行业研究索引"
       }
-    ],
-    "companyForecastSampleCount": 31,
-    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
-    "synthesis": {
-      "verdict": "机构都在寻找底部边际变化，但确认指标不同",
-      "confidence": "标题级归纳 · 中低置信度",
-      "confidenceTone": "warning",
-      "evidenceNote": "2份行业研报；当前只有标题与结构化元数据，未读取完整正文。",
-      "commonPoints": [
-        {
-          "point": "关注旺季前后的边际变化，而非判断全面高景气",
-          "reason": "两份报告分别跟踪高端白酒价格和基金低配，核心都指向低预期环境下的变化信号。",
-          "support": "2份 / 2家机构"
-        }
-      ],
-      "differences": [
-        {
-          "topic": "基本面信号与资金面信号谁更领先",
-          "views": "申万宏源侧重高端白酒价格；国金证券侧重基金持仓降至低配。",
-          "investmentMeaning": "价格企稳可验证需求，低配只能提供潜在资金弹性，不能单独作为买点。"
-        }
-      ],
-      "integratedView": "白酒处于低预期观察期；真正可交易的反转应由批价、库存和现金回款改善确认，基金低配只提高反弹弹性。",
-      "validation": "用报告中的渠道库存、批价、合同负债、经营现金流和篮子放量突破共同验证。"
-    }
+    ]
   },
-  "decisionLevel": "wait_trigger",
-  "dataGaps": [],
   "tradeDecision": {
     "asOf": "2026-08-10",
     "verdict": "下行后段—主动去库存，但技术趋势反转未达到交易门槛，当前不交易",
@@ -4365,5 +4309,44 @@
         "source": "腾讯证券前复权行情，截至2026-08-10"
       }
     ]
+  },
+  "supplyDemand": {
+    "state": "低景气",
+    "tone": "warning",
+    "direction": "L型筑底、头部分化",
+    "conclusion": "2026年上半年烟酒类限额以上零售额同比增长13.2%，但酒业协会全产业链调研显示白酒仍处于量、价、利三重收缩，渠道主动去库存、价格倒挂和消费理性化延续。零售统计包含烟草且不能直接代表白酒真实开瓶，因此目前只能判断为深度调整中的局部企稳，尚非全面复苏。",
+    "demand": {
+      "status": "见需求证据矩阵",
+      "evidence": "烟酒零售同比+13.2%，但白酒开瓶口径缺失",
+      "change": "L型筑底、头部分化",
+      "tone": "warning"
+    },
+    "supply": {
+      "status": "见供给证据矩阵",
+      "evidence": "行业仍主动去库存；2025H1平均存货周转约900天；部分企业控货、优化网点，但成品及基酒库存仍高",
+      "change": "待验证",
+      "tone": "warning"
+    },
+    "inventory": {
+      "status": "库存需持续核验",
+      "evidence": "行业仍主动去库存；2025H1平均存货周转约900天",
+      "change": "待验证",
+      "tone": "warning"
+    },
+    "price": {
+      "status": "价格决定利润传导",
+      "evidence": "价格倒挂仍普遍，价格体系重建中",
+      "change": "待验证",
+      "tone": "warning"
+    },
+    "profit": {
+      "status": "利润分化",
+      "evidence": "茅台26Q1收入+6.54%、净利+1.47%；行业分化",
+      "change": "待验证",
+      "tone": "warning"
+    },
+    "leadingIndicator": "真实动销改善、渠道库存出清、主流批价企稳、龙头盈利企稳、供给纪律改善",
+    "improvement": "主流单品批价连续三个月企稳、经销商库存回落至合理月数、合同负债和经营现金流不再恶化，且多数龙头利润预期停止下修。",
+    "invalidation": "节日动销弱于预期、批价再次快速下行、酒企继续向渠道压货，或核心公司现金流与合同负债同步恶化。"
   }
 }

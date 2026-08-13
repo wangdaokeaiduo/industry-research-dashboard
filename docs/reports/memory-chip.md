@@ -1,6 +1,6 @@
 # 存储芯片板块投资研究报告
 
-> 数据截止：2026-08-12｜文档更新：2026-08-13T01:20:00.518Z｜不构成投资建议
+> 数据截止：2026-08-12｜文档更新：2026-08-13T05:15:56.707Z｜不构成投资建议
 
 ## 0. 是否可以交易
 
@@ -61,13 +61,23 @@
 
 ## 5. 行业研报与行业温度
 
-- 数据状态：已接入5份存储行业价格、供需和原厂资料；不展示个股研报
-- 统计口径：仅DRAM、NAND、HBM、服务器存储供需和技术行业研究
-- 统计期：20260202—20260624
-- 行业研报：5份 / 3家机构
-- 个股盈利预测汇总样本：0条
-- 行业共识：AI需求与结构性供给约束推动存储价格和盈利扩张
-- 预期变化：从一季度价格跳涨，演变为二季度全产品涨价和长期供货协议
+- 数据状态：Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限
+- 统计口径：仅行业周报、策略、专题与行业深度；个股报告不逐条展示
+- 统计期：20260415—20260813
+- 行业研报：2份 / 5家机构
+- 个股盈利预测汇总样本：41条
+- 行业共识：AI需求与供给约束推动价格和盈利扩张
+- 预期变化：代表公司盈利预测样本41条，用于观察行业盈利预期扩散，不作为行业研报展示
+
+**共同观点**
+
+- 机构观点仅作为预期证据，不替代产业供需和公司财报
+- 优先观察盈利预测是否连续上修，而不是单篇研报标题
+
+**核心分歧**
+
+- 需求增长能否转化为利润
+- 当前估值是否已经提前反映乐观预期
 
 ### 研报共性与不同点
 
@@ -87,17 +97,32 @@
 
 **验证方法：** 每月核对合约价、原厂库存与资本开支；中报核对A股毛利率、库存和现金流；每周核对板块量价。
 
-**综合研判：** 基本面支持进入交易池，是否试仓由真实篮子量价确认；优先盈利兑现，不追纯概念。
+**综合研判：** 存储进入高景气扩张期，但A股映射和估值分化明显；需用合约价、原厂库存、样本毛利率与板块量价共同确认。
 
-**事实核验：** 供需结论已与三类来源及A股财务估值和真实前复权篮子交叉检查。
+**事实核验：** 综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。
+
+**免费公开来源**
+
+- [东方财富研报中心](https://data.eastmoney.com/report/)（研报索引）：公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。
+- [券商官方网站研究栏目](https://www.sac.net.cn/hyfw/hydt/)（券商公开）：从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。
+- [World Bank Documents & Reports](https://documents.worldbank.org/en/publication/documents-reports)（国际研究）：世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。
+- [IMF eLibrary](https://www.elibrary.imf.org/)（国际研究）：IMF公开出版物、国别报告、专题研究与金融稳定资料。
+- [McKinsey Insights](https://www.mckinsey.com/featured-insights)（咨询研究）：麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。
+- [BCG Publications](https://www.bcg.com/publications)（咨询研究）：BCG公开行业报告与企业战略研究。
+- [Bain Insights](https://www.bain.com/insights/)（咨询研究）：贝恩公开行业洞察，消费品、零售和技术覆盖较多。
+- [Deloitte Insights](https://www.deloitte.com/us/en/insights.html)（咨询研究）：德勤公开行业展望、调查和专题分析。
+- [巨潮资讯](https://www.cninfo.com.cn/)（事实核验）：上市公司法定公告与财报，用于核验研报中的经营与财务判断。
+- [国家统计局](https://www.stats.gov.cn/)（事实核验）：宏观、消费、工业产量和行业统计的官方来源。
 
 | 日期 | 机构 | 行业研报标题 | 类型 |
 | --- | --- | --- | --- |
+| 20260810 | 华鑫证券 | 寒武纪上半年营收高增，SK海力士投资新建DRAM／NAND晶圆厂：半导体行业周报 | 行业研究索引 |
+| 20260803 | 东吴证券 | 半导体设备行业深度：AI发展带动HBM需求爆发，看好半导体设备商充分受益 | 行业研究索引 |
 | 20260624 | Micron | [Fiscal Q3 2026 Results and Memory Market Outlook](https://investors.micron.com/node/50671) | 厂商财报与行业展望 |
 | 20260331 | TrendForce | [AI Server Demand to Drive Memory Contract Price Increases in 2Q26](https://www.trendforce.com/presscenter/news/20260331-12995.html) | 行业价格 |
 | 20260318 | Micron | [Fiscal Q2 2026 Earnings Deck — Market Outlook](https://investors.micron.com/static-files/9c0becf5-df56-4eec-bd67-453dda68b273) | 行业供需 |
-| 20260202 | TrendForce | [Memory Price Outlook for 1Q26 Sharply Upgraded](https://www.trendforce.com/presscenter/news/20260202-12911.html) | 行业价格 |
 | 20260212 | Samsung Electronics | [Samsung Ships Industry-First Commercial HBM4](https://news.samsung.com/global/samsung-ships-industry-first-commercial-hbm4-with-ultimate-performance-for-ai-computing) | 技术与产能 |
+| 20260202 | TrendForce | [Memory Price Outlook for 1Q26 Sharply Upgraded](https://www.trendforce.com/presscenter/news/20260202-12911.html) | 行业价格 |
 
 ## 6. 执行摘要
 

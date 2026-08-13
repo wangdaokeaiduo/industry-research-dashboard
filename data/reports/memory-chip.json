@@ -3,7 +3,7 @@
   "industry": "存储芯片板块",
   "category": "cycle",
   "asOf": "2026-08-12",
-  "updatedAt": "2026-08-13T01:20:00.518Z",
+  "updatedAt": "2026-08-13T05:15:56.707Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "全球原厂库存周数与逐月位元产出缺少统一免费实时口径",
@@ -6100,7 +6100,39 @@
         "close": 402.1272675384
       }
     ],
-    "volumeUnit": "百万元（5股成交额合计）"
+    "volumeUnit": "百万元（5股成交额合计）",
+    "volumeAverages": [
+      {
+        "days": 5,
+        "average": 4848.79201237,
+        "ratio": 0.8118897661821591
+      },
+      {
+        "days": 10,
+        "average": 5179.555835015401,
+        "ratio": 0.7600428952953443
+      },
+      {
+        "days": 20,
+        "average": 5381.463458571101,
+        "ratio": 0.7315267758473785
+      },
+      {
+        "days": 60,
+        "average": 6494.794965494432,
+        "ratio": 0.6061291594428816
+      },
+      {
+        "days": 90,
+        "average": 5638.4876113374,
+        "ratio": 0.698180945768763
+      },
+      {
+        "days": 145,
+        "average": 4553.646098284595,
+        "ratio": 0.864512640688522
+      }
+    ]
   },
   "executionPlan": {
     "action": "等待放量突破，不因存储涨价新闻追高",
@@ -6154,15 +6186,25 @@
     }
   ],
   "marketResearch": {
-    "fullTextStatus": "available",
-    "statusNote": "已接入5份存储行业价格、供需和原厂资料；不展示个股研报",
-    "period": "20260202—20260624",
-    "reportCount": 5,
-    "institutionCount": 3,
-    "companyForecastSampleCount": 0,
-    "reportScope": "仅DRAM、NAND、HBM、服务器存储供需和技术行业研究",
-    "consensus": "AI需求与结构性供给约束推动存储价格和盈利扩张",
-    "revisionTrend": "从一季度价格跳涨，演变为二季度全产品涨价和长期供货协议",
+    "fullTextStatus": "permission_required",
+    "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
+    "period": "20260415—20260813",
+    "reportCount": 2,
+    "institutionCount": 5,
+    "companyForecastSampleCount": 41,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
+    "consensus": "AI需求与供给约束推动价格和盈利扩张",
+    "revisionTrend": "代表公司盈利预测样本41条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "commonViews": [
+      "机构观点仅作为预期证据，不替代产业供需和公司财报",
+      "优先观察盈利预测是否连续上修，而不是单篇研报标题"
+    ],
+    "disagreements": [
+      "需求增长能否转化为利润",
+      "当前估值是否已经提前反映乐观预期"
+    ],
+    "integratedConclusion": "存储进入高景气扩张期，但A股映射和估值分化明显；需用合约价、原厂库存、样本毛利率与板块量价共同确认。",
+    "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
     "synthesis": {
       "verdict": "共同确认存储进入供给受限的盈利扩张期，分歧在于消费需求承受力和高价持续时间",
       "confidence": "全文/摘要级归纳 · 高置信度",
@@ -6190,9 +6232,101 @@
       "integratedView": "存储处于扩张阶段而非左侧底部；产业价值高，但交易需防涨价预期过度和A股映射偏差。",
       "validation": "每月核对合约价、原厂库存与资本开支；中报核对A股毛利率、库存和现金流；每周核对板块量价。"
     },
-    "integratedConclusion": "基本面支持进入交易池，是否试仓由真实篮子量价确认；优先盈利兑现，不追纯概念。",
-    "evidenceCheck": "供需结论已与三类来源及A股财务估值和真实前复权篮子交叉检查。",
+    "freeSources": [
+      {
+        "name": "东方财富研报中心",
+        "url": "https://data.eastmoney.com/report/",
+        "type": "research",
+        "typeLabel": "研报索引",
+        "description": "公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。",
+        "coverage": "A股券商研报"
+      },
+      {
+        "name": "券商官方网站研究栏目",
+        "url": "https://www.sac.net.cn/hyfw/hydt/",
+        "type": "research",
+        "typeLabel": "券商公开",
+        "description": "从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。",
+        "coverage": "中国券商公开观点"
+      },
+      {
+        "name": "World Bank Documents & Reports",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。",
+        "coverage": "全球宏观与产业"
+      },
+      {
+        "name": "IMF eLibrary",
+        "url": "https://www.elibrary.imf.org/",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "IMF公开出版物、国别报告、专题研究与金融稳定资料。",
+        "coverage": "全球宏观、金融与政策"
+      },
+      {
+        "name": "McKinsey Insights",
+        "url": "https://www.mckinsey.com/featured-insights",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。",
+        "coverage": "消费、科技、医疗、工业"
+      },
+      {
+        "name": "BCG Publications",
+        "url": "https://www.bcg.com/publications",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "BCG公开行业报告与企业战略研究。",
+        "coverage": "全球行业与竞争格局"
+      },
+      {
+        "name": "Bain Insights",
+        "url": "https://www.bain.com/insights/",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "贝恩公开行业洞察，消费品、零售和技术覆盖较多。",
+        "coverage": "消费、零售、科技"
+      },
+      {
+        "name": "Deloitte Insights",
+        "url": "https://www.deloitte.com/us/en/insights.html",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "德勤公开行业展望、调查和专题分析。",
+        "coverage": "TMT、消费、医疗、制造"
+      },
+      {
+        "name": "巨潮资讯",
+        "url": "https://www.cninfo.com.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "上市公司法定公告与财报，用于核验研报中的经营与财务判断。",
+        "coverage": "A股公司公告"
+      },
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "宏观、消费、工业产量和行业统计的官方来源。",
+        "coverage": "中国官方统计"
+      }
+    ],
     "topReports": [
+      {
+        "date": "20260810",
+        "institution": "华鑫证券",
+        "title": "寒武纪上半年营收高增，SK海力士投资新建DRAM／NAND晶圆厂：半导体行业周报",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260803",
+        "institution": "东吴证券",
+        "title": "半导体设备行业深度：AI发展带动HBM需求爆发，看好半导体设备商充分受益",
+        "type": "行业研究索引"
+      },
       {
         "date": "20260624",
         "institution": "Micron",
@@ -6215,21 +6349,20 @@
         "url": "https://investors.micron.com/static-files/9c0becf5-df56-4eec-bd67-453dda68b273"
       },
       {
-        "date": "20260202",
-        "institution": "TrendForce",
-        "title": "Memory Price Outlook for 1Q26 Sharply Upgraded",
-        "type": "行业价格",
-        "url": "https://www.trendforce.com/presscenter/news/20260202-12911.html"
-      },
-      {
         "date": "20260212",
         "institution": "Samsung Electronics",
         "title": "Samsung Ships Industry-First Commercial HBM4",
         "type": "技术与产能",
         "url": "https://news.samsung.com/global/samsung-ships-industry-first-commercial-hbm4-with-ultimate-performance-for-ai-computing"
+      },
+      {
+        "date": "20260202",
+        "institution": "TrendForce",
+        "title": "Memory Price Outlook for 1Q26 Sharply Upgraded",
+        "type": "行业价格",
+        "url": "https://www.trendforce.com/presscenter/news/20260202-12911.html"
       }
-    ],
-    "freeSources": []
+    ]
   },
   "scenarios": [
     {

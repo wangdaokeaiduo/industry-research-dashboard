@@ -3,7 +3,7 @@
   "industry": "医药连锁板块",
   "category": "mixed",
   "asOf": "2026-08-12",
-  "updatedAt": "2026-08-13T01:12:03.226Z",
+  "updatedAt": "2026-08-13T05:15:56.173Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "全国药店门店数、闭店数与同店增长缺少统一高频免费口径",
@@ -6095,7 +6095,39 @@
         "close": 61.56030492826085
       }
     ],
-    "volumeUnit": "百万元（5股成交额合计）"
+    "volumeUnit": "百万元（5股成交额合计）",
+    "volumeAverages": [
+      {
+        "days": 5,
+        "average": 134.395801243,
+        "ratio": 1.385389069003357
+      },
+      {
+        "days": 10,
+        "average": 104.3485869119,
+        "ratio": 1.7843123656211837
+      },
+      {
+        "days": 20,
+        "average": 90.21635212124998,
+        "ratio": 2.063821797092412
+      },
+      {
+        "days": 60,
+        "average": 69.09418956366669,
+        "ratio": 2.694734175736082
+      },
+      {
+        "days": 90,
+        "average": 67.03715608577777,
+        "ratio": 2.777422027327038
+      },
+      {
+        "days": 145,
+        "average": 69.54637991117242,
+        "ratio": 2.6772130224435884
+      }
+    ]
   },
   "executionPlan": {
     "action": "等待放量突破与同店改善，不因低估值单独买入",
@@ -6149,15 +6181,25 @@
     }
   ],
   "marketResearch": {
-    "fullTextStatus": "available",
-    "statusNote": "已接入4份医药零售政策与行业事实资料；不展示个股研报",
-    "period": "20250420—20260519",
-    "reportCount": 4,
-    "institutionCount": 2,
+    "fullTextStatus": "permission_required",
+    "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
+    "period": "20260415—20260813",
+    "reportCount": 0,
+    "institutionCount": 3,
     "companyForecastSampleCount": 0,
-    "reportScope": "仅医保支付、药价机制、追溯与零售药店监管",
-    "consensus": "行业从门店扩张转向合规与效率竞争",
-    "revisionTrend": "医保流量入口继续开放，但价格和基金监管同步趋严",
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
+    "consensus": "从门店扩张转向合规与单店效率",
+    "revisionTrend": "本期代表公司盈利预测样本不足",
+    "commonViews": [
+      "机构观点仅作为预期证据，不替代产业供需和公司财报",
+      "优先观察盈利预测是否连续上修，而不是单篇研报标题"
+    ],
+    "disagreements": [
+      "需求增长能否转化为利润",
+      "当前估值是否已经提前反映乐观预期"
+    ],
+    "integratedConclusion": "处方外流带来长期增量，但价格监管与门店过密压制回报；需用同店、毛利率、库存、经营现金流和板块量价共同确认。",
+    "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
     "synthesis": {
       "verdict": "政策同时提供处方流量和强化价格合规，行业价值取决于效率而不是门店数量",
       "confidence": "政策全文级归纳 · 高置信度",
@@ -6185,8 +6227,88 @@
       "integratedView": "医药连锁处于规范化出清期，龙头长期受益于集中度提升，但短期投资价值需要同店与现金流先出现拐点。",
       "validation": "每季核对同店、门店、统筹收入、毛利率、库存、应收和经营现金流；每周核对板块量价。"
     },
-    "integratedConclusion": "产业具备长期整合价值，当前仍需等待经营与技术面共振。",
-    "evidenceCheck": "政策结论已与A股财务估值和真实前复权篮子交叉检查。",
+    "freeSources": [
+      {
+        "name": "东方财富研报中心",
+        "url": "https://data.eastmoney.com/report/",
+        "type": "research",
+        "typeLabel": "研报索引",
+        "description": "公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。",
+        "coverage": "A股券商研报"
+      },
+      {
+        "name": "券商官方网站研究栏目",
+        "url": "https://www.sac.net.cn/hyfw/hydt/",
+        "type": "research",
+        "typeLabel": "券商公开",
+        "description": "从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。",
+        "coverage": "中国券商公开观点"
+      },
+      {
+        "name": "World Bank Documents & Reports",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。",
+        "coverage": "全球宏观与产业"
+      },
+      {
+        "name": "IMF eLibrary",
+        "url": "https://www.elibrary.imf.org/",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "IMF公开出版物、国别报告、专题研究与金融稳定资料。",
+        "coverage": "全球宏观、金融与政策"
+      },
+      {
+        "name": "McKinsey Insights",
+        "url": "https://www.mckinsey.com/featured-insights",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。",
+        "coverage": "消费、科技、医疗、工业"
+      },
+      {
+        "name": "BCG Publications",
+        "url": "https://www.bcg.com/publications",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "BCG公开行业报告与企业战略研究。",
+        "coverage": "全球行业与竞争格局"
+      },
+      {
+        "name": "Bain Insights",
+        "url": "https://www.bain.com/insights/",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "贝恩公开行业洞察，消费品、零售和技术覆盖较多。",
+        "coverage": "消费、零售、科技"
+      },
+      {
+        "name": "Deloitte Insights",
+        "url": "https://www.deloitte.com/us/en/insights.html",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "德勤公开行业展望、调查和专题分析。",
+        "coverage": "TMT、消费、医疗、制造"
+      },
+      {
+        "name": "巨潮资讯",
+        "url": "https://www.cninfo.com.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "上市公司法定公告与财报，用于核验研报中的经营与财务判断。",
+        "coverage": "A股公司公告"
+      },
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "宏观、消费、工业产量和行业统计的官方来源。",
+        "coverage": "中国官方统计"
+      }
+    ],
     "topReports": [
       {
         "date": "20260519",
@@ -6216,8 +6338,7 @@
         "type": "追溯监管",
         "url": "https://www.nhsa.gov.cn/art/2025/4/20/art_52_16312.html"
       }
-    ],
-    "freeSources": []
+    ]
   },
   "scenarios": [
     {

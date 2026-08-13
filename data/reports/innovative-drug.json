@@ -2,8 +2,8 @@
   "id": "innovative-drug",
   "industry": "创新药板块",
   "category": "growth",
-  "asOf": "2026-08-10",
-  "updatedAt": "2026-08-11T07:16:06.082Z",
+  "asOf": "2026-08-11",
+  "updatedAt": "2026-08-13T05:15:55.657Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "BD交易总额包含里程碑付款，不能直接等同于当期现金流",
@@ -28,13 +28,13 @@
         "label": "估值吸引力",
         "value": "偏低",
         "score": 45,
-        "comment": "盈利样本PE-TTM中位数58.15倍"
+        "comment": "盈利样本PE-TTM中位数57.84倍"
       },
       {
         "label": "技术位置",
         "value": "中长期偏强",
         "score": 70,
-        "comment": "篮子176.65，MA60 158.76"
+        "comment": "篮子176.44，MA60 159.19"
       },
       {
         "label": "综合评级",
@@ -92,7 +92,7 @@
     "stage": "产业上行—价值重估",
     "rating": "等待触发",
     "confidence": "中高",
-    "conclusion": "创新药产业价值处于上行期，但板块不是普涨逻辑。等权篮子176.65，MA20/60/145=171.00/158.76/156.42，量比1.44倍；当前尚未放量突破。",
+    "conclusion": "创新药产业价值处于上行期，但板块不是普涨逻辑。等权篮子176.44，MA20/60/145=170.69/159.19/156.58，量比1.33倍；当前尚未放量突破。",
     "evidence": [
       "中国相关跨境生物医药交易在2025年创历史新高",
       "亚洲约占全球创新管线43%和对外授权活动40%",
@@ -151,8 +151,8 @@
     {
       "name": "K线放量确认",
       "dimension": "技术",
-      "current": "篮子176.65，量比1.44",
-      "threshold": "放量突破179.79",
+      "current": "篮子176.44，量比1.33",
+      "threshold": "放量突破185.55",
       "status": "partial",
       "trend": "up",
       "source": "Tushare前复权5股等权篮子"
@@ -226,25 +226,24 @@
     },
     {
       "label": "盈利样本PE-TTM中位数",
-      "value": "58.15",
+      "value": "57.84",
       "unit": "倍",
-      "change": "截至20260810",
+      "change": "截至20260811",
       "direction": "down",
       "series": [
-        44.2901,
-        136.5858,
-        58.7505,
-        57.5517
+        44.9359,
+        136.8181,
+        57.6799,
+        58.009
       ]
     },
     {
       "label": "创新药等权篮子",
-      "value": "176.65",
+      "value": "176.44",
       "unit": "点",
-      "change": "量比1.44倍",
+      "change": "量比1.33倍",
       "direction": "up",
       "series": [
-        182.48541662537065,
         181.66678846393705,
         181.24080892792645,
         164.98276593767443,
@@ -263,7 +262,8 @@
         163.9906756357265,
         162.46146034648513,
         177.273231148396,
-        176.65490560229196
+        176.65490560229196,
+        176.43853680420077
       ]
     }
   ],
@@ -342,7 +342,7 @@
       "company": "恒瑞医药",
       "ticker": "600276.SH",
       "driver": "最新营收同比12.98%，净利同比21.78%",
-      "valuation": "PE-TTM 44.29倍；毛利率86.60%",
+      "valuation": "PE-TTM 44.94倍；毛利率86.60%",
       "risk": "临床失败、BD兑现、商业化放量、现金消耗与估值风险"
     },
     {
@@ -351,7 +351,7 @@
       "company": "百济神州",
       "ticker": "688235.SH",
       "driver": "最新营收同比31.02%，净利同比1801.30%",
-      "valuation": "PE-TTM 136.59倍；毛利率89.02%",
+      "valuation": "PE-TTM 136.82倍；毛利率89.02%",
       "risk": "临床失败、BD兑现、商业化放量、现金消耗与估值风险"
     },
     {
@@ -360,7 +360,7 @@
       "company": "君实生物",
       "ticker": "688180.SH",
       "driver": "最新营收同比45.09%，净利同比91.24%",
-      "valuation": "仍亏损；PB 6.78倍；毛利率79.76%",
+      "valuation": "仍亏损；PB 6.70倍；毛利率79.76%",
       "risk": "临床失败、BD兑现、商业化放量、现金消耗与估值风险"
     },
     {
@@ -369,7 +369,7 @@
       "company": "荣昌生物",
       "ticker": "688331.SH",
       "driver": "最新营收同比24.76%，净利同比229.06%",
-      "valuation": "PE-TTM 58.75倍；毛利率82.18%",
+      "valuation": "PE-TTM 57.68倍；毛利率82.18%",
       "risk": "临床失败、BD兑现、商业化放量、现金消耗与估值风险"
     },
     {
@@ -378,7 +378,7 @@
       "company": "泽璟制药",
       "ticker": "688266.SH",
       "driver": "最新营收同比220.88%，净利同比979.09%",
-      "valuation": "PE-TTM 57.55倍；毛利率94.64%",
+      "valuation": "PE-TTM 58.01倍；毛利率94.64%",
       "risk": "临床失败、BD兑现、商业化放量、现金消耗与估值风险"
     }
   ],
@@ -394,7 +394,7 @@
       "name": "基准",
       "weight": "50%",
       "assumption": "产业景气延续但公司分化",
-      "valuation": "盈利公司PE中位数约58.15倍；亏损公司按现金与管线风险调整",
+      "valuation": "盈利公司PE中位数约57.84倍；亏损公司按现金与管线风险调整",
       "signal": "优质资产获认可、同质化继续出清"
     },
     {
@@ -407,16 +407,16 @@
   ],
   "technical": {
     "instrument": "A股创新药5股等权篮子（恒瑞医药/百济神州/君实生物/荣昌生物/泽璟制药）",
-    "timeframe": "日线 · 前复权等权标准化指数 · 630日",
-    "trend": "收盘176.65；MA20/60/90/145=171.00/158.76/160.35/156.42，中长期偏强",
-    "volume": "当日成交额1395.68百万元，为20日均额1.44倍",
+    "timeframe": "日线 · 前复权等权标准化指数 · 631日",
+    "trend": "收盘176.44；MA20/60/90/145=170.69/159.19/160.59/156.58，中长期偏强",
+    "volume": "当日成交额1307.97百万元，为20日均额1.33倍",
     "wave": "主计数为产业重估后的上升推动或高位整理，备选为反弹结束；跌破失效位转弱。",
     "fibonacci": "近250日高低200.30/128.80，0.382/0.5/0.618回撤为172.99/164.55/156.11",
-    "chan": "最近20日形成震荡中枢，放量突破179.79为三买候选，跌破174.01失效。",
+    "chan": "最近20日形成震荡中枢，放量突破185.55为三买候选，跌破173.79失效。",
     "rating": "等待触发",
-    "riskReward": "1.2 : 1",
-    "trigger": "放量突破179.79，成交额≥20日均额1.2倍",
-    "invalidation": "收盘跌破174.01",
+    "riskReward": "3.4 : 1",
+    "trigger": "放量突破185.55，成交额≥20日均额1.2倍",
+    "invalidation": "收盘跌破173.79",
     "prices": [
       100,
       99.72530939931762,
@@ -1047,7 +1047,8 @@
       163.9906756357265,
       162.46146034648513,
       177.273231148396,
-      176.65490560229196
+      176.65490560229196,
+      176.43853680420077
     ],
     "volumes": [
       137.17065060000002,
@@ -1679,7 +1680,8 @@
       750.6069848999999,
       1093.7509791,
       1500.7725615,
-      1395.6768321
+      1395.6768321,
+      1307.9696384
     ],
     "ohlc": [
       {
@@ -6091,15 +6093,54 @@
         "high": 184.62440167794097,
         "low": 174.26830642342185,
         "close": 176.65490560229196
+      },
+      {
+        "date": "20260811",
+        "open": 175.29972673816033,
+        "high": 183.0512218546495,
+        "low": 173.7591458047746,
+        "close": 176.43853680420077
       }
     ],
-    "volumeUnit": "百万元（5股成交额合计）"
+    "volumeUnit": "百万元（5股成交额合计）",
+    "volumeAverages": [
+      {
+        "days": 5,
+        "average": 1209.7553991999998,
+        "ratio": 1.0811852042693493
+      },
+      {
+        "days": 10,
+        "average": 950.51789287,
+        "ratio": 1.3760599860468778
+      },
+      {
+        "days": 20,
+        "average": 983.1206596499997,
+        "ratio": 1.3304263577022677
+      },
+      {
+        "days": 60,
+        "average": 926.08415975,
+        "ratio": 1.4123658466991718
+      },
+      {
+        "days": 90,
+        "average": 880.6097334122226,
+        "ratio": 1.4853000015475932
+      },
+      {
+        "days": 145,
+        "average": 751.5694907103449,
+        "ratio": 1.740317634719012
+      }
+    ]
   },
   "executionPlan": {
     "action": "等待放量突破，不因单笔BD新闻追高",
-    "trigger": "收盘放量突破179.79且成交额≥20日均额1.2倍；同时无重大临床利空",
-    "add": "突破后回踩179.79附近不破，且中报确认收入、现金储备或BD首付款改善",
-    "priceInvalidation": "收盘跌破174.01",
+    "trigger": "收盘放量突破185.55且成交额≥20日均额1.2倍；同时无重大临床利空",
+    "add": "突破后回踩185.55附近不破，且中报确认收入、现金储备或BD首付款改善",
+    "priceInvalidation": "收盘跌破173.79",
     "fundamentalInvalidation": "核心临床失败、授权退回、现金消耗显著加快或商业化收入不及预期",
     "nextReview": "下一交易周及2026年中报"
   },
@@ -6133,7 +6174,7 @@
     {
       "grade": "A",
       "label": "A股行情、估值和财务",
-      "note": "Tushare/公司定期报告，截至20260810"
+      "note": "Tushare/公司定期报告，截至20260811"
     },
     {
       "grade": "B",
@@ -6147,15 +6188,25 @@
     }
   ],
   "marketResearch": {
-    "fullTextStatus": "available",
-    "statusNote": "已接入4份创新药行业与监管研究；不展示个股研报",
-    "period": "20251014—20260701",
-    "reportCount": 4,
-    "institutionCount": 3,
-    "companyForecastSampleCount": 0,
-    "reportScope": "仅全球研发、亚洲创新、跨境交易与监管政策研究",
-    "consensus": "中国创新资产全球地位提升，价值向差异化管线集中",
-    "revisionTrend": "从审评提速走向跨境BD高景气，但研发效率和融资仍分化",
+    "fullTextStatus": "permission_required",
+    "statusNote": "Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限",
+    "period": "20260415—20260813",
+    "reportCount": 3,
+    "institutionCount": 7,
+    "companyForecastSampleCount": 81,
+    "reportScope": "仅行业周报、策略、专题与行业深度；个股报告不逐条展示",
+    "consensus": "中国创新资产全球价值提升",
+    "revisionTrend": "代表公司盈利预测样本81条，用于观察行业盈利预期扩散，不作为行业研报展示",
+    "commonViews": [
+      "机构观点仅作为预期证据，不替代产业供需和公司财报",
+      "优先观察盈利预测是否连续上修，而不是单篇研报标题"
+    ],
+    "disagreements": [
+      "需求增长能否转化为利润",
+      "当前估值是否已经提前反映乐观预期"
+    ],
+    "integratedConclusion": "产业景气向上但公司分化显著；优先验证临床差异化、BD首付款、商业化收入、现金储备和板块量价突破。",
+    "evidenceCheck": "综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。",
     "synthesis": {
       "verdict": "共同确认中国创新药全球价值提升，分歧集中在研发效率、交易可持续性和商业化兑现",
       "confidence": "摘要/全文级归纳 · 中高置信度",
@@ -6183,9 +6234,107 @@
       "integratedView": "创新药处于产业上行阶段，但投资机会是结构性的：商业化、全球BD和后期差异化管线的确定性高于早期同质化资产。",
       "validation": "每周核对BD首付款、临床读出和板块量价；中报核对商业化收入、研发费用与现金储备。"
     },
-    "integratedConclusion": "产业基本面支持进入交易池，但板块尚需放量突破；优先确定性，限制纯主题仓位。",
-    "evidenceCheck": "产业结论已与监管、A股财务估值和真实前复权篮子交叉检查。",
+    "freeSources": [
+      {
+        "name": "东方财富研报中心",
+        "url": "https://data.eastmoney.com/report/",
+        "type": "research",
+        "typeLabel": "研报索引",
+        "description": "公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。",
+        "coverage": "A股券商研报"
+      },
+      {
+        "name": "券商官方网站研究栏目",
+        "url": "https://www.sac.net.cn/hyfw/hydt/",
+        "type": "research",
+        "typeLabel": "券商公开",
+        "description": "从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。",
+        "coverage": "中国券商公开观点"
+      },
+      {
+        "name": "World Bank Documents & Reports",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。",
+        "coverage": "全球宏观与产业"
+      },
+      {
+        "name": "IMF eLibrary",
+        "url": "https://www.elibrary.imf.org/",
+        "type": "research",
+        "typeLabel": "国际研究",
+        "description": "IMF公开出版物、国别报告、专题研究与金融稳定资料。",
+        "coverage": "全球宏观、金融与政策"
+      },
+      {
+        "name": "McKinsey Insights",
+        "url": "https://www.mckinsey.com/featured-insights",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。",
+        "coverage": "消费、科技、医疗、工业"
+      },
+      {
+        "name": "BCG Publications",
+        "url": "https://www.bcg.com/publications",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "BCG公开行业报告与企业战略研究。",
+        "coverage": "全球行业与竞争格局"
+      },
+      {
+        "name": "Bain Insights",
+        "url": "https://www.bain.com/insights/",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "贝恩公开行业洞察，消费品、零售和技术覆盖较多。",
+        "coverage": "消费、零售、科技"
+      },
+      {
+        "name": "Deloitte Insights",
+        "url": "https://www.deloitte.com/us/en/insights.html",
+        "type": "research",
+        "typeLabel": "咨询研究",
+        "description": "德勤公开行业展望、调查和专题分析。",
+        "coverage": "TMT、消费、医疗、制造"
+      },
+      {
+        "name": "巨潮资讯",
+        "url": "https://www.cninfo.com.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "上市公司法定公告与财报，用于核验研报中的经营与财务判断。",
+        "coverage": "A股公司公告"
+      },
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "type": "validation",
+        "typeLabel": "事实核验",
+        "description": "宏观、消费、工业产量和行业统计的官方来源。",
+        "coverage": "中国官方统计"
+      }
+    ],
     "topReports": [
+      {
+        "date": "20260811",
+        "institution": "中金",
+        "title": "百济神州：携手Revolution，跑步快入RAS赛道",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260805",
+        "institution": "东吴证券",
+        "title": "策略深度报告：8月度金股：降波蓄势，结构致胜",
+        "type": "行业研究索引"
+      },
+      {
+        "date": "20260803",
+        "institution": "国泰海通",
+        "title": "聚焦科技制造真龙头与大金融--国泰海通策略2026年8月金股组合",
+        "type": "行业研究索引"
+      },
       {
         "date": "20260701",
         "institution": "IQVIA",
@@ -6214,8 +6363,7 @@
         "type": "监管政策",
         "url": "https://english.nmpa.gov.cn/2025-10/14/c_1132769.htm"
       }
-    ],
-    "freeSources": []
+    ]
   },
   "scenarios": [
     {
@@ -6250,12 +6398,12 @@
     "IQVIA Institute 20260325：https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/global-r-and-d-trends-2026",
     "NMPA 20251014：https://english.nmpa.gov.cn/2025-10/14/c_1132769.htm",
     "NMPA 2026新版药物临床试验质量管理规范：https://english.nmpa.gov.cn/2026-06/12/c_1190202.htm",
-    "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260810提取"
+    "Tushare Pro daily/adj_factor/daily_basic/fina_indicator，20260811提取"
   ],
   "tradeDecision": {
-    "asOf": "2026-08-10",
+    "asOf": "2026-08-11",
     "verdict": "产业上行—价值重估，但K线放量确认未达到交易门槛，当前不交易",
-    "reason": "截至2026-08-10，2/5项条件达成。主要缺口：研发活动全面扩张（中国总部企业临床试验启动数2025年下降；标准：I–III期启动数和融资同步回升）；上市公司盈利与现金流改善（样本收入/净利同比中位数31.02%/229.06%；标准：多数样本收入增长且经营现金流/现金储备改善）",
+    "reason": "截至2026-08-11，2/5项条件达成。主要缺口：研发活动全面扩张（中国总部企业临床试验启动数2025年下降；标准：I–III期启动数和融资同步回升）；上市公司盈利与现金流改善（样本收入/净利同比中位数31.02%/229.06%；标准：多数样本收入增长且经营现金流/现金储备改善）",
     "checks": [
       {
         "name": "中国创新资产获得全球验证",
@@ -6296,8 +6444,8 @@
       {
         "name": "K线放量确认",
         "dimension": "技术",
-        "current": "篮子176.65，量比1.44",
-        "threshold": "放量突破179.79",
+        "current": "篮子176.44，量比1.33",
+        "threshold": "放量突破185.55",
         "status": "partial",
         "trend": "up",
         "source": "Tushare前复权5股等权篮子"

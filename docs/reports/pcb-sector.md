@@ -1,6 +1,6 @@
 # PCB板块投资研究报告
 
-> 数据截止：2026-08-12｜文档更新：2026-08-13T01:43:35.293Z｜不构成投资建议
+> 数据截止：2026-08-12｜文档更新：2026-08-13T05:15:57.233Z｜不构成投资建议
 
 ## 0. 是否可以交易
 
@@ -61,13 +61,23 @@
 
 ## 5. 行业研报与行业温度
 
-- 数据状态：已接入5份PCB行业、服务器需求、材料与扩产资料；不展示个股研报
-- 统计口径：仅PCB全球市场、AI服务器架构、上游材料和高阶产能研究
-- 统计期：20251120—20260728
-- 行业研报：5份 / 2家机构
-- 个股盈利预测汇总样本：0条
-- 行业共识：AI推动PCB从数量增长转向层数、材料、良率和价值量升级
-- 预期变化：从Rubin架构升级演变为材料紧缺、价格上涨和大规模高阶扩产
+- 数据状态：Token有效；当前使用可用的券商盈利预测，完整研报需单独开通权限
+- 统计口径：仅行业周报、策略、专题与行业深度；个股报告不逐条展示
+- 统计期：20260415—20260813
+- 行业研报：2份 / 4家机构
+- 个股盈利预测汇总样本：59条
+- 行业共识：AI服务器推动高阶PCB层数、材料和单机价值量升级
+- 预期变化：代表公司盈利预测样本59条，用于观察行业盈利预期扩散，不作为行业研报展示
+
+**共同观点**
+
+- 机构观点仅作为预期证据，不替代产业供需和公司财报
+- 优先观察盈利预测是否连续上修，而不是单篇研报标题
+
+**核心分歧**
+
+- 需求增长能否转化为利润
+- 当前估值是否已经提前反映乐观预期
 
 ### 研报共性与不同点
 
@@ -87,13 +97,28 @@
 
 **验证方法：** 每季核对AI收入、良率、毛利率、材料价格和资本开支；每周核对篮子量价。
 
-**综合研判：** 基本面支持进入交易池，是否试仓由真实篮子突破与量能决定。
+**综合研判：** AI高阶PCB景气明确，但普通消费板并非同步繁荣；需用高端材料供给、扩产良率、AI收入、样本毛利率和板块量价共同确认。
 
-**事实核验：** 需求、材料和市场规模结论已与A股财务估值及真实前复权篮子交叉检查。
+**事实核验：** 综合结论已与报告中的真实数据交叉检查；完整研报摘要尚未接入时，不推断研报正文观点。
+
+**免费公开来源**
+
+- [东方财富研报中心](https://data.eastmoney.com/report/)（研报索引）：公开展示券商个股与行业研报标题、机构、日期和摘要，优先跳转原始来源。
+- [券商官方网站研究栏目](https://www.sac.net.cn/hyfw/hydt/)（券商公开）：从证券业协会会员与券商官网进入公开研究内容；以券商原文为最终来源。
+- [World Bank Documents & Reports](https://documents.worldbank.org/en/publication/documents-reports)（国际研究）：世界银行官方开放报告库，包含行业、国家、基础设施与发展研究。
+- [IMF eLibrary](https://www.elibrary.imf.org/)（国际研究）：IMF公开出版物、国别报告、专题研究与金融稳定资料。
+- [McKinsey Insights](https://www.mckinsey.com/featured-insights)（咨询研究）：麦肯锡行业洞察和专题报告；部分下载可能要求免费注册。
+- [BCG Publications](https://www.bcg.com/publications)（咨询研究）：BCG公开行业报告与企业战略研究。
+- [Bain Insights](https://www.bain.com/insights/)（咨询研究）：贝恩公开行业洞察，消费品、零售和技术覆盖较多。
+- [Deloitte Insights](https://www.deloitte.com/us/en/insights.html)（咨询研究）：德勤公开行业展望、调查和专题分析。
+- [巨潮资讯](https://www.cninfo.com.cn/)（事实核验）：上市公司法定公告与财报，用于核验研报中的经营与财务判断。
+- [国家统计局](https://www.stats.gov.cn/)（事实核验）：宏观、消费、工业产量和行业统计的官方来源。
 
 | 日期 | 机构 | 行业研报标题 | 类型 |
 | --- | --- | --- | --- |
+| 20260804 | 国泰海通 | 天津普林公司首次覆盖：津门PCB龙头企业，重回增长并布局产业高地 | 行业研究索引 |
 | 20260728 | TrendForce | [深圳新增AI服务器高端PCB重大扩产项目](https://www.trendforce.com/news/2026/07/28/news-shenzhen-adds-two-rmb-10-billion-semiconductor-projects-targeting-ai-servers-and-12-inch-wafers/) | 行业产能 |
+| 20260719 | 华创证券 | 机械行业周报（20260713-20260719）：关注PCB钻针、人形机器人 | 行业研究索引 |
 | 20260506 | TrendForce | [AI需求推动CCL供给趋紧与涨价扩产](https://www.trendforce.com/news/2026/05/06/news-ai-demand-tightens-ccl-supply-drives-advance-orders-price-hikes-and-expansion/) | 上游材料 |
 | 20260501 | Prismark | [Global Leading PCB Companies 2025 / Market Outlook](https://www.prismark.com/what-s-new) | 全球行业 |
 | 20260204 | TrendForce | [1Q26 Server Market Report](https://www.trendforce.com/research/download/RP260204LF) | 下游需求 |
