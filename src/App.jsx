@@ -2,6 +2,15 @@ import { useEffect, useMemo, useState } from 'react'
 
 const categoryName = { cycle: '周期', growth: '成长', mixed: '混合' }
 const isStockReport = report => report?.reportType === 'stock' || report?.id?.endsWith('-stock')
+const stockDisplayName = report => String(report?.industry || '').replace(/[\s（(]*\d{6}\.(?:SZ|SH)[）)]*\s*$/i, '').trim()
+const auditFlag = report => {
+  if (!isStockReport(report)) return null
+  const items = report?.auditRiskHistory?.items || []
+  const highRisk = items.some(item => item?.risk && item.risk !== 'low') || items.some(item => !String(item?.opinion || '').includes('标准无保留'))
+  if (highRisk) return { label: '审计风险', tone: 'risk' }
+  const changed = items.some(item => item?.change && item.change !== '无异常变更')
+  return changed ? { label: '审计关注', tone: 'watch' } : null
+}
 const reportIdFromUrl = () => new URLSearchParams(window.location.search).get('report') || ''
 const syncReportUrl = reportId => {
   const url = new URL(window.location.href)
@@ -90,11 +99,11 @@ function Sidebar({ reports, selected, onSelect, query, setQuery, filter, setFilt
     </div>}
     <div className="report-label"><span>{reportType==='stock'?'个股报告':'板块报告'}</span><span>{filtered.length}</span></div>
     <nav className="report-list" tabIndex="0" aria-label={reportType==='stock'?'个股报告列表':'板块报告列表'}>
-      {filtered.map(report => <button key={report.id} className={`report-row ${selected===report.id?'selected':''}`} onClick={()=>onSelect(report.id)}>
-        <span className={`report-symbol ${report.category}`}>{report.industry.slice(0,1)}</span>
-        <span className="report-copy"><strong>{report.industry}</strong><small>{report.asOf} · {isStockReport(report)?'个股':categoryName[report.category]}</small></span>
+      {filtered.map(report => { const stock=isStockReport(report), name=stock?stockDisplayName(report):report.industry, flag=auditFlag(report); return <button key={report.id} className={`report-row ${selected===report.id?'selected':''}`} onClick={()=>onSelect(report.id)}>
+        <span className={`report-symbol ${report.category}`}>{name.slice(0,1)}</span>
+        <span className="report-copy"><strong>{name}</strong>{stock ? flag&&<small className={`sidebar-audit-flag ${flag.tone}`}><Icon name="alert" size={12}/>{flag.label}</small> : <small>{report.asOf} · {categoryName[report.category]}</small>}</span>
         <Icon name="chevron" size={16}/>
-      </button>)}
+      </button>})}
       {!filtered.length && <p className="side-empty">没有匹配的报告</p>}
     </nav>
     <div className="sidebar-foot"><span className="sync-dot"/>监听 data/reports/</div>
