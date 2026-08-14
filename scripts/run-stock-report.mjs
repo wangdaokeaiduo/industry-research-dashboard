@@ -24,8 +24,8 @@ const input={code,latestDaily:newest(probes[0]),latestIncome:newest(probes[1]),l
 const fingerprint=createHash('sha256').update(JSON.stringify(input)).digest('hex')
 const reportPath=path.join(root,`data/reports/${id}-stock.json`)
 const existing=JSON.parse(await fs.readFile(reportPath,'utf8').catch(()=> 'null'))
-if(process.env.FORCE_REPORT!=='1'&&existing?.generationFingerprint===fingerprint){
-  console.log(JSON.stringify({status:'skipped_duplicate',id,asOf:existing.asOf,fingerprint:fingerprint.slice(0,12)},null,2))
+if(process.env.FORCE_REPORT!=='1'&&existing?.generationFingerprint===fingerprint&&existing?.researchDepth==='full'){
+  console.log(JSON.stringify({status:'skipped_duplicate',id,asOf:existing.asOf,researchDepth:existing.researchDepth,fingerprint:fingerprint.slice(0,12)},null,2))
   process.exit(0)
 }
 const scripts=['scripts/build-yixintang-report.mjs','scripts/enrich-stock-full-report.mjs',...process.argv.slice(2)]

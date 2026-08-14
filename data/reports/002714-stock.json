@@ -4,7 +4,7 @@
   "industry": "牧原股份（002714.SZ）",
   "category": "mixed",
   "asOf": "2026-08-13",
-  "updatedAt": "2026-08-14T02:02:58.775Z",
+  "updatedAt": "2026-08-14T02:04:58.800Z",
   "decisionLevel": "wait_trigger",
   "dataGaps": [
     "筹码分布接口当前不可验证，因此不展示平均成本、获利比例和集中度",
@@ -8391,8 +8391,8 @@
       "marketStats": {
         "close": 40.15,
         "changePct": 0.551,
-        "turnoverRate": 0.46,
-        "volumeRatio": 2.07
+        "turnoverRate": 0.47,
+        "volumeRatio": 2.02
       },
       "chip": {
         "status": "data_insufficient",
@@ -8810,6 +8810,7 @@
       "signal": "Q3仍大额亏损、现金流恶化或跌破37.63元"
     }
   ],
+  "researchDepth": "full",
   "generationFingerprint": "28cee4ff8f8d8cd3a92b09b71360e932fee85a0f33e0f75c4c4c7650c7efeee6",
   "generationInputs": {
     "code": "002714.SZ",
