@@ -25,7 +25,12 @@ const fm=new Map(factors.map(x=>[x.trade_date,x.adj_factor])),latestFactor=facto
 const rows=raw.map(r=>{const q=(fm.get(r.trade_date)||latestFactor)/latestFactor;return{date:r.trade_date,open:r.open*q,high:r.high*q,low:r.low*q,close:r.close*q,volume:r.amount/1000,pct_chg:r.pct_chg}}).reverse()
 const quoteText=(await execFile('curl',['-L','-s','--retry','3',`https://qt.gtimg.cn/q=${quoteSymbol}`])).stdout
 const qf=quoteText.match(/="([\s\S]*)";/)?.[1]?.split('~')||[],tradeDate=qf[30]?.slice(0,8),quote=qf.length>35?{close:Number(qf[3]),open:Number(qf[5]),high:Number(qf[33]),low:Number(qf[34]),vol:Number(qf[6]),amount:Number(qf[35]?.split('/')[2])/1e6,changePct:Number(qf[32]),turnover:Number(qf[38]),volumeRatio:Number(qf[49])}:null
-const validRealtimeBar=quote&&[quote.open,quote.high,quote.low,quote.close,quote.amount].every(value=>Number.isFinite(value)&&value>0)&&quote.high>=Math.max(quote.open,quote.close)&&quote.low<=Math.min(quote.open,quote.close)
+const completedAmountBaseline=mean(rows.slice(-20).map(x=>x.volume))
+const auctionLikeSnapshot=quote&&quote.open===quote.high&&quote.high===quote.low&&quote.low===quote.close&&quote.amount<completedAmountBaseline*.01
+const shanghaiNow=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Shanghai'}))
+const shanghaiToday=`${shanghaiNow.getFullYear()}${String(shanghaiNow.getMonth()+1).padStart(2,'0')}${String(shanghaiNow.getDate()).padStart(2,'0')}`
+const incompleteIntradayBar=tradeDate===shanghaiToday&&shanghaiNow.getHours()<15
+const validRealtimeBar=quote&&!auctionLikeSnapshot&&!incompleteIntradayBar&&[quote.open,quote.high,quote.low,quote.close,quote.amount].every(value=>Number.isFinite(value)&&value>0)&&quote.high>=Math.max(quote.open,quote.close)&&quote.low<=Math.min(quote.open,quote.close)
 if(validRealtimeBar&&tradeDate&&!rows.some(x=>x.date===tradeDate))rows.push({date:tradeDate,open:quote.open,high:quote.high,low:quote.low,close:quote.close,volume:quote.amount,pct_chg:quote.changePct,realtime:true})
 const prices=rows.map(x=>x.close),volumes=rows.map(x=>x.volume),latest=rows.at(-1),ma=n=>mean(prices.slice(-n)),maValues=Object.fromEntries([5,10,20,60,90,145].map(n=>[n,ma(n)])),volumeAverages=[5,10,20,60,90,145].map(days=>({days,average:mean(volumes.slice(-days)),ratio:latest.volume/mean(volumes.slice(-days))}))
 const e12=ema(prices,12),e26=ema(prices,26),dif=e12.map((x,i)=>x-e26[i]),dea=ema(dif,9),macdBar=(dif.at(-1)-dea.at(-1))*2
