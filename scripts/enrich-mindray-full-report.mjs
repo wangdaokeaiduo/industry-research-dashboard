@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..')
 const reportPath=path.join(root,'data/reports/300760-stock.json')
 const report=JSON.parse(await fs.readFile(reportPath,'utf8'))
+report.researchDepth='full'
 const env=await fs.readFile(path.join(root,'.env.local'),'utf8')
 const token=process.env.TUSHARE_TOKEN||env.match(/^TUSHARE_TOKEN=(.+)$/m)?.[1]?.trim()
 const fmt=(n,d=2)=>Number(n).toFixed(d)
@@ -21,7 +22,7 @@ const q1={revenue:83.52,profit:23.30,cfo:13.81,revenueYoy:1.39,profitYoy:-11.37,
 const annual={revenue:332.82,profit:81.36,netProfit:84.51,cfo:101.45,international:176.50,domestic:156.32}
 
 report.decisionLevel='wait_trigger'
-report.tradeDecision={asOf:report.asOf,verdict:'中期底部正在修复，可以观察回踩，但量能与长期趋势尚不支持直接追入',reason:`截至${report.asOf}收盘${fmt(close)}元，价格站上MA5/20/60/90，却仍低于MA145 ${fmt(ma[145])}元；20日成交额比仅${fmt(vr20)}倍且MACD尚未金叉。基本面上2026Q1收入同比转正至+1.39%，但归母净利润仍同比-11.37%，修复尚未完成。`,checks:[
+report.tradeDecision={asOf:report.asOf,verdict:'中期底部正在修复，可以观察回踩，但量能与长期趋势尚不支持直接追入',reason:`截至${report.asOf}收盘${fmt(close)}元，价格略高于MA20并站上MA60/90，但已低于MA5/10，且仍低于MA145 ${fmt(ma[145])}元；20日成交额比仅${fmt(vr20)}倍且MACD尚未金叉。基本面上2026Q1收入同比转正至+1.39%，但归母净利润仍同比-11.37%，修复尚未完成。`,checks:[
   {name:'MA20回踩',current:`收盘${fmt(close)}元，MA20 ${fmt(ma[20])}元`,threshold:'MA20附近止跌且不出现放量长阴',status:close>=ma[20]?'partial':'unmet'},
   {name:'长期均线',current:`MA145 ${fmt(ma[145])}元`,threshold:'收盘站上MA145',status:close>=ma[145]?'met':'unmet'},
   {name:'右侧突破',current:`收盘${fmt(close)}元`,threshold:`收盘≥${fmt(trigger)}元`,status:close>=trigger?'met':'unmet'},
@@ -36,7 +37,7 @@ report.decisionOverview={items:[
   {label:'增长阶段',value:'国内筑底、海外增长',score:67,comment:'2025境外收入+7.40%，境内收入-22.97%；2026Q1收入重回正增长'},
   {label:'盈利质量',value:'高盈利但仍承压',score:65,comment:`2026Q1毛利率${fmt(q1.grossMargin)}%，归母净利同比${fmt(q1.profitYoy)}%`},
   {label:'估值',value:'历史消化后中性',score:68,comment:'PE-TTM 23.75倍、PB 4.64倍，仍需利润恢复消化'},
-  {label:'技术位置',value:'中期修复、长期未反转',score:57,comment:`站上MA20/60/90，尚未站上MA145；20日量比${fmt(vr20)}倍`}
+  {label:'技术位置',value:'中期修复、长期未反转',score:57,comment:`略高于MA20并站上MA60/90，但低于MA5/10/145；20日量比${fmt(vr20)}倍`}
 ],coreConflict:'国际业务和新兴业务正在接棒增长，但国内设备采购、IVD集采、支付改革和税率/汇率因素仍压制利润；股价已从低点修复，却尚未用量能突破长期均线确认盈利拐点。',action:'可以放入优质资产观察池，但交易上只做“MA20回踩确认”或“162.81元放量突破”，不在缩量盘整中提前重仓。'}
 
 report.prosperity={level:'行业需求分化，公司处于恢复早期',direction:'海外与新兴业务向上 / 国内传统设备筑底',directionTone:'warning',score:65,verdict:'医疗器械总量并非全面高景气：国内医院采购和IVD价格仍受政策影响，海外高端突破、国际IVD和新兴业务是结构性增长来源。迈瑞的收入拐点早于利润拐点。',dimensions:[
@@ -74,8 +75,11 @@ report.marketResearch={fullTextStatus:'available',statusNote:'已接入2025年�
   {date:'2026-03-31',institution:'迈瑞医疗/深交所',title:'2025年年度报告',type:'定期报告',url:'https://disc.static.szse.cn/disc/disk03/finalpage/2026-03-31/a2d3ff33-2728-4fb4-88cd-339f8096f814.PDF'},
   {date:'2026-04-08',institution:'公开机构研究',title:'国内逐步筑底企稳，国际收入持续增长',type:'年报点评',url:'https://pdf.dfcfw.com/pdf/H3_AP202604081821064635_1.pdf?1775667490000.pdf='},
   {date:'2026-04',institution:'公开机构研究',title:'创新及全球化构筑动能，静待国内业绩复苏',type:'年报点评',url:'https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/828374684397/index.phtml'}],freeSources:[]}
+report.marketResearch.period='2026-03-31—2026-08-14'
+report.marketResearch.statusNote='已接入2025年报、2026Q1、投资者关系记录及公开机构研究摘要；公司未披露2026H1业绩预告或快报'
+report.marketResearch.companyForecastSampleCount=0
 
-report.catalysts=[{date:'2026-08-29',event:'2026年半年度报告预约披露',expectation:'验证国内收入拐点、国际/新兴业务增速、毛利率、扣非利润和现金流',status:'pending',statusLabel:'交易所预约日'},{date:'2026-04-17',event:'公司披露2026年经营展望与国际业务进展',expectation:'已披露收入恢复逻辑，等待半年报兑现',status:'confirmed',statusLabel:'已披露'},{date:'持续跟踪',event:'国内医疗设备招投标、IVD集采执行及海外高端客户突破',expectation:'月度/季度验证订单、装机和试剂消耗',status:'pending',statusLabel:'高频跟踪'}]
+report.catalysts=[{date:'2026-08-29',event:'2026年半年度报告预约披露',expectation:'验证国内收入拐点、国际/新兴业务增速、毛利率、扣非利润和现金流',status:'pending',statusLabel:'交易所预约日'},{date:'2026-08-29—2026-09-05',event:'半年报与业绩说明会验证窗口',expectation:'核对国内设备招投标、IVD集采影响、海外高端客户与试剂消耗',status:'pending',statusLabel:'报告后验证'},{date:'2026-10-26—2026-10-31',event:'2026年三季报验证窗口',expectation:'确认收入修复是否连续，利润与现金流能否跟上',status:'pending',statusLabel:'季报窗口'}]
 report.bearCase=['国内医疗设备采购和IVD行业调整持续时间超预期，单季收入转正后再次下滑','集采、全球最低税率、汇率和产品结构共同导致净利率继续下降','技术上仍低于MA145且突破无量，当前修复可能只是长期下降趋势中的反弹']
 report.evidenceQuality=[{grade:'A',label:'行情、财务与估值',note:`Tushare前复权OHLCV、财务三表与daily_basic，截至${report.asOf}`},{grade:'A',label:'业务结构与经营展望',note:'2025年报、2026Q1和公司投资者关系记录'},{grade:'B',label:'市场预期',note:'公开机构年报点评用于比较共识与分歧，不采用目标价'},{grade:'C',label:'筹码与次级别缠论',note:'无可验证筹码接口和30分钟笔段，明确标注数据边界'}]
 report.dataGaps=['筹码平均成本、获利比例与集中度无可验证接口，不展示估算值','缺少30分钟级别完整笔段，缠论只使用日线重叠区间作为中枢代理','2026年半年报尚未披露，国内收入持续转正和利润率拐点仍无法确认']
