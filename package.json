@@ -27,6 +27,7 @@
     "report:haida": "STOCK_CODE=002311.SZ STOCK_NAME=海大集团 STOCK_ID=002311 QUOTE_SYMBOL=sz002311 INDUSTRY_REPORT=pig-cycle.json node scripts/build-yixintang-report.mjs && STOCK_CODE=002311.SZ STOCK_NAME=海大集团 STOCK_ID=002311 INDUSTRY_REPORT=pig-cycle.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-haida-full-report.mjs && npm run reports:docs",
     "report:mindray": "STOCK_CODE=300760.SZ STOCK_NAME=迈瑞医疗 STOCK_ID=300760 QUOTE_SYMBOL=sz300760 INDUSTRY_REPORT=innovative-drug.json node scripts/build-yixintang-report.mjs && STOCK_CODE=300760.SZ STOCK_NAME=迈瑞医疗 STOCK_ID=300760 INDUSTRY_REPORT=innovative-drug.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-mindray-full-report.mjs && npm run reports:docs",
     "report:songcheng": "STOCK_CODE=300144.SZ STOCK_NAME=宋城演艺 STOCK_ID=300144 QUOTE_SYMBOL=sz300144 INDUSTRY_REPORT=tourism-hotel.json node scripts/build-yixintang-report.mjs && STOCK_CODE=300144.SZ STOCK_NAME=宋城演艺 STOCK_ID=300144 INDUSTRY_REPORT=tourism-hotel.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-songcheng-full-report.mjs && npm run reports:docs",
+    "report:fenjiu": "STOCK_CODE=600809.SH STOCK_NAME=山西汾酒 STOCK_ID=600809 QUOTE_SYMBOL=sh600809 INDUSTRY_REPORT=baijiu-sector.json node scripts/build-yixintang-report.mjs && STOCK_CODE=600809.SH STOCK_NAME=山西汾酒 STOCK_ID=600809 INDUSTRY_REPORT=baijiu-sector.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-fenjiu-full-report.mjs && npm run reports:docs",
     "test": "node --test"
   },
   "dependencies": {
