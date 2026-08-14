@@ -3,6 +3,23 @@ import { useEffect, useMemo, useState } from 'react'
 const categoryName = { cycle: '周期', growth: '成长', mixed: '混合' }
 const isStockReport = report => report?.reportType === 'stock' || report?.id?.endsWith('-stock')
 const stockDisplayName = report => String(report?.industry || '').replace(/[\s（(]*\d{6}\.(?:SZ|SH)[）)]*\s*$/i, '').trim()
+const researchGroups = [
+  {id:'consumer',name:'消费',mark:'消',description:'食品饮料、白酒、旅游、免税与文娱消费'},
+  {id:'technology',name:'科技',mark:'科',description:'半导体、PCB、光模块、电子元件与新材料'},
+  {id:'healthcare',name:'医药健康',mark:'医',description:'创新药、中药、医疗器械、医美与药店'},
+  {id:'cyclical',name:'周期资源',mark:'周',description:'农牧养殖、黄金、能源、金属与价格周期'},
+  {id:'utilities',name:'公用事业',mark:'公',description:'电力、环保、燃气与稳定现金流资产'},
+  {id:'other',name:'其他',mark:'其',description:'尚未归入主要产业分类的结构性机会'}
+]
+const groupForReport = report => {
+  const text=`${report?.id||''} ${report?.industry||''}`.toLowerCase()
+  if (/(food|beverage|baijiu|tourism|hotel|game|duty|consumer|食品|饮料|白酒|酒|旅游|酒店|免税|游戏|洽洽|中免|宋城|汾酒|巨人|吉比特)/.test(text)) return 'consumer'
+  if (/(optical|mlcc|memory|chip|pcb|semiconductor|battery|putailai|光模块|存储|芯片|半导体|璞泰来|电子)/.test(text)) return 'technology'
+  if (/(medical|pharmacy|drug|health|aesthetic|医美|医疗|医药|创新药|药|爱美客|迈瑞|太极|一心堂|药易购)/.test(text)) return 'healthcare'
+  if (/(pig|gold|cycle|resource|猪|养殖|黄金|牧原|温氏|海大)/.test(text)) return 'cyclical'
+  if (/(power|utility|电力|公用|燃气|环保)/.test(text)) return 'utilities'
+  return 'other'
+}
 const auditFlag = report => {
   if (!isStockReport(report)) return null
   const items = report?.auditRiskHistory?.items || []
@@ -106,6 +123,21 @@ function Sidebar({ reports, selected, onSelect, query, setQuery, filter, setFilt
     </nav>
     <div className="sidebar-foot"><span className="sync-dot"/>监听 data/reports/</div>
   </aside>
+}
+
+function ResearchHome({ reports, reportType, query, activeGroup, onGroupChange, onOpenReport }) {
+  const typed=reports.filter(report=>reportType==='stock'?isStockReport(report):!isStockReport(report))
+  const counts=Object.fromEntries(researchGroups.map(group=>[group.id,typed.filter(report=>groupForReport(report)===group.id).length]))
+  const available=researchGroups.filter(group=>counts[group.id]>0)
+  const current=available.some(group=>group.id===activeGroup)?activeGroup:(available[0]?.id||'other')
+  const normalized=query.trim().toLowerCase()
+  const visible=typed.filter(report=>groupForReport(report)===current&&(!normalized||report.industry.toLowerCase().includes(normalized)))
+  const title=reportType==='stock'?'个股研究':'板块研究'
+  const currentMeta=researchGroups.find(group=>group.id===current)
+  return <main className="research-home"><header className="home-header"><div><h1>{title}</h1><p>{reportType==='stock'?'聚焦上市公司基本面与周期信号，提供独立、客观、可验证的研究结论。':'从景气、供需和盈利周期理解产业，将研究结论转化为可验证的交易条件。'}</p></div><span>{typed.length} 篇研究</span></header>
+    <section className="group-grid" aria-label="研究分类">{available.map(group=><button key={group.id} className={group.id===current?'active':''} onClick={()=>onGroupChange(group.id)}><i>{group.mark}</i><strong>{group.name}</strong><span>{counts[group.id]} 篇报告</span><p>{group.description}</p></button>)}</section>
+    <section className="home-reports"><div className="home-section-title"><div><h2>{currentMeta?.name}</h2><span>{visible.length} 篇报告</span></div><p>{currentMeta?.description}</p></div><div className="home-report-list">{visible.map(report=>{const stock=isStockReport(report), flag=auditFlag(report), verdict=report.tradeDecision?.verdict||report.summary?.conclusion||'等待研究结论';return <button key={report.id} onClick={()=>onOpenReport(report.id)}><span className="home-report-name"><i>{(stock?stockDisplayName(report):report.industry).slice(0,1)}</i><strong>{stock?stockDisplayName(report):report.industry}</strong></span><span className="home-report-conclusion"><small>直接结论</small><b>{verdict}</b></span><span className={`home-report-state ${report.decisionLevel||'wait_trigger'}`}><small>状态</small><b>{report.decisionLevel==='add'?'可加仓':report.decisionLevel==='trial'?'可试错':report.decisionLevel==='no_trade'?'不交易':'待触发'}</b>{flag&&<em>审计风险</em>}</span><span className="home-report-date"><small>更新于</small><b>{report.asOf}</b></span><Icon name="chevron" size={18}/></button>})}{!visible.length&&<div className="home-empty">该分类暂无匹配报告</div>}</div></section>
+  </main>
 }
 
 function Section({ id, title, action, children, className='' }) {
@@ -305,11 +337,11 @@ function ArticleNav({ readingLarge, setReadingLarge }) {
   return <aside className="article-nav"><strong>目录</strong><nav>{articleLinks.map(([id,label],index)=><a key={id} href={`#${id}`}><span>{index+1}</span>{label}</a>)}</nav><div className="reading-controls"><small>阅读字号</small><button className={!readingLarge?'active':''} onClick={()=>setReadingLarge(false)} aria-label="标准字号">A</button><button className={readingLarge?'active':''} onClick={()=>setReadingLarge(true)} aria-label="大字号">A+</button></div></aside>
 }
 
-function ReportView({ report, readingLarge, setReadingLarge }) {
+function ReportView({ report, readingLarge, setReadingLarge, onBackHome }) {
   if (!report) return <main className="loading-screen">正在读取报告…</main>
   const stock=isStockReport(report)
   return <main className={`main ${readingLarge?'reading-large':''}`}>
-    <header className="topbar"><div><h1>{report.industry}</h1><span className={`category-tag ${report.category}`}>{categoryName[report.category]}</span></div><div className="report-meta"><span>数据截止 <strong>{report.asOf}</strong></span><span>最后更新 <strong>{new Date(report.updatedAt).toLocaleString('zh-CN',{hour12:false})}</strong></span></div></header>
+    <header className="topbar"><div className="report-title-wrap"><button className="back-home" onClick={onBackHome}>← 研究首页</button><div><h1>{report.industry}</h1><span className={`category-tag ${report.category}`}>{categoryName[report.category]}</span></div></div><div className="report-meta"><span>数据截止 <strong>{report.asOf}</strong></span><span>最后更新 <strong>{new Date(report.updatedAt).toLocaleString('zh-CN',{hour12:false})}</strong></span></div></header>
     <div className="report-layout"><div className="content">
       <Section id="trade" title={stock?'是否可以介入':'是否可以交易'} action="结论 · 理由 · 操作"><TradeDecision report={report}/></Section>
       <DataGaps items={report.dataGaps}/>
@@ -338,12 +370,14 @@ function ReportView({ report, readingLarge, setReadingLarge }) {
 export default function App() {
   const [reports,setReports]=useState([]), [errors,setErrors]=useState([]), [selected,setSelected]=useState('')
   const [query,setQuery]=useState(''), [filter,setFilter]=useState('all'), [reportType,setReportType]=useState('sector'), [online,setOnline]=useState(false), [updated,setUpdated]=useState(0)
+  const [homeGroup,setHomeGroup]=useState({sector:'consumer',stock:'consumer'})
   const [readingLarge,setReadingLarge]=useState(()=>localStorage.getItem('reading-size')==='large')
-  const load = async () => { const res=await fetch('/api/reports'); const data=await res.json(), next=data.reports||[], linked=next.find(r=>r.id===reportIdFromUrl()); setReports(next); setErrors(data.errors||[]); if(linked)setReportType(isStockReport(linked)?'stock':'sector'); setSelected(value=>linked?.id||(next.some(r=>r.id===value)?value:(next.find(r=>!isStockReport(r))?.id||next[0]?.id||''))); setUpdated(Date.now()) }
+  const load = async () => { const res=await fetch('/api/reports'); const data=await res.json(), next=data.reports||[], linked=next.find(r=>r.id===reportIdFromUrl()); setReports(next); setErrors(data.errors||[]); if(linked)setReportType(isStockReport(linked)?'stock':'sector'); setSelected(value=>linked?.id||(next.some(r=>r.id===value)?value:'')); setUpdated(Date.now()) }
   useEffect(()=>{ load().catch(()=>setOnline(false)); const events=new EventSource('/api/events'); events.addEventListener('connected',()=>setOnline(true)); events.addEventListener('reports-updated',()=>load()); events.onerror=()=>setOnline(false); return()=>events.close() },[])
   const report=useMemo(()=>reports.find(r=>r.id===selected),[reports,selected])
   const selectReport=id=>{setSelected(id);syncReportUrl(id)}
-  const changeReportType=type=>{const id=reports.find(r=>type==='stock'?isStockReport(r):!isStockReport(r))?.id||'';setReportType(type);setFilter('all');setQuery('');setSelected(id);syncReportUrl(id)}
+  const showHome=()=>{setSelected('');syncReportUrl('')}
+  const changeReportType=type=>{setReportType(type);setFilter('all');setQuery('');setSelected('');syncReportUrl('')}
   useEffect(()=>{localStorage.setItem('reading-size',readingLarge?'large':'standard')},[readingLarge])
-  return <div className="app-shell"><Sidebar reports={reports} selected={selected} onSelect={selectReport} query={query} setQuery={setQuery} filter={filter} setFilter={setFilter} reportType={reportType} onTypeChange={changeReportType}/><ReportView key={report?.id||'loading'} report={report} readingLarge={readingLarge} setReadingLarge={setReadingLarge}/><div className={`live-status ${online?'online':''}`}><span/>{online?'实时同步':'正在重连'}<small>{updated?new Date(updated).toLocaleTimeString('zh-CN',{hour12:false}):''}</small></div>{errors.length>0&&<div className="error-toast"><Icon name="alert"/><div><strong>{errors.length} 个报告未载入</strong><span>{errors[0].file} · {errors[0].message}</span></div></div>}</div>
+  return <div className="app-shell"><Sidebar reports={reports} selected={selected} onSelect={selectReport} query={query} setQuery={setQuery} filter={filter} setFilter={setFilter} reportType={reportType} onTypeChange={changeReportType}/>{report?<ReportView key={report.id} report={report} readingLarge={readingLarge} setReadingLarge={setReadingLarge} onBackHome={showHome}/>:<ResearchHome reports={reports} reportType={reportType} query={query} activeGroup={homeGroup[reportType]} onGroupChange={group=>setHomeGroup(value=>({...value,[reportType]:group}))} onOpenReport={selectReport}/>}<div className={`live-status ${online?'online':''}`}><span/>{online?'实时同步':'正在重连'}<small>{updated?new Date(updated).toLocaleTimeString('zh-CN',{hour12:false}):''}</small></div>{errors.length>0&&<div className="error-toast"><Icon name="alert"/><div><strong>{errors.length} 个报告未载入</strong><span>{errors[0].file} · {errors[0].message}</span></div></div>}</div>
 }
