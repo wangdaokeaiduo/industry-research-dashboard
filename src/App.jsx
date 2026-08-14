@@ -7,9 +7,7 @@ const auditFlag = report => {
   if (!isStockReport(report)) return null
   const items = report?.auditRiskHistory?.items || []
   const highRisk = items.some(item => item?.risk && item.risk !== 'low') || items.some(item => !String(item?.opinion || '').includes('标准无保留'))
-  if (highRisk) return { label: '审计风险', tone: 'risk' }
-  const changed = items.some(item => item?.change && item.change !== '无异常变更')
-  return changed ? { label: '审计关注', tone: 'watch' } : null
+  return highRisk ? { label: '审计风险', tone: 'risk' } : null
 }
 const reportIdFromUrl = () => new URLSearchParams(window.location.search).get('report') || ''
 const syncReportUrl = reportId => {
