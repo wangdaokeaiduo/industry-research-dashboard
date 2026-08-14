@@ -89,7 +89,7 @@ function Sidebar({ reports, selected, onSelect, query, setQuery, filter, setFilt
       {[['all','全部'],['cycle','周期'],['growth','成长']].map(([key,label]) => <button key={key} className={filter===key?'active':''} onClick={()=>setFilter(key)}>{label}</button>)}
     </div>}
     <div className="report-label"><span>{reportType==='stock'?'个股报告':'板块报告'}</span><span>{filtered.length}</span></div>
-    <nav className="report-list">
+    <nav className="report-list" tabIndex="0" aria-label={reportType==='stock'?'个股报告列表':'板块报告列表'}>
       {filtered.map(report => <button key={report.id} className={`report-row ${selected===report.id?'selected':''}`} onClick={()=>onSelect(report.id)}>
         <span className={`report-symbol ${report.category}`}>{report.industry.slice(0,1)}</span>
         <span className="report-copy"><strong>{report.industry}</strong><small>{report.asOf} · {isStockReport(report)?'个股':categoryName[report.category]}</small></span>
