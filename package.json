@@ -32,6 +32,7 @@
     "report:muyuan": "STOCK_CODE=002714.SZ STOCK_NAME=牧原股份 STOCK_ID=002714 QUOTE_SYMBOL=sz002714 INDUSTRY_REPORT=pig-cycle.json node scripts/run-stock-report.mjs scripts/enrich-muyuan-full-report.mjs",
     "report:putailai": "STOCK_CODE=603659.SH STOCK_NAME=璞泰来 STOCK_ID=603659 QUOTE_SYMBOL=sh603659 INDUSTRY_REPORT=memory-chip.json node scripts/run-stock-report.mjs scripts/enrich-putailai-full-report.mjs",
     "report:qiaqia": "STOCK_CODE=002557.SZ STOCK_NAME=洽洽食品 STOCK_ID=002557 QUOTE_SYMBOL=sz002557 INDUSTRY_REPORT=food-beverage.json node scripts/run-stock-report.mjs scripts/enrich-qiaqia-full-report.mjs",
+    "report:imeik": "STOCK_CODE=300896.SZ STOCK_NAME=爱美客 STOCK_ID=300896 QUOTE_SYMBOL=sz300896 INDUSTRY_REPORT=medical-aesthetics.json node scripts/run-stock-report.mjs scripts/enrich-imeik-full-report.mjs",
     "test": "node --test"
   },
   "dependencies": {
