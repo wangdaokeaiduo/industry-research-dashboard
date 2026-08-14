@@ -30,6 +30,7 @@
     "report:fenjiu": "STOCK_CODE=600809.SH STOCK_NAME=山西汾酒 STOCK_ID=600809 QUOTE_SYMBOL=sh600809 INDUSTRY_REPORT=baijiu-sector.json node scripts/build-yixintang-report.mjs && STOCK_CODE=600809.SH STOCK_NAME=山西汾酒 STOCK_ID=600809 INDUSTRY_REPORT=baijiu-sector.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-fenjiu-full-report.mjs && npm run reports:docs",
     "report:wens": "STOCK_CODE=300498.SZ STOCK_NAME=温氏股份 STOCK_ID=300498 QUOTE_SYMBOL=sz300498 INDUSTRY_REPORT=pig-cycle.json node scripts/build-yixintang-report.mjs && STOCK_CODE=300498.SZ STOCK_NAME=温氏股份 STOCK_ID=300498 INDUSTRY_REPORT=pig-cycle.json node scripts/enrich-stock-full-report.mjs && node scripts/enrich-wens-full-report.mjs && npm run reports:docs",
     "report:muyuan": "STOCK_CODE=002714.SZ STOCK_NAME=牧原股份 STOCK_ID=002714 QUOTE_SYMBOL=sz002714 INDUSTRY_REPORT=pig-cycle.json node scripts/run-stock-report.mjs scripts/enrich-muyuan-full-report.mjs",
+    "report:putailai": "STOCK_CODE=603659.SH STOCK_NAME=璞泰来 STOCK_ID=603659 QUOTE_SYMBOL=sh603659 INDUSTRY_REPORT=memory-chip.json node scripts/run-stock-report.mjs scripts/enrich-putailai-full-report.mjs",
     "test": "node --test"
   },
   "dependencies": {
